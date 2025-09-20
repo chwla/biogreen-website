@@ -43,10 +43,10 @@ const Header = () => {
               WHY BIOGREEN
             </Link>
             <Link 
-              href="/career" 
+              href="/sustainability" 
               className="text-gray-700 hover:text-green-600 font-normal text-base tracking-wide transition-colors duration-200"
             >
-              CAREER
+              SUSTAINABILITY
             </Link>
             <Link 
               href="/contact" 
@@ -85,8 +85,8 @@ const Header = () => {
           <Link href="/why-biogreen" className="block px-3 py-2 text-gray-700 hover:text-green-600 font-normal tracking-wide">
             WHY BIOGREEN
           </Link>
-          <Link href="/career" className="block px-3 py-2 text-gray-700 hover:text-green-600 font-normal tracking-wide">
-            CAREER
+          <Link href="/sustainability" className="block px-3 py-2 text-gray-700 hover:text-green-600 font-normal tracking-wide">
+            SUSTAINABILITY
           </Link>
           <Link href="/contact" className="block px-3 py-2 text-gray-700 hover:text-green-600 font-normal tracking-wide">
             CONTACT US
