@@ -3,8 +3,8 @@ import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
-const AchievementsPage = () => {
-  const [activeSection, setActiveSection] = useState('OUR ACHIEVEMENTS');
+const HowDoWeDoIt = () => {
+  const [activeSection, setActiveSection] = useState('HOW WE DO IT');
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   const menuItems = [
@@ -40,7 +40,7 @@ const AchievementsPage = () => {
         {/* Title overlay */}
         <div className="absolute inset-0 flex items-center justify-center px-4">
           <h1 className="text-amber-800 text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold tracking-wide uppercase text-center drop-shadow-lg">
-            Our Achievements
+            How Do We Do It?
           </h1>
         </div>
       </div>
@@ -124,7 +124,7 @@ const AchievementsPage = () => {
                   {/* Text Content */}
                   <div className="flex-1 lg:flex-[2] w-full">
                     <h2 className="text-green-600 text-xl sm:text-2xl lg:text-3xl font-light tracking-wide mb-6 md:mb-8 pb-2 md:pb-3 border-b-2 md:border-b-3 border-green-600 inline-block">
-                      OUR ACHIEVEMENTS
+                      How Do We Do It?
                     </h2>
 
                   </div>
@@ -140,4 +140,4 @@ const AchievementsPage = () => {
   )
 }
 
-export default AchievementsPage;
+export default HowDoWeDoIt;
