@@ -22,50 +22,20 @@ const HistoryPage = () => {
 
   return (
     <>
-      {/* Hero Section - Simple working approach */}
-      <div className="w-full" style={{ height: '400px', position: 'relative' }}>
+      {/* Hero Section*/}
+      <div className="w-full relative overflow-hidden" style={{ height: '400px' }}>
         <img 
-          src="/photos/about.png" 
+          src="/photos/about.jpeg" 
           alt="About BioGreen"
-          style={{
-            width: '100%',
-            height: '400px',
-            objectFit: 'cover',
-            objectPosition: 'center top',
-            display: 'block'
-          }}
+          className="w-full h-full object-cover object-center"
+          style={{ transform: 'scale(1.1)', transformOrigin: 'center' }}
         />
         
-        {/* Dark overlay */}
-        <div style={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          backgroundColor: 'rgba(0, 0, 0, 0.5)'
-        }}></div>
-        
-        {/* Title overlay */}
-        <div style={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center'
-        }}>
-          <div style={{
-            backgroundColor: 'rgba(255, 255, 255, 0.95)',
-            padding: '20px 40px',
-            boxShadow: '0 4px 15px rgba(0,0,0,0.2)'
-          }}>
-            <h1 className="text-amber-800 text-4xl font-bold tracking-wide uppercase text-center">
-              Our History
-            </h1>
-          </div>
+        {/* Title overlay - removed white background */}
+        <div className="absolute inset-0 flex items-center justify-center">
+          <h1 className="text-amber-800 text-4xl font-bold tracking-wide uppercase text-center drop-shadow-lg">
+            Our History
+          </h1>
         </div>
       </div>
 
