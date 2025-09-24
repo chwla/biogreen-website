@@ -1,13 +1,20 @@
 'use client';
 import React from 'react';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 
 const Home2 = () => {
+  const router = useRouter();
+
+  const handleReadMore = () => {
+    router.push('/about');
+  };
+
   return (
     <div className="bg-white">
       {/* First Section */}
       <div className="bg-gray-50 mb-8">
-        <div className="flex items-center justify-between max-w-7xl mx-auto px-8 py-16 flex-wrap">
+        <div className="flex items-start justify-between max-w-7xl mx-auto px-8 py-16 flex-wrap">
           {/* Left Content */}
           <div className="flex-1 pr-12 min-w-[300px]">
             <p className="text-gray-700 text-base leading-relaxed mb-8">
@@ -26,7 +33,10 @@ const Home2 = () => {
               for agriculture and industry.
             </p>
 
-            <button className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 text-sm font-medium transition-colors duration-200">
+            <button 
+              className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 text-sm font-medium transition-colors duration-200"
+              onClick={handleReadMore}
+            >
               READ MORE
             </button>
           </div>
@@ -45,7 +55,7 @@ const Home2 = () => {
 
       {/* Second Section */}
       <div className="bg-gray-100">
-        <div className="flex items-center justify-between max-w-7xl mx-auto px-8 py-16 flex-wrap">
+        <div className="flex items-start justify-between max-w-7xl mx-auto px-8 py-16 flex-wrap">
           {/* Left Content */}
           <div className="flex-1 pr-12 min-w-[300px]">
             <h2 className="text-3xl font-normal text-green-600 mb-8 uppercase tracking-wide">
@@ -60,7 +70,10 @@ const Home2 = () => {
               alternatives that are safe, effective, and efficient.
             </p>
 
-            <button className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 text-sm font-medium transition-colors duration-200">
+            <button 
+              className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 text-sm font-medium transition-colors duration-200"
+              onClick={handleReadMore}
+            >
               READ MORE
             </button>
           </div>

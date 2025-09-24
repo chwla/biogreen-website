@@ -1,6 +1,7 @@
 'use client';
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function AboutBiogreen() {
   return (
@@ -12,7 +13,7 @@ export default function AboutBiogreen() {
 
           <div className="flex flex-wrap justify-center gap-8 items-start">
             {/* Who we are */}
-            <div className="flex flex-col items-center max-w-xs bg-gray-100 p-6 rounded-lg shadow-sm">
+            <Link href="/about/who-we-are" className="flex flex-col items-center w-80 h-96 bg-gray-100 p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow cursor-pointer">
               <div className="w-full mb-4 relative h-32">
                 <Image
                   src="/photos/home3_1.png"
@@ -22,13 +23,13 @@ export default function AboutBiogreen() {
                 />
               </div>
               <h3 className="text-lg font-semibold text-gray-800 mb-2">Who we are</h3>
-              <p className="text-sm text-gray-600 text-center leading-relaxed">
+              <p className="text-sm text-gray-600 text-center leading-relaxed flex-1 overflow-hidden">
                 Biogreen Fertilizer and Gas Manufacturing PLC is a forward-thinking company dedicated to providing green technology solutions for the fertilizer and gas industries. The company leverages Ethiopian resources and international alliances with sustainable alternatives that are safe, effective, and efficient.
               </p>
-            </div>
+            </Link>
 
             {/* What we do */}
-            <div className="flex flex-col items-center max-w-xs bg-gray-100 p-6 rounded-lg shadow-sm">
+            <Link href="/about/what-we-do" className="flex flex-col items-center w-80 h-96 bg-gray-100 p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow cursor-pointer">
               <div className="w-full mb-4 relative h-32">
                 <Image
                   src="/photos/home3_2.png"
@@ -38,13 +39,13 @@ export default function AboutBiogreen() {
                 />
               </div>
               <h3 className="text-lg font-semibold text-gray-800 mb-2">What we do</h3>
-              <p className="text-sm text-gray-600 text-center leading-relaxed">
+              <p className="text-sm text-gray-600 text-center leading-relaxed flex-1 overflow-hidden">
                 Biogreen Fertilizer and Gas Manufacturing PLC provides green technology solutions for the fertilizer and gas industries by leveraging Ethiopian resources and international best practices to deliver safe, effective, and efficient alternatives.
               </p>
-            </div>
+            </Link>
 
             {/* How do we do it */}
-            <div className="flex flex-col items-center max-w-xs bg-gray-100 p-6 rounded-lg shadow-sm">
+            <Link href="/about/how-we-do-it" className="flex flex-col items-center w-80 h-96 bg-gray-100 p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow cursor-pointer">
               <div className="w-full mb-4 relative h-32">
                 <Image
                   src="/photos/home3_3.png"
@@ -54,10 +55,10 @@ export default function AboutBiogreen() {
                 />
               </div>
               <h3 className="text-lg font-semibold text-gray-800 mb-2">How we do it</h3>
-              <p className="text-sm text-gray-600 text-center leading-relaxed">
+              <p className="text-sm text-gray-600 text-center leading-relaxed flex-1 overflow-hidden">
                 Biogreen applies sustainable technology and strategic collaborations to improve fertilizer quality, reduce environmental impact, and optimize manufacturing efficiency.
               </p>
-            </div>
+            </Link>
           </div>
         </div>
 

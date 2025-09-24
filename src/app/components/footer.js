@@ -69,7 +69,7 @@ export default function Footer() {
             <li><Link href="/about" className="hover:text-green-200 transition-colors">- ABOUT NAQ GLOBAL</Link></li>
             <li><Link href="/services" className="hover:text-green-200 transition-colors">- SERVICES</Link></li>
             <li><Link href="/why-us" className="hover:text-green-200 transition-colors">- WHY NAQ GLOBAL</Link></li>
-            <li><Link href="/career" className="hover:text-green-200 transition-colors">- CAREER</Link></li>
+            <li><Link href="/sustainability" className="hover:text-green-200 transition-colors">- SUSTAINABILITY</Link></li>
             <li><Link href="/contact" className="hover:text-green-200 transition-colors">- CONTACT US</Link></li>
           </ul>
         </div>
