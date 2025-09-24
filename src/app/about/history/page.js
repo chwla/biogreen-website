@@ -5,6 +5,7 @@ import Link from 'next/link';
 
 const HistoryPage = () => {
   const [activeSection, setActiveSection] = useState('OUR HISTORY');
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   const menuItems = [
     { name: 'OUR PRESIDENT MESSAGE', path: '/about' },
@@ -18,37 +19,55 @@ const HistoryPage = () => {
 
   const handleMenuClick = (item) => {
     setActiveSection(item.name);
+    setIsSidebarOpen(false); // Close mobile menu on item click
     // Navigate to the specified path
     window.location.href = item.path;
   };
 
   return (
     <>
-      {/* Hero Section*/}
-      <div className="w-full relative overflow-hidden" style={{ height: '400px' }}>
+      {/* Hero Section - Responsive height */}
+      <div className="w-full relative overflow-hidden h-48 sm:h-64 md:h-80 lg:h-96">
         <Image 
           src="/photos/about.jpeg" 
           alt="About BioGreen"
           fill
           className="object-cover object-center"
           style={{ transform: 'scale(1.1)', transformOrigin: 'center' }}
+          priority
         />
         
-        {/* Title overlay - removed white background */}
-        <div className="absolute inset-0 flex items-center justify-center">
-          <h1 className="text-amber-800 text-4xl font-bold tracking-wide uppercase text-center drop-shadow-lg">
+        {/* Title overlay */}
+        <div className="absolute inset-0 flex items-center justify-center px-4">
+          <h1 className="text-amber-800 text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold tracking-wide uppercase text-center drop-shadow-lg">
             Our History
           </h1>
         </div>
       </div>
 
       {/* Main Content Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-6xl mx-auto px-5">
-          <div className="flex gap-10 items-start">
-            {/* Left Sidebar Navigation */}
-            <div className="w-72 flex-shrink-0">
-              <div className="bg-white shadow-lg border border-gray-200">
+      <section className="py-8 md:py-16 bg-gray-50">
+        <div className="max-w-6xl mx-auto px-4 sm:px-5">
+          {/* Mobile Menu Toggle */}
+          <div className="md:hidden mb-6">
+            <button
+              onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+              className="w-full bg-green-600 text-white py-3 px-4 rounded-lg font-semibold uppercase tracking-wide text-sm flex items-center justify-between"
+            >
+              <span>Navigation Menu</span>
+              <span className={`transform transition-transform ${isSidebarOpen ? 'rotate-180' : ''}`}>
+                ▼
+              </span>
+            </button>
+          </div>
+
+          <div className="flex flex-col md:flex-row gap-6 md:gap-10 items-start">
+            {/* Left Sidebar Navigation - Mobile dropdown, desktop fixed */}
+            <div className={`
+              w-full md:w-72 md:flex-shrink-0
+              ${isSidebarOpen ? 'block' : 'hidden md:block'}
+            `}>
+              <div className="bg-white shadow-lg border border-gray-200 rounded-lg md:rounded-none overflow-hidden">
                 {menuItems.map((item, index) => (
                   <div
                     key={item.name}
@@ -59,7 +78,7 @@ const HistoryPage = () => {
                         ? 'bg-green-600 text-white' 
                         : 'bg-white text-green-600 hover:bg-green-50'
                       }
-                      text-center py-4 px-4 font-bold text-xs uppercase tracking-widest cursor-pointer transition-all duration-200 
+                      text-center py-3 md:py-4 px-3 md:px-4 font-bold text-xs sm:text-xs uppercase tracking-wide cursor-pointer transition-all duration-200 
                       font-sans leading-tight
                     `}
                     style={{
@@ -74,43 +93,13 @@ const HistoryPage = () => {
             </div>
 
             {/* Right Content Area */}
-            <div className="flex-1">
-              <div className="flex flex-col lg:flex-row gap-10 items-start">
-                {/* Text Content */}
-                <div className="flex-1 lg:flex-[2]">
-                  <h2 className="text-green-600 text-3xl font-light tracking-wide mb-8 pb-3 border-b-3 border-green-600 inline-block">
-                    OUR HISTORY
-                  </h2>
-                  
-                  <div className="space-y-5">
-                    <p className="font-semibold text-gray-700 text-lg">
-                      Read The Message From Our President And CEO
-                    </p>
-                    
-                    <p className="text-gray-600 text-lg leading-relaxed text-justify">
-                      NAQ Global aims at providing best technical solutions for fertilizer 
-                      process &amp; quality improvement. Our R&amp;D works to develop innovative 
-                      technologies &amp; products for all such processes, trouble shooting, 
-                      efficiency improvement &amp; cost reduction in the fertilizer industry. 
-                      Environment friendliness, green (vegetable) sources, &amp; safety 
-                      concerns are unique characteristics of NAQ Global&apos;s products.
-                    </p>
-                    
-                    <p className="text-gray-600 text-lg leading-relaxed text-justify">
-                      Another advantageous feature of our company is our Technical 
-                      Services, which help the fertilizer plants to analyze, diagnose &amp; solve 
-                      the problems easily with our experts. Our Tech Service engineers and 
-                      chemists also supervise the design and installation of dosing systems, 
-                      apply the specialty chemicals appropriately, and help the customers 
-                      in deriving the desired results.
-                    </p>
-                  </div>
-                </div>
-
-                {/* Images */}
-                <div className="flex-1">
-                  <div className="space-y-4">
-                    <div className="w-full h-48 bg-gray-200 rounded-lg overflow-hidden shadow-lg relative">
+            <div className="flex-1 w-full">
+              <div className="flex flex-col gap-8 md:gap-10 items-start">
+                
+                {/* Images Section - Mobile first */}
+                <div className="w-full md:hidden">
+                  <div className="grid grid-cols-1 gap-4">
+                    <div className="w-full h-48 sm:h-56 bg-gray-200 rounded-lg overflow-hidden shadow-lg relative">
                       <Image
                         src="/photos/home3_1.png"
                         alt="NAQ Global Facility"
@@ -119,13 +108,125 @@ const HistoryPage = () => {
                       />
                     </div>
                     
-                    <div className="w-full h-48 bg-gray-200 rounded-lg overflow-hidden shadow-lg relative">
+                    <div className="w-full h-48 sm:h-56 bg-gray-200 rounded-lg overflow-hidden shadow-lg relative">
                       <Image
                         src="/photos/home3_2.png"
                         alt="NAQ Global Operations"
                         fill
                         className="object-cover"
                       />
+                    </div>
+                  </div>
+                </div>
+
+                {/* Content Container - Desktop layout */}
+                <div className="w-full flex flex-col lg:flex-row gap-8 lg:gap-10 items-start">
+                  {/* Text Content */}
+                  <div className="flex-1 lg:flex-[2] w-full">
+                    <h2 className="text-green-600 text-xl sm:text-2xl lg:text-3xl font-light tracking-wide mb-6 md:mb-8 pb-2 md:pb-3 border-b-2 md:border-b-3 border-green-600 inline-block">
+                      OUR HISTORY
+                    </h2>
+                    
+                    <div className="space-y-4 md:space-y-5">
+                      <p className="font-semibold text-gray-700 text-base sm:text-lg">
+                        Our Journey Through Time
+                      </p>
+                      
+                      <p className="text-gray-600 text-sm sm:text-base lg:text-lg leading-relaxed text-justify">
+                        NAQ Global aims at providing best technical solutions for fertilizer 
+                        process &amp; quality improvement. Our R&amp;D works to develop innovative 
+                        technologies &amp; products for all such processes, trouble shooting, 
+                        efficiency improvement &amp; cost reduction in the fertilizer industry. 
+                        Environment friendliness, green (vegetable) sources, &amp; safety 
+                        concerns are unique characteristics of NAQ Global&apos;s products.
+                      </p>
+                      
+                      <p className="text-gray-600 text-sm sm:text-base lg:text-lg leading-relaxed text-justify">
+                        Another advantageous feature of our company is our Technical 
+                        Services, which help the fertilizer plants to analyze, diagnose &amp; solve 
+                        the problems easily with our experts. Our Tech Service engineers and 
+                        chemists also supervise the design and installation of dosing systems, 
+                        apply the specialty chemicals appropriately, and help the customers 
+                        in deriving the desired results.
+                      </p>
+                      
+                      <div className="mt-6 md:mt-8">
+                        <h3 className="text-green-600 text-lg sm:text-xl font-semibold mb-3 md:mb-4">
+                          Key Milestones
+                        </h3>
+                        <div className="space-y-3">
+                          <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
+                            <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium whitespace-nowrap">
+                              Founding Year
+                            </span>
+                            <span className="text-gray-600 text-sm sm:text-base">
+                              Established with a vision to revolutionize fertilizer technology
+                            </span>
+                          </div>
+                          <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
+                            <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium whitespace-nowrap">
+                              Innovation Focus
+                            </span>
+                            <span className="text-gray-600 text-sm sm:text-base">
+                              Developed cutting-edge R&D capabilities
+                            </span>
+                          </div>
+                          <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
+                            <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium whitespace-nowrap">
+                              Global Expansion
+                            </span>
+                            <span className="text-gray-600 text-sm sm:text-base">
+                              Extended technical services worldwide
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Images Section - Desktop only */}
+                  <div className="hidden md:flex flex-1 lg:flex-[1]">
+                    <div className="w-full space-y-4">
+                      <div className="w-full h-40 lg:h-48 bg-gray-200 rounded-lg overflow-hidden shadow-lg relative">
+                        <Image
+                          src="/photos/home3_1.png"
+                          alt="NAQ Global Facility"
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
+                      
+                      <div className="w-full h-40 lg:h-48 bg-gray-200 rounded-lg overflow-hidden shadow-lg relative">
+                        <Image
+                          src="/photos/home3_2.png"
+                          alt="NAQ Global Operations"
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Additional History Timeline - Mobile optimized */}
+                <div className="w-full mt-8 md:mt-12">
+                  <div className="bg-white rounded-lg shadow-lg p-4 md:p-6">
+                    <h3 className="text-green-600 text-lg sm:text-xl font-semibold mb-4 md:mb-6 text-center">
+                      Our Evolution Timeline
+                    </h3>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+                      <div className="text-center p-4 bg-green-50 rounded-lg">
+                        <div className="text-green-600 font-bold text-lg mb-2">Phase 1</div>
+                        <div className="text-gray-600 text-sm">Foundation & Research</div>
+                      </div>
+                      <div className="text-center p-4 bg-green-50 rounded-lg">
+                        <div className="text-green-600 font-bold text-lg mb-2">Phase 2</div>
+                        <div className="text-gray-600 text-sm">Product Development</div>
+                      </div>
+                      <div className="text-center p-4 bg-green-50 rounded-lg sm:col-span-2 lg:col-span-1">
+                        <div className="text-green-600 font-bold text-lg mb-2">Phase 3</div>
+                        <div className="text-gray-600 text-sm">Global Expansion</div>
+                      </div>
                     </div>
                   </div>
                 </div>
