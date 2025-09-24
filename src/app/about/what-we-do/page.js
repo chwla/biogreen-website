@@ -1,5 +1,6 @@
 'use client';
 import { useState } from 'react';
+import Image from 'next/image'; // ✅ Import Next.js Image component
 
 const CEOSection = () => {
   const [activeSection, setActiveSection] = useState('WHAT DO WE DO?');
@@ -16,26 +17,20 @@ const CEOSection = () => {
 
   const handleMenuClick = (item) => {
     setActiveSection(item.name);
-    // Navigate to the specified path
     window.location.href = item.path;
   };
 
   return (
     <>
-      {/* Hero Section - Simple working approach */}
+      {/* Hero Section */}
       <div className="w-full" style={{ height: '400px', position: 'relative' }}>
-        <img 
-          src="/photos/about.png" 
+        <Image
+          src="/photos/about.png"
           alt="About BioGreen"
-          style={{
-            width: '100%',
-            height: '400px',
-            objectFit: 'cover',
-            objectPosition: 'center top',
-            display: 'block'
-          }}
+          fill
+          style={{ objectFit: 'cover', objectPosition: 'center top' }}
         />
-        
+
         {/* Dark overlay */}
         <div style={{
           position: 'absolute',
@@ -45,7 +40,7 @@ const CEOSection = () => {
           bottom: 0,
           backgroundColor: 'rgba(0, 0, 0, 0.5)'
         }}></div>
-        
+
         {/* Title overlay */}
         <div style={{
           position: 'absolute',
@@ -107,19 +102,19 @@ const CEOSection = () => {
                 <h2 className="text-green-600 text-3xl font-light tracking-wide mb-8 pb-3 border-b-3 border-green-600 inline-block">
                   WHO ARE WE?
                 </h2>
-                
+
                 <div className="space-y-5 mb-8">
                   <p className="font-semibold text-gray-700 text-lg">
                     Read The Message From Our President And CEO
                   </p>
-                  
+
                   <p className="text-gray-600 text-lg leading-relaxed text-justify">
                     NAQ Global aims at providing best technical solutions for fertilizer 
-                    process & quality improvement. Our R&D works to develop innovative 
-                    technologies & products for all such processes, trouble shooting, 
-                    efficiency improvement & cost reduction in the fertilizer industry. 
-                    Environment friendliness, green (vegetable) sources, & safety 
-                    concerns are unique characteristics of NAQ Global's products.
+                    process &amp; quality improvement. Our R&amp;D works to develop innovative 
+                    technologies &amp; products for all such processes, trouble shooting, 
+                    efficiency improvement &amp; cost reduction in the fertilizer industry. 
+                    Environment friendliness, green (vegetable) sources, &amp; safety 
+                    concerns are unique characteristics of NAQ Global&apos;s products.
                   </p>
                 </div>
 
@@ -132,14 +127,15 @@ const CEOSection = () => {
 
                 {/* World Map */}
                 <div className="w-full max-w-2xl">
-                  <div className="w-full h-80 bg-gray-100 rounded-lg overflow-hidden shadow-lg flex items-center justify-center">
-                    <img
+                  <div className="w-full h-80 bg-gray-100 rounded-lg overflow-hidden shadow-lg flex items-center justify-center relative">
+                    <Image
                       src="/photos/home3_1.png"
                       alt="NAQ Global Operations World Map"
-                      className="w-full h-full object-contain"
+                      fill
+                      style={{ objectFit: 'contain' }}
                       onError={(e) => {
-                        e.target.style.display = 'none';
-                        e.target.nextSibling.style.display = 'flex';
+                        e.currentTarget.style.display = 'none';
+                        e.currentTarget.nextSibling.style.display = 'flex';
                       }}
                     />
                     <div className="w-full h-full bg-gradient-to-br from-green-100 to-green-200 flex items-center justify-center text-green-600 font-semibold" style={{display: 'none'}}>
@@ -156,4 +152,4 @@ const CEOSection = () => {
   )
 }
 
-export default CEOSection
+export default CEOSection;

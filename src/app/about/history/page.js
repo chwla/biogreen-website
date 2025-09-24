@@ -9,7 +9,7 @@ const HistoryPage = () => {
     { name: 'OUR HISTORY', path: '/about/history' },
     { name: 'WHO ARE WE?', path: '/about/who-we-are' },
     { name: 'WHAT DO WE DO?', path: '/about/what-we-do' },
-    { name: 'HOW DO WE DO IT?', path: '/about/how-we-do-it' },
+    { name: 'HOW DO WE DO IT?', path: '/about/how-do-we-do-it' },
     { name: 'ACHIEVEMENTS', path: '/about/achievements' },
     { name: 'SENIOR MANAGEMENT', path: '/about/senior-management' }
   ];
@@ -116,16 +116,16 @@ const HistoryPage = () => {
                     
                     <p className="text-gray-600 text-lg leading-relaxed text-justify">
                       NAQ Global aims at providing best technical solutions for fertilizer 
-                      process & quality improvement. Our R&D works to develop innovative 
-                      technologies & products for all such processes, trouble shooting, 
-                      efficiency improvement & cost reduction in the fertilizer industry. 
-                      Environment friendliness, green (vegetable) sources, & safety 
-                      concerns are unique characteristics of NAQ Global's products.
+                      process &amp; quality improvement. Our R&amp;D works to develop innovative 
+                      technologies &amp; products for all such processes, trouble shooting, 
+                      efficiency improvement &amp; cost reduction in the fertilizer industry. 
+                      Environment friendliness, green (vegetable) sources, &amp; safety 
+                      concerns are unique characteristics of NAQ Global&apos;s products.
                     </p>
                     
                     <p className="text-gray-600 text-lg leading-relaxed text-justify">
                       Another advantageous feature of our company is our Technical 
-                      Services, which help the fertilizer plants to analyze, diagnose & solve 
+                      Services, which help the fertilizer plants to analyze, diagnose &amp; solve 
                       the problems easily with our experts. Our Tech Service engineers and 
                       chemists also supervise the design and installation of dosing systems, 
                       apply the specialty chemicals appropriately, and help the customers 
@@ -177,4 +177,4 @@ const HistoryPage = () => {
   )
 }
 
-export default HistoryPage
+export default HistoryPage;

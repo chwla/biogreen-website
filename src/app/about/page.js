@@ -1,7 +1,10 @@
 'use client';
 import { useState } from 'react';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 const CEOSection = () => {
+  const pathname = usePathname();
   const [activeSection, setActiveSection] = useState('OUR PRESIDENT MESSAGE');
 
   const menuItems = [
@@ -9,20 +12,14 @@ const CEOSection = () => {
     { name: 'OUR HISTORY', path: '/about/history' },
     { name: 'WHO ARE WE?', path: '/about/who-we-are' },
     { name: 'WHAT DO WE DO?', path: '/about/what-we-do' },
-    { name: 'HOW DO WE DO IT?', path: '/about/how-we-do-it' },
+    { name: 'HOW DO WE DO IT?', path: '/about/how-do-we-do-it' },
     { name: 'ACHIEVEMENTS', path: '/about/achievements' },
     { name: 'SENIOR MANAGEMENT', path: '/about/senior-management' }
   ];
 
-  const handleMenuClick = (item) => {
-    setActiveSection(item.name);
-    // Navigate to the specified path
-    window.location.href = item.path;
-  };
-
   return (
     <>
-      {/* Hero Section - Simple working approach */}
+      {/* Hero Section */}
       <div className="w-full" style={{ height: '400px', position: 'relative' }}>
         <img 
           src="/photos/about.png" 
@@ -73,37 +70,38 @@ const CEOSection = () => {
       <section className="py-16 bg-gray-50">
         <div className="max-w-6xl mx-auto px-5">
           <div className="flex gap-10 items-start">
-            {/* Left Sidebar Navigation */}
+            {/* Sidebar */}
             <div className="w-72 flex-shrink-0">
               <div className="bg-white shadow-lg border border-gray-200">
-                {menuItems.map((item, index) => (
-                  <div
-                    key={item.name}
-                    onClick={() => handleMenuClick(item)}
-                    className={`
-                      ${index !== menuItems.length - 1 ? 'border-b border-gray-300' : ''}
-                      ${activeSection === item.name 
-                        ? 'bg-green-600 text-white' 
-                        : 'bg-white text-green-600 hover:bg-green-50'
-                      }
-                      text-center py-4 px-4 font-bold text-xs uppercase tracking-widest cursor-pointer transition-all duration-200 
-                      font-sans leading-tight
-                    `}
-                    style={{
-                      fontFamily: 'Arial, sans-serif',
-                      letterSpacing: '1px'
-                    }}
-                  >
-                    {item.name}
-                  </div>
-                ))}
+                {menuItems.map((item, index) => {
+                  const isActive = pathname === item.path;
+                  return (
+                    <Link key={item.name} href={item.path}>
+                      <div
+                        onClick={() => setActiveSection(item.name)}
+                        className={`
+                          ${index !== menuItems.length - 1 ? 'border-b border-gray-300' : ''}
+                          ${isActive ? 'bg-green-600 text-white' : 'bg-white text-green-600 hover:bg-green-50'}
+                          text-center py-4 px-4 font-bold text-xs uppercase tracking-widest cursor-pointer transition-all duration-200 
+                          font-sans leading-tight
+                        `}
+                        style={{
+                          fontFamily: 'Arial, sans-serif',
+                          letterSpacing: '1px'
+                        }}
+                      >
+                        {item.name}
+                      </div>
+                    </Link>
+                  );
+                })}
               </div>
             </div>
 
-            {/* Right Content Area */}
+            {/* Right Content */}
             <div className="flex-1">
               <div className="flex flex-col lg:flex-row gap-10 items-start">
-                {/* Text Content */}
+                {/* Text */}
                 <div className="flex-1 lg:flex-[2]">
                   <h2 className="text-green-600 text-3xl font-light tracking-wide mb-8 pb-3 border-b-3 border-green-600 inline-block">
                     READ THE MESSAGE FROM OUR CEO
@@ -151,9 +149,9 @@ const CEOSection = () => {
                 {/* CEO Image */}
                 <div className="flex-1 flex justify-center lg:justify-start">
                   <div className="w-72 h-72 rounded-full bg-gradient-to-br from-green-100 to-green-200 border-4 border-green-500 shadow-2xl flex items-center justify-center">
-                    {/* Placeholder for CEO image */}
+                    {/* Placeholder */}
                     <div className="text-green-600 text-6xl font-light">AM</div>
-                    {/* Replace with actual image when available:
+                    {/* Replace with real photo:
                     <img
                       src="/photos/ceo.jpg"
                       alt="Avdhesh Mathur - President & CEO"
@@ -171,4 +169,4 @@ const CEOSection = () => {
   )
 }
 
-export default CEOSection
+export default CEOSection;
