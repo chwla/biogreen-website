@@ -11,7 +11,7 @@ export default function Footer() {
           <div className="flex items-center space-x-2">
             <div className="relative w-16 h-16">
               <Image 
-                src="/photos/transparent_logo.png" 
+                src="/photos/Untitled.jpeg"
                 alt="Company Logo" 
                 width={64}
                 height={64}
