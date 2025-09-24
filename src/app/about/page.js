@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import Image from 'next/image';
 
 const CEOSection = () => {
   const pathname = usePathname();
@@ -21,17 +22,19 @@ const CEOSection = () => {
     <>
       {/* Hero Section */}
       <div className="w-full relative overflow-hidden" style={{ height: '400px' }}>
-        <img 
+        <Image 
           src="/photos/about.jpeg" 
           alt="About BioGreen"
-          className="w-full h-full object-cover object-center"
+          fill
+          className="object-cover object-center"
           style={{ transform: 'scale(1.1)', transformOrigin: 'center' }}
+          priority
         />
         
         {/* Title overlay - removed white background */}
         <div className="absolute inset-0 flex items-center justify-center">
           <h1 className="text-amber-800 text-4xl font-bold tracking-wide uppercase text-center drop-shadow-lg">
-            Our President and Ceo
+            Our President and CEO
           </h1>
         </div>
       </div>
@@ -88,7 +91,7 @@ const CEOSection = () => {
                       technologies & products for all such processes, trouble shooting, 
                       efficiency improvement & cost reduction in the fertilizer industry. 
                       Environment friendliness, green (vegetable) sources, & safety 
-                      concerns are unique characteristics of NAQ Global's products.
+                      concerns are unique characteristics of NAQ Global&apos;s products.
                     </p>
                     
                     <p className="text-gray-600 text-lg leading-relaxed text-justify">
@@ -122,10 +125,12 @@ const CEOSection = () => {
                     {/* Placeholder */}
                     <div className="text-green-600 text-6xl font-light">AM</div>
                     {/* Replace with real photo:
-                    <img
+                    <Image
                       src="/photos/ceo.jpg"
                       alt="Avdhesh Mathur - President & CEO"
-                      className="w-72 h-72 rounded-full object-cover"
+                      width={288}
+                      height={288}
+                      className="rounded-full object-cover"
                     />
                     */}
                   </div>

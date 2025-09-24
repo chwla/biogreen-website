@@ -3,9 +3,12 @@ import Image from 'next/image';
 const Hero = () => {
   return (
     <div className="relative w-full" style={{ height: 'calc(100vh - 7rem)' }}>
-      <img 
-        src={'/photos/hero.jpeg'} 
-        className="w-full h-full object-cover"
+      <Image 
+        src="/photos/hero.jpeg" 
+        alt="BioGreen sustainable fertilizer hero banner"
+        fill
+        className="object-cover"
+        priority
       />
       
       {/* Text overlay */}

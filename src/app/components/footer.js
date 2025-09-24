@@ -1,4 +1,6 @@
 import React from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Footer() {
   return (
@@ -8,7 +10,13 @@ export default function Footer() {
         <div className="space-y-4">
           <div className="flex items-center space-x-2">
             <div className="relative w-16 h-16">
-              <img src='/photos/transparent_logo.png' alt="Company Logo" className="w-16 h-16 object-contain"/>
+              <Image 
+                src="/photos/transparent_logo.png" 
+                alt="Company Logo" 
+                width={64}
+                height={64}
+                className="object-contain"
+              />
             </div>
           </div>
           
@@ -57,12 +65,12 @@ export default function Footer() {
         <div>
           <h3 className="text-lg font-semibold mb-6">QUICK LINKS</h3>
           <ul className="space-y-3 text-sm">
-            <li><a href="#" className="hover:text-green-200 transition-colors">- HOME</a></li>
-            <li><a href="#" className="hover:text-green-200 transition-colors">- ABOUT NAQ GLOBAL</a></li>
-            <li><a href="#" className="hover:text-green-200 transition-colors">- SERVICES</a></li>
-            <li><a href="#" className="hover:text-green-200 transition-colors">- WHY NAQ GLOBAL</a></li>
-            <li><a href="#" className="hover:text-green-200 transition-colors">- CAREER</a></li>
-            <li><a href="#" className="hover:text-green-200 transition-colors">- CONTACT US</a></li>
+            <li><Link href="/" className="hover:text-green-200 transition-colors">- HOME</Link></li>
+            <li><Link href="/about" className="hover:text-green-200 transition-colors">- ABOUT NAQ GLOBAL</Link></li>
+            <li><Link href="/services" className="hover:text-green-200 transition-colors">- SERVICES</Link></li>
+            <li><Link href="/why-us" className="hover:text-green-200 transition-colors">- WHY NAQ GLOBAL</Link></li>
+            <li><Link href="/career" className="hover:text-green-200 transition-colors">- CAREER</Link></li>
+            <li><Link href="/contact" className="hover:text-green-200 transition-colors">- CONTACT US</Link></li>
           </ul>
         </div>
 
@@ -70,8 +78,8 @@ export default function Footer() {
         <div>
           <h3 className="text-lg font-semibold mb-6">PRODUCTS</h3>
           <ul className="space-y-3 text-sm">
-            <li><a href="#" className="hover:text-green-200 transition-colors">- Fertilizers</a></li>
-            <li><a href="#" className="hover:text-green-200 transition-colors">- Filter Aid Powder</a></li>
+            <li><Link href="/products/fertilizers" className="hover:text-green-200 transition-colors">- Fertilizers</Link></li>
+            <li><Link href="/products/filter-aid" className="hover:text-green-200 transition-colors">- Filter Aid Powder</Link></li>
           </ul>
         </div>
 

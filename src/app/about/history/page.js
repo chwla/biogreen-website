@@ -1,5 +1,7 @@
 'use client';
 import { useState } from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
 
 const HistoryPage = () => {
   const [activeSection, setActiveSection] = useState('OUR HISTORY');
@@ -24,10 +26,11 @@ const HistoryPage = () => {
     <>
       {/* Hero Section*/}
       <div className="w-full relative overflow-hidden" style={{ height: '400px' }}>
-        <img 
+        <Image 
           src="/photos/about.jpeg" 
           alt="About BioGreen"
-          className="w-full h-full object-cover object-center"
+          fill
+          className="object-cover object-center"
           style={{ transform: 'scale(1.1)', transformOrigin: 'center' }}
         />
         
@@ -107,34 +110,22 @@ const HistoryPage = () => {
                 {/* Images */}
                 <div className="flex-1">
                   <div className="space-y-4">
-                    <div className="w-full h-48 bg-gray-200 rounded-lg overflow-hidden shadow-lg">
-                      <img
+                    <div className="w-full h-48 bg-gray-200 rounded-lg overflow-hidden shadow-lg relative">
+                      <Image
                         src="/photos/home3_1.png"
                         alt="NAQ Global Facility"
-                        className="w-full h-full object-cover"
-                        onError={(e) => {
-                          e.target.style.display = 'none';
-                          e.target.nextSibling.style.display = 'flex';
-                        }}
+                        fill
+                        className="object-cover"
                       />
-                      <div className="w-full h-full bg-gradient-to-br from-green-100 to-green-200 flex items-center justify-center text-green-600 font-semibold" style={{display: 'none'}}>
-                        Facility Image
-                      </div>
                     </div>
                     
-                    <div className="w-full h-48 bg-gray-200 rounded-lg overflow-hidden shadow-lg">
-                      <img
+                    <div className="w-full h-48 bg-gray-200 rounded-lg overflow-hidden shadow-lg relative">
+                      <Image
                         src="/photos/home3_2.png"
                         alt="NAQ Global Operations"
-                        className="w-full h-full object-cover"
-                        onError={(e) => {
-                          e.target.style.display = 'none';
-                          e.target.nextSibling.style.display = 'flex';
-                        }}
+                        fill
+                        className="object-cover"
                       />
-                      <div className="w-full h-full bg-gradient-to-br from-green-100 to-green-200 flex items-center justify-center text-green-600 font-semibold" style={{display: 'none'}}>
-                        Operations Image
-                      </div>
                     </div>
                   </div>
                 </div>

@@ -1,6 +1,7 @@
 'use client';
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 
 const WhoWeArePage = () => {
@@ -21,17 +22,17 @@ const WhoWeArePage = () => {
     <>
       {/* Hero Section */}
       <div className="w-full relative overflow-hidden" style={{ height: '400px' }}>
-        <img 
-          src="/photos/about.jpeg" 
+        <Image
+          src="/photos/about.jpeg"
           alt="About BioGreen"
-          className="w-full h-full object-cover object-center"
-          style={{ transform: 'scale(1.1)', transformOrigin: 'center' }}
+          fill
+          style={{ objectFit: 'cover', transform: 'scale(1.1)', transformOrigin: 'center' }}
         />
-        
-        {/* Title overlay - removed white background */}
+
+        {/* Title overlay */}
         <div className="absolute inset-0 flex items-center justify-center">
           <h1 className="text-amber-800 text-4xl font-bold tracking-wide uppercase text-center drop-shadow-lg">
-            Who are we
+            Who are we&apos;
           </h1>
         </div>
       </div>
@@ -39,9 +40,9 @@ const WhoWeArePage = () => {
       {/* Main Content Section */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-6xl mx-auto px-5">
-          <div className="flex gap-10 items-start">
+          <div className="flex flex-col lg:flex-row gap-10 items-start">
             {/* Sidebar */}
-            <div className="w-72 flex-shrink-0">
+            <div className="w-full lg:w-72 flex-shrink-0">
               <div className="bg-white shadow-lg border border-gray-200">
                 {menuItems.map((item, index) => {
                   const isActive = pathname === item.path;
@@ -74,19 +75,19 @@ const WhoWeArePage = () => {
                 <h2 className="text-green-600 text-3xl font-light tracking-wide mb-8 pb-3 border-b-3 border-green-600 inline-block">
                   WHO ARE WE?
                 </h2>
-                
+
                 <div className="space-y-5 mb-8">
                   <p className="font-semibold text-gray-700 text-lg">
                     Read The Message From Our President And CEO
                   </p>
-                  
+
                   <p className="text-gray-600 text-lg leading-relaxed text-justify">
                     NAQ Global aims at providing best technical solutions for fertilizer 
-                    process & quality improvement. Our R&D works to develop innovative 
-                    technologies & products for all such processes, trouble shooting, 
-                    efficiency improvement & cost reduction in the fertilizer industry. 
-                    Environment friendliness, green (vegetable) sources, & safety 
-                    concerns are unique characteristics of NAQ Global's products.
+                    process &amp; quality improvement. Our R&amp;D works to develop innovative 
+                    technologies &amp; products for all such processes, troubleshooting, 
+                    efficiency improvement &amp; cost reduction in the fertilizer industry. 
+                    Environment friendliness, green (vegetable) sources, &amp; safety 
+                    concerns are unique characteristics of NAQ Global&apos;s products.
                   </p>
                 </div>
 
@@ -99,17 +100,14 @@ const WhoWeArePage = () => {
 
                 {/* World Map */}
                 <div className="w-full max-w-2xl">
-                  <div className="w-full h-80 bg-gray-100 rounded-lg overflow-hidden shadow-lg flex items-center justify-center">
-                    <img
+                  <div className="w-full h-80 bg-gray-100 rounded-lg overflow-hidden shadow-lg flex items-center justify-center relative">
+                    <Image
                       src="/photos/home3_1.png"
                       alt="NAQ Global Operations World Map"
-                      className="w-full h-full object-contain"
-                      onError={(e) => {
-                        e.target.style.display = 'none';
-                        e.target.nextSibling.style.display = 'flex';
-                      }}
+                      fill
+                      style={{ objectFit: 'contain' }}
                     />
-                    <div className="w-full h-full bg-gradient-to-br from-green-100 to-green-200 flex items-center justify-center text-green-600 font-semibold" style={{display: 'none'}}>
+                    <div className="w-full h-full bg-gradient-to-br from-green-100 to-green-200 flex items-center justify-center text-green-600 font-semibold" style={{ display: 'none' }}>
                       Global Operations Map
                     </div>
                   </div>
@@ -120,7 +118,7 @@ const WhoWeArePage = () => {
         </div>
       </section>
     </>
-  )
-}
+  );
+};
 
 export default WhoWeArePage;
