@@ -27,7 +27,7 @@ export default function CertificatesReportsTestimony() {
         {/* Reports Section */}
         <div className="mb-16 bg-gray-100 p-8 rounded-lg shadow-sm">
           <h2 className="text-3xl font-bold text-green-600 text-center mb-12">
-            OUR REPORT
+            OUR REPORTS
           </h2>
           
           <div className="flex flex-wrap justify-center gap-8">
