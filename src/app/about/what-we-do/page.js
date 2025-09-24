@@ -22,39 +22,6 @@ const WhatWeDoSection = () => {
     window.location.href = item.path;
   };
 
-  const services = [
-    {
-      title: "Technical Solutions",
-      description: "Providing best technical solutions for fertilizer process & quality improvement",
-      icon: "🔧"
-    },
-    {
-      title: "R&D Innovation",
-      description: "Developing innovative technologies & products for all fertilizer processes",
-      icon: "🔬"
-    },
-    {
-      title: "Troubleshooting",
-      description: "Expert analysis, diagnosis & problem-solving for fertilizer plants",
-      icon: "🛠️"
-    },
-    {
-      title: "Efficiency Improvement",
-      description: "Cost reduction and process optimization in the fertilizer industry",
-      icon: "📈"
-    },
-    {
-      title: "Environmental Solutions",
-      description: "Environment-friendly, green sources & safety-focused products",
-      icon: "🌱"
-    },
-    {
-      title: "Technical Services",
-      description: "Expert supervision of design, installation & chemical application",
-      icon: "⚙️"
-    }
-  ];
-
   return (
     <>
       {/* Hero Section - Responsive height */}
@@ -148,26 +115,6 @@ const WhatWeDoSection = () => {
                     </p>
                   </div>
 
-                  {/* Services Grid */}
-                  <div className="mb-8 md:mb-12">
-                    <h3 className="text-green-600 text-lg sm:text-xl font-semibold mb-6 uppercase tracking-wide">
-                      Our Services
-                    </h3>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-                      {services.map((service, index) => (
-                        <div key={index} className="bg-white p-4 md:p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
-                          <div className="text-3xl md:text-4xl mb-3 text-center">{service.icon}</div>
-                          <h4 className="text-green-600 font-semibold text-base md:text-lg mb-2 text-center">
-                            {service.title}
-                          </h4>
-                          <p className="text-gray-600 text-sm md:text-base text-center leading-relaxed">
-                            {service.description}
-                          </p>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-
                   {/* Global Operations Section */}
                   <div className="mb-6">
                     <h3 className="text-green-600 text-lg sm:text-xl font-semibold mb-4 uppercase tracking-wide">
@@ -199,35 +146,6 @@ const WhatWeDoSection = () => {
                           <div className="text-base md:text-lg">Global Operations Map</div>
                           <div className="text-sm md:text-base text-gray-600 mt-2">Serving clients worldwide</div>
                         </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Key Features */}
-                  <div className="mt-8 md:mt-12 bg-white rounded-lg shadow-lg p-4 md:p-6">
-                    <h3 className="text-green-600 text-lg sm:text-xl font-semibold mb-4 md:mb-6 text-center">
-                      Why Choose NAQ Global?
-                    </h3>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                      <div className="text-center p-4 bg-green-50 rounded-lg">
-                        <div className="text-2xl mb-2">🏭</div>
-                        <div className="text-green-600 font-semibold text-sm md:text-base">Industry Expertise</div>
-                        <div className="text-gray-600 text-xs md:text-sm mt-1">Deep fertilizer knowledge</div>
-                      </div>
-                      <div className="text-center p-4 bg-green-50 rounded-lg">
-                        <div className="text-2xl mb-2">🌿</div>
-                        <div className="text-green-600 font-semibold text-sm md:text-base">Eco-Friendly</div>
-                        <div className="text-gray-600 text-xs md:text-sm mt-1">Environmental focus</div>
-                      </div>
-                      <div className="text-center p-4 bg-green-50 rounded-lg">
-                        <div className="text-2xl mb-2">🔬</div>
-                        <div className="text-green-600 font-semibold text-sm md:text-base">Innovation</div>
-                        <div className="text-gray-600 text-xs md:text-sm mt-1">Cutting-edge R&D</div>
-                      </div>
-                      <div className="text-center p-4 bg-green-50 rounded-lg">
-                        <div className="text-2xl mb-2">🌍</div>
-                        <div className="text-green-600 font-semibold text-sm md:text-base">Global Reach</div>
-                        <div className="text-gray-600 text-xs md:text-sm mt-1">Worldwide service</div>
                       </div>
                     </div>
                   </div>
