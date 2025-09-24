@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 const Header = () => {
   return (
-    <header className="shadow-sm border-b border-gray-200" style={{ backgroundColor: '#FEFEFF' }}>
+    <header className="sticky top-0 z-50 shadow-sm border-b border-gray-200" style={{ backgroundColor: '#FEFEFF' }}>
       <div className="w-full px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-28">
           {/* Logo and Company Name */}
