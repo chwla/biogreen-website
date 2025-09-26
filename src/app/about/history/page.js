@@ -13,8 +13,7 @@ const HistoryPage = () => {
     { name: 'WHO ARE WE?', path: '/about/who-we-are' },
     { name: 'WHAT DO WE DO?', path: '/about/what-we-do' },
     { name: 'HOW DO WE DO IT?', path: '/about/how-do-we-do-it' },
-    { name: 'ACHIEVEMENTS', path: '/about/achievements' },
-    { name: 'SENIOR MANAGEMENT', path: '/about/senior-management' }
+    { name: 'ACHIEVEMENTS', path: '/about/achievements' }
   ];
 
   const handleMenuClick = (item) => {
@@ -52,7 +51,8 @@ const HistoryPage = () => {
           <div className="md:hidden mb-6">
             <button
               onClick={() => setIsSidebarOpen(!isSidebarOpen)}
-              className="w-full bg-green-600 text-white py-3 px-4 rounded-lg font-semibold uppercase tracking-wide text-sm flex items-center justify-between"
+              className="w-full text-white py-3 px-4 rounded-lg font-semibold uppercase tracking-wide text-sm flex items-center justify-between"
+              style={{backgroundColor: '#39702E'}}
             >
               <span>Navigation Menu</span>
               <span className={`transform transition-transform ${isSidebarOpen ? 'rotate-180' : ''}`}>
@@ -75,15 +75,17 @@ const HistoryPage = () => {
                     className={`
                       ${index !== menuItems.length - 1 ? 'border-b border-gray-300' : ''}
                       ${activeSection === item.name 
-                        ? 'bg-green-600 text-white' 
-                        : 'bg-white text-green-600 hover:bg-green-50'
+                        ? 'text-white' 
+                        : 'hover:bg-green-50'
                       }
                       text-center py-3 md:py-4 px-3 md:px-4 font-bold text-xs sm:text-xs uppercase tracking-wide cursor-pointer transition-all duration-200 
                       font-sans leading-tight
                     `}
                     style={{
                       fontFamily: 'Arial, sans-serif',
-                      letterSpacing: '1px'
+                      letterSpacing: '1px',
+                      backgroundColor: activeSection === item.name ? '#39702E' : 'white',
+                      color: activeSection === item.name ? 'white' : '#39702E'
                     }}
                   >
                     {item.name}
@@ -123,7 +125,8 @@ const HistoryPage = () => {
                 <div className="w-full flex flex-col lg:flex-row gap-8 lg:gap-10 items-start">
                   {/* Text Content */}
                   <div className="flex-1 lg:flex-[2] w-full">
-                    <h2 className="text-green-600 text-xl sm:text-2xl lg:text-3xl font-light tracking-wide mb-6 md:mb-8 pb-2 md:pb-3 border-b-2 md:border-b-3 border-green-600 inline-block">
+                    <h2 className="text-xl sm:text-2xl lg:text-3xl font-light tracking-wide mb-6 md:mb-8 pb-2 md:pb-3 border-b-2 md:border-b-3 inline-block"
+                        style={{color: '#39702E', borderColor: '#39702E'}}>
                       OUR HISTORY
                     </h2>
                     
@@ -133,54 +136,16 @@ const HistoryPage = () => {
                       </p>
                       
                       <p className="text-gray-600 text-sm sm:text-base lg:text-lg leading-relaxed text-justify">
-                        NAQ Global aims at providing best technical solutions for fertilizer 
-                        process &amp; quality improvement. Our R&amp;D works to develop innovative 
-                        technologies &amp; products for all such processes, trouble shooting, 
-                        efficiency improvement &amp; cost reduction in the fertilizer industry. 
-                        Environment friendliness, green (vegetable) sources, &amp; safety 
-                        concerns are unique characteristics of NAQ Global&apos;s products.
+                        Bio Green was founded with a vision to transform agriculture through sustainable innovation. Rooted in the legacy of <strong>AEV Oil</strong>, the first company of our group and a trusted name in avocado oil extraction, Bio Green represents the next step in our journey of <strong>excellence, quality, and trust</strong>.
                       </p>
                       
                       <p className="text-gray-600 text-sm sm:text-base lg:text-lg leading-relaxed text-justify">
-                        Another advantageous feature of our company is our Technical 
-                        Services, which help the fertilizer plants to analyze, diagnose &amp; solve 
-                        the problems easily with our experts. Our Tech Service engineers and 
-                        chemists also supervise the design and installation of dosing systems, 
-                        apply the specialty chemicals appropriately, and help the customers 
-                        in deriving the desired results.
+                        With professional expertise in soil science and plant nutrition, we specialize in producing <strong>organic fertilizers from avocado by-products</strong> sourced directly from AEV Oil's operations. By transforming what was once considered waste into high-quality, eco-friendly fertilizers, we <strong>close the loop in agriculture</strong>—supporting farmers with sustainable solutions while reducing environmental impact.
                       </p>
                       
-                      <div className="mt-6 md:mt-8">
-                        <h3 className="text-green-600 text-lg sm:text-xl font-semibold mb-3 md:mb-4">
-                          Key Milestones
-                        </h3>
-                        <div className="space-y-3">
-                          <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
-                            <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium whitespace-nowrap">
-                              Founding Year
-                            </span>
-                            <span className="text-gray-600 text-sm sm:text-base">
-                              Established with a vision to revolutionize fertilizer technology
-                            </span>
-                          </div>
-                          <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
-                            <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium whitespace-nowrap">
-                              Innovation Focus
-                            </span>
-                            <span className="text-gray-600 text-sm sm:text-base">
-                              Developed cutting-edge R&D capabilities
-                            </span>
-                          </div>
-                          <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
-                            <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium whitespace-nowrap">
-                              Global Expansion
-                            </span>
-                            <span className="text-gray-600 text-sm sm:text-base">
-                              Extended technical services worldwide
-                            </span>
-                          </div>
-                        </div>
-                      </div>
+                      <p className="text-gray-600 text-sm sm:text-base lg:text-lg leading-relaxed text-justify">
+                        As the youngest member of a multi-diverse family group with over seven decades of experience, Bio Green carries forward a strong legacy while shaping a <strong>greener, more resilient future</strong>. Our vision is to become the most reputed and trusted name in organic fertilizers—empowering farmers, restoring soils, and cultivating sustainability for generations to come.
+                      </p>
                     </div>
                   </div>
 
@@ -203,29 +168,6 @@ const HistoryPage = () => {
                           fill
                           className="object-cover"
                         />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Additional History Timeline - Mobile optimized */}
-                <div className="w-full mt-8 md:mt-12">
-                  <div className="bg-white rounded-lg shadow-lg p-4 md:p-6">
-                    <h3 className="text-green-600 text-lg sm:text-xl font-semibold mb-4 md:mb-6 text-center">
-                      Our Evolution Timeline
-                    </h3>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-                      <div className="text-center p-4 bg-green-50 rounded-lg">
-                        <div className="text-green-600 font-bold text-lg mb-2">Phase 1</div>
-                        <div className="text-gray-600 text-sm">Foundation & Research</div>
-                      </div>
-                      <div className="text-center p-4 bg-green-50 rounded-lg">
-                        <div className="text-green-600 font-bold text-lg mb-2">Phase 2</div>
-                        <div className="text-gray-600 text-sm">Product Development</div>
-                      </div>
-                      <div className="text-center p-4 bg-green-50 rounded-lg sm:col-span-2 lg:col-span-1">
-                        <div className="text-green-600 font-bold text-lg mb-2">Phase 3</div>
-                        <div className="text-gray-600 text-sm">Global Expansion</div>
                       </div>
                     </div>
                   </div>
