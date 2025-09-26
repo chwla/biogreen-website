@@ -6,28 +6,11 @@ const WhyBioGreenPage = () => {
   return (
     <>
       {/* Hero Section */}
-      <div className="w-full relative overflow-hidden h-64 md:h-80 lg:h-96">
-        <Image 
-          src="/photos/about.jpeg" 
-          alt="Why Bio Green"
-          fill
-          className="object-cover object-center"
-          priority
-        />
-        
-        {/* Dark overlay */}
-        <div className="absolute inset-0 bg-black bg-opacity-40"></div>
-        
-        {/* Title overlay */}
-        <div className="absolute inset-0 flex items-center justify-center px-4">
-          <div className="text-center">
-            <h1 className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-wide mb-4">
-              Why Bio Green?
-            </h1>
-            <p className="text-white text-lg sm:text-xl md:text-2xl font-light max-w-3xl">
-              Transforming agriculture with sustainable, future-ready solutions
-            </p>
-          </div>
+      <div className="w-full py-20 bg-white">
+        <div className="max-w-6xl mx-auto px-4 text-center">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-wide mb-6" style={{ color: '#39702E' }}>
+            Why Bio Green?
+          </h1>
         </div>
       </div>
 
