@@ -22,7 +22,7 @@ const Home2 = () => {
             </p>
 
             <p className="text-gray-700 text-base leading-relaxed mb-6">
-              To meet the growing demand for sustainable agricultural inputs, Bio Green established one of East Africa's largest organic fertilizer facilities in <strong>Jimma, Ethiopia</strong>, spanning <strong>50,000 square meters</strong>. This facility enables large-scale production of premium organic fertilizers made from <strong>avocado by-products</strong>, ensuring farming practices that enrich soil health, improve yields, and protect the environment.
+              To meet the growing demand for sustainable agricultural inputs, Bio Green established one of East Africa&apos;s largest organic fertilizer facilities in <strong>Jimma, Ethiopia</strong>, spanning <strong>50,000 square meters</strong>. This facility enables large-scale production of premium organic fertilizers made from <strong>avocado by-products</strong>, ensuring farming practices that enrich soil health, improve yields, and protect the environment.
             </p>
 
             <p className="text-gray-700 text-base leading-relaxed mb-8">
