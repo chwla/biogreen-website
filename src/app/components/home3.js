@@ -9,54 +9,54 @@ export default function AboutBiogreen() {
       <div className="max-w-6xl mx-auto">
         {/* About Biogreen Header */}
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-green-600 mb-8">ABOUT BIOGREEN</h2>
+          <h2 className="text-4xl font-bold mb-8" style={{ color: '#39702E' }}>ABOUT BIOGREEN</h2>
 
           <div className="flex flex-wrap justify-center gap-8 items-start">
-            {/* Who we are */}
+            {/* Our Vision */}
             <Link href="/about/who-we-are" className="flex flex-col items-center w-80 h-96 bg-gray-100 p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow cursor-pointer">
               <div className="w-full mb-4 relative h-32">
                 <Image
                   src="/photos/home3_1.png"
-                  alt="Who we are section image"
+                  alt="Our Vision section image"
                   fill
                   style={{ objectFit: 'cover', borderRadius: '0.5rem' }}
                 />
               </div>
-              <h3 className="text-lg font-semibold text-gray-800 mb-2">Who we are</h3>
+              <h3 className="text-lg font-semibold text-gray-800 mb-2">Our Vision</h3>
               <p className="text-sm text-gray-600 text-center leading-relaxed flex-1 overflow-hidden">
-                Biogreen Fertilizer and Gas Manufacturing PLC is a forward-thinking company dedicated to providing green technology solutions for the fertilizer and gas industries. The company leverages Ethiopian resources and international alliances with sustainable alternatives that are safe, effective, and efficient.
+                We envision a world where agriculture is productive, sustainable, and regenerative—restoring soils, empowering farmers, and protecting the planet for generations to come.
               </p>
             </Link>
 
-            {/* What we do */}
+            {/* Our Mission */}
             <Link href="/about/what-we-do" className="flex flex-col items-center w-80 h-96 bg-gray-100 p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow cursor-pointer">
               <div className="w-full mb-4 relative h-32">
                 <Image
                   src="/photos/home3_2.png"
-                  alt="What we do section image"
+                  alt="Our Mission section image"
                   fill
                   style={{ objectFit: 'cover', borderRadius: '0.5rem' }}
                 />
               </div>
-              <h3 className="text-lg font-semibold text-gray-800 mb-2">What we do</h3>
+              <h3 className="text-lg font-semibold text-gray-800 mb-2">Our Mission</h3>
               <p className="text-sm text-gray-600 text-center leading-relaxed flex-1 overflow-hidden">
-                Biogreen Fertilizer and Gas Manufacturing PLC provides green technology solutions for the fertilizer and gas industries by leveraging Ethiopian resources and international best practices to deliver safe, effective, and efficient alternatives.
+                Our mission is to nourish the world organically by transforming avocado by-products into high-quality, plant-based fertilizers that improve soil health, boost yields, and reduce chemical dependency.
               </p>
             </Link>
 
-            {/* How do we do it */}
+            {/* Our Core Values */}
             <Link href="/about/how-we-do-it" className="flex flex-col items-center w-80 h-96 bg-gray-100 p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow cursor-pointer">
               <div className="w-full mb-4 relative h-32">
                 <Image
                   src="/photos/home3_3.png"
-                  alt="How we do it section image"
+                  alt="Our Core Values section image"
                   fill
                   style={{ objectFit: 'cover', borderRadius: '0.5rem' }}
                 />
               </div>
-              <h3 className="text-lg font-semibold text-gray-800 mb-2">How we do it</h3>
+              <h3 className="text-lg font-semibold text-gray-800 mb-2">Our Core Values</h3>
               <p className="text-sm text-gray-600 text-center leading-relaxed flex-1 overflow-hidden">
-                Biogreen applies sustainable technology and strategic collaborations to improve fertilizer quality, reduce environmental impact, and optimize manufacturing efficiency.
+                At Bio Green, we are driven by sustainability, innovation, and integrity. We put farmers first, collaborate with communities, and act as stewards of the land—ensuring agriculture thrives today while preserving fertility for tomorrow.
               </p>
             </Link>
           </div>
@@ -64,7 +64,7 @@ export default function AboutBiogreen() {
 
         {/* Sustainability Section */}
         <div className="mt-16 bg-gray-100 p-8 rounded-lg shadow-sm">
-          <h2 className="text-3xl font-bold text-green-600 mb-8 text-center">
+          <h2 className="text-3xl font-bold mb-8 text-center" style={{ color: '#39702E' }}>
             SUSTAINABILITY FOR THE ENTIRE FERTILIZER SUPPLY CHAIN
           </h2>
 
