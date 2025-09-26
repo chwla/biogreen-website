@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 export default function Footer() {
   return (
-    <footer className="bg-green-600 text-white px-8 py-12">
+    <footer className="text-white px-8 py-12" style={{backgroundColor: '#39702E'}}>
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
         {/* Logo and Description Section */}
         <div className="space-y-4">
@@ -86,7 +86,7 @@ export default function Footer() {
         {/* Contact Section */}
         <div>
           <h3 className="text-lg font-semibold mb-6">CONTACT</h3>
-          <div className="bg-green-400 bg-opacity-60 px-4 py-2 rounded">
+          <div className="px-4 py-2 rounded" style={{backgroundColor: '#39702E'}}>
             <span className="text-sm font-medium">ETHIOPIA : +251 955000009</span>
           </div>
         </div>
