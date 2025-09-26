@@ -13,9 +13,8 @@ const WhoWeArePage = () => {
     { name: 'OUR HISTORY', path: '/about/history' },
     { name: 'WHO ARE WE?', path: '/about/who-we-are' },
     { name: 'WHAT DO WE DO?', path: '/about/what-we-do' },
-    { name: 'HOW DO WE DO IT?', path: '/about/how-we-do-it' },
-    { name: 'ACHIEVEMENTS', path: '/about/achievements' },
-    { name: 'SENIOR MANAGEMENT', path: '/about/senior-management' }
+    { name: 'HOW DO WE DO IT?', path: '/about/how-do-we-do-it' },
+    { name: 'ACHIEVEMENTS', path: '/about/achievements' }
   ];
 
   return (
@@ -32,7 +31,7 @@ const WhoWeArePage = () => {
         {/* Title overlay */}
         <div className="absolute inset-0 flex items-center justify-center">
           <h1 className="text-amber-800 text-4xl font-bold tracking-wide uppercase text-center drop-shadow-lg">
-            Who are we&apos;
+            Who are we?
           </h1>
         </div>
       </div>
@@ -52,13 +51,15 @@ const WhoWeArePage = () => {
                         onClick={() => setActiveSection(item.name)}
                         className={`
                           ${index !== menuItems.length - 1 ? 'border-b border-gray-300' : ''}
-                          ${isActive ? 'bg-green-600 text-white' : 'bg-white text-green-600 hover:bg-green-50'}
+                          ${isActive ? 'text-white hover:bg-green-50' : 'hover:bg-green-50'}
                           text-center py-4 px-4 font-bold text-xs uppercase tracking-widest cursor-pointer transition-all duration-200 
                           font-sans leading-tight
                         `}
                         style={{
                           fontFamily: 'Arial, sans-serif',
-                          letterSpacing: '1px'
+                          letterSpacing: '1px',
+                          backgroundColor: isActive ? '#39702E' : 'white',
+                          color: isActive ? 'white' : '#39702E'
                         }}
                       >
                         {item.name}
@@ -72,28 +73,33 @@ const WhoWeArePage = () => {
             {/* Right Content */}
             <div className="flex-1">
               <div className="w-full">
-                <h2 className="text-green-600 text-3xl font-light tracking-wide mb-8 pb-3 border-b-3 border-green-600 inline-block">
+                <h2 className="text-3xl font-light tracking-wide mb-8 pb-3 border-b-3 inline-block"
+                    style={{color: '#39702E', borderColor: '#39702E'}}>
                   WHO ARE WE?
                 </h2>
 
                 <div className="space-y-5 mb-8">
                   <p className="font-semibold text-gray-700 text-lg">
-                    Read The Message From Our President And CEO
+                    Advancing Organic Farming Through Innovation
                   </p>
 
                   <p className="text-gray-600 text-lg leading-relaxed text-justify">
-                    NAQ Global aims at providing best technical solutions for fertilizer 
-                    process &amp; quality improvement. Our R&amp;D works to develop innovative 
-                    technologies &amp; products for all such processes, troubleshooting, 
-                    efficiency improvement &amp; cost reduction in the fertilizer industry. 
-                    Environment friendliness, green (vegetable) sources, &amp; safety 
-                    concerns are unique characteristics of NAQ Global&apos;s products.
+                    We are an agricultural solutions company dedicated to advancing organic farming. With expertise in <strong>soil science and plant nutrition</strong>, we bridge the gap between farmers&apos; needs and sustainable practices.
+                  </p>
+
+                  <p className="text-gray-600 text-lg leading-relaxed text-justify">
+                    Our operations are anchored in one of <strong>East Africa&apos;s largest organic fertilizer facilities</strong>, spanning <strong>50,000 square meters in Jimma, Ethiopia</strong>. This state-of-the-art facility enables the large-scale production of high-quality organic fertilizers, meeting the growing demand for sustainable agricultural solutions across the region.
+                  </p>
+
+                  <p className="text-gray-600 text-lg leading-relaxed text-justify">
+                    At Bio Green, we stand for <strong>integrity, innovation, and impact</strong>.
                   </p>
                 </div>
 
                 {/* Global Operations Section */}
                 <div className="mb-6">
-                  <h3 className="text-green-600 text-xl font-semibold mb-4 uppercase tracking-wide">
+                  <h3 className="text-xl font-semibold mb-4 uppercase tracking-wide"
+                      style={{color: '#39702E'}}>
                     Our Global Operations
                   </h3>
                 </div>
@@ -103,7 +109,7 @@ const WhoWeArePage = () => {
                   <div className="w-full h-80 bg-gray-100 rounded-lg overflow-hidden shadow-lg flex items-center justify-center relative">
                     <Image
                       src="/photos/home3_1.png"
-                      alt="NAQ Global Operations World Map"
+                      alt="Bio Green Operations Facility"
                       fill
                       style={{ objectFit: 'contain' }}
                     />

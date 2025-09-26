@@ -50,7 +50,8 @@ const WhatWeDoSection = () => {
           <div className="md:hidden mb-6">
             <button
               onClick={() => setIsSidebarOpen(!isSidebarOpen)}
-              className="w-full bg-green-600 text-white py-3 px-4 rounded-lg font-semibold uppercase tracking-wide text-sm flex items-center justify-between"
+              className="w-full text-white py-3 px-4 rounded-lg font-semibold uppercase tracking-wide text-sm flex items-center justify-between"
+              style={{backgroundColor: '#39702E'}}
             >
               <span>Navigation Menu</span>
               <span className={`transform transition-transform ${isSidebarOpen ? 'rotate-180' : ''}`}>
@@ -73,15 +74,17 @@ const WhatWeDoSection = () => {
                     className={`
                       ${index !== menuItems.length - 1 ? 'border-b border-gray-300' : ''}
                       ${activeSection === item.name 
-                        ? 'bg-green-600 text-white' 
-                        : 'bg-white text-green-600 hover:bg-green-50'
+                        ? 'text-white' 
+                        : 'hover:bg-green-50'
                       }
                       text-center py-3 md:py-4 px-3 md:px-4 font-bold text-xs sm:text-xs uppercase tracking-wide cursor-pointer transition-all duration-200 
                       font-sans leading-tight
                     `}
                     style={{
                       fontFamily: 'Arial, sans-serif',
-                      letterSpacing: '1px'
+                      letterSpacing: '1px',
+                      backgroundColor: activeSection === item.name ? '#39702E' : 'white',
+                      color: activeSection === item.name ? 'white' : '#39702E'
                     }}
                   >
                     {item.name}
@@ -96,28 +99,36 @@ const WhatWeDoSection = () => {
                 
                 {/* Main Text Content */}
                 <div className="w-full">
-                  <h2 className="text-green-600 text-xl sm:text-2xl lg:text-3xl font-light tracking-wide mb-6 md:mb-8 pb-2 md:pb-3 border-b-2 md:border-b-3 border-green-600 inline-block">
+                  <h2 className="text-xl sm:text-2xl lg:text-3xl font-light tracking-wide mb-6 md:mb-8 pb-2 md:pb-3 border-b-2 md:border-b-3 inline-block"
+                      style={{color: '#39702E', borderColor: '#39702E'}}>
                     WHAT DO WE DO?
                   </h2>
 
                   <div className="space-y-4 md:space-y-5 mb-8 md:mb-10">
-                    <p className="font-semibold text-gray-700 text-base sm:text-lg">
-                      Our Core Services & Expertise
+                    <p className="text-gray-600 text-sm sm:text-base lg:text-lg leading-relaxed text-justify">
+                      At Bio Green, we manufacture <strong>premium organic fertilizers</strong> derived from avocado by-products, transforming agricultural waste into <strong>sustainable farming solutions</strong>.
                     </p>
 
+                    <p className="text-gray-600 text-sm sm:text-base lg:text-lg leading-relaxed">
+                      Our products are designed to:
+                    </p>
+
+                    <ul className="text-gray-600 text-sm sm:text-base lg:text-lg leading-relaxed ml-6 space-y-2">
+                      <li>• Enhance soil fertility by enriching the soil ecosystem</li>
+                      <li>• Reduce environmental impact by replacing harmful chemical inputs</li>
+                      <li>• Improve crop yields through efficient, balanced nutrient release</li>
+                      <li>• Support certified organic farming with plant-based, eco-friendly formulations</li>
+                    </ul>
+
                     <p className="text-gray-600 text-sm sm:text-base lg:text-lg leading-relaxed text-justify">
-                      NAQ Global aims at providing best technical solutions for fertilizer 
-                      process &amp; quality improvement. Our R&amp;D works to develop innovative 
-                      technologies &amp; products for all such processes, trouble shooting, 
-                      efficiency improvement &amp; cost reduction in the fertilizer industry. 
-                      Environment friendliness, green (vegetable) sources, &amp; safety 
-                      concerns are unique characteristics of NAQ Global&apos;s products.
+                      What makes our fertilizers unique is that they go beyond performance—they are <strong>cost-effective, environmentally responsible, and farmer-friendly</strong>.
                     </p>
                   </div>
 
                   {/* Global Operations Section */}
                   <div className="mb-6">
-                    <h3 className="text-green-600 text-lg sm:text-xl font-semibold mb-4 uppercase tracking-wide">
+                    <h3 className="text-lg sm:text-xl font-semibold mb-4 uppercase tracking-wide"
+                        style={{color: '#39702E'}}>
                       Our Global Operations
                     </h3>
                     <p className="text-gray-600 text-sm sm:text-base lg:text-lg leading-relaxed mb-6">
@@ -140,10 +151,11 @@ const WhatWeDoSection = () => {
                           e.currentTarget.nextElementSibling.style.display = 'flex';
                         }}
                       />
-                      <div className="w-full h-full bg-gradient-to-br from-green-100 to-green-200 flex items-center justify-center text-green-600 font-semibold text-center px-4" style={{display: 'none'}}>
+                      <div className="w-full h-full flex items-center justify-center text-center px-4" 
+                           style={{display: 'none', background: 'linear-gradient(135deg, #f0fdf4, #dcfce7)', color: '#39702E'}}>
                         <div>
                           <div className="text-4xl md:text-6xl mb-4">🌍</div>
-                          <div className="text-base md:text-lg">Global Operations Map</div>
+                          <div className="text-base md:text-lg font-semibold">Global Operations Map</div>
                           <div className="text-sm md:text-base text-gray-600 mt-2">Serving clients worldwide</div>
                         </div>
                       </div>

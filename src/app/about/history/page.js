@@ -140,7 +140,7 @@ const HistoryPage = () => {
                       </p>
                       
                       <p className="text-gray-600 text-sm sm:text-base lg:text-lg leading-relaxed text-justify">
-                        With professional expertise in soil science and plant nutrition, we specialize in producing <strong>organic fertilizers from avocado by-products</strong> sourced directly from AEV Oil's operations. By transforming what was once considered waste into high-quality, eco-friendly fertilizers, we <strong>close the loop in agriculture</strong>—supporting farmers with sustainable solutions while reducing environmental impact.
+                        With professional expertise in soil science and plant nutrition, we specialize in producing <strong>organic fertilizers from avocado by-products</strong> sourced directly from AEV Oil&apos;s operations. By transforming what was once considered waste into high-quality, eco-friendly fertilizers, we <strong>close the loop in agriculture</strong>—supporting farmers with sustainable solutions while reducing environmental impact.
                       </p>
                       
                       <p className="text-gray-600 text-sm sm:text-base lg:text-lg leading-relaxed text-justify">
