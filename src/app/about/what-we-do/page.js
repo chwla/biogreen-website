@@ -12,8 +12,7 @@ const WhatWeDoSection = () => {
     { name: 'WHO ARE WE?', path: '/about/who-we-are' },
     { name: 'WHAT DO WE DO?', path: '/about/what-we-do' },
     { name: 'HOW DO WE DO IT?', path: '/about/how-do-we-do-it' },
-    { name: 'ACHIEVEMENTS', path: '/about/achievements' },
-    { name: 'SENIOR MANAGEMENT', path: '/about/senior-management' }
+    { name: 'ACHIEVEMENTS', path: '/about/achievements' }
   ];
 
   const handleMenuClick = (item) => {
