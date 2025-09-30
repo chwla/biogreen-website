@@ -1,27 +1,27 @@
 'use client';
+
 import { useState } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import Image from 'next/image';
 
-const CEOSection = () => {
-  const pathname = usePathname();
-  const [activeSection, setActiveSection] = useState('OUR PRESIDENT MESSAGE');
+const PresidentMessagePage = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const pathname = usePathname(); // Hook to get the current page path
 
   const menuItems = [
-    { name: 'OUR PRESIDENT MESSAGE', path: '/about' },
-    { name: 'OUR HISTORY', path: '/about/history' },
-    { name: 'WHO ARE WE?', path: '/about/who-we-are' },
-    { name: 'WHAT DO WE DO?', path: '/about/what-we-do' },
-    { name: 'HOW DO WE DO IT?', path: '/about/how-do-we-do-it' },
-    { name: 'ACHIEVEMENTS', path: '/about/achievements' }
+    { name: 'Our President Message', path: '/about' },
+    { name: 'Our History', path: '/about/history' },
+    { name: 'Who Are We?', path: '/about/who-we-are' },
+    { name: 'What Do We Do?', path: '/about/what-we-do' },
+    { name: 'How Do We Do It?', path: '/about/how-do-we-do-it' },
+    { name: 'Achievements', path: '/about/achievements' }
   ];
 
   return (
     <>
-      {/* Hero Section - Responsive height */}
-      <div className="w-full relative overflow-hidden h-48 sm:h-64 md:h-80 lg:h-96">
+      {/* Hero Section */}
+      <div className="w-full relative overflow-hidden h-64 sm:h-80 md:h-96 lg:h-[32rem]">
         <Image 
           src="/photos/about.jpeg" 
           alt="About BioGreen"
@@ -30,130 +30,89 @@ const CEOSection = () => {
           style={{ transform: 'scale(1.1)', transformOrigin: 'center' }}
           priority
         />
-        
-        {/* Title overlay */}
         <div className="absolute inset-0 flex items-center justify-center px-4">
           <h1 className="text-amber-800 text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold tracking-wide uppercase text-center drop-shadow-lg">
-            Our President and CEO
+            Message from Our President
           </h1>
         </div>
       </div>
 
       {/* Main Content Section */}
-      <section className="py-8 md:py-16 bg-gray-50">
-        <div className="max-w-6xl mx-auto px-4 sm:px-5">
+      <section className="py-12 md:py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Mobile Menu Toggle */}
-          <div className="md:hidden mb-6">
+          <div className="lg:hidden mb-8">
             <button
               onClick={() => setIsSidebarOpen(!isSidebarOpen)}
-              className="w-full text-white py-3 px-4 rounded-lg font-semibold uppercase tracking-wide text-sm flex items-center justify-between"
-              style={{ backgroundColor: '#39702E' }}
+              className="w-full text-white py-3 px-4 rounded-md font-semibold uppercase tracking-wider text-sm flex items-center justify-between shadow-md"
+              style={{backgroundColor: '#39702E'}}
             >
-              <span>Navigation Menu</span>
-              <span className={`transform transition-transform ${isSidebarOpen ? 'rotate-180' : ''}`}>
-                ▼
-              </span>
+              <span>About Us Menu</span>
+              <svg className={`w-5 h-5 transform transition-transform ${isSidebarOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
             </button>
           </div>
 
-          <div className="flex flex-col md:flex-row gap-6 md:gap-10 items-start">
-            {/* Sidebar - Mobile dropdown, desktop fixed */}
-            <div className={`
-              w-full md:w-72 md:flex-shrink-0
-              ${isSidebarOpen ? 'block' : 'hidden md:block'}
+          <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start">
+            {/* Left Sidebar Navigation */}
+            <aside className={`
+              w-full lg:w-72 lg:flex-shrink-0
+              ${isSidebarOpen ? 'block' : 'hidden lg:block'}
             `}>
-              <div className="bg-white shadow-lg border border-gray-200 rounded-lg md:rounded-none overflow-hidden">
-                {menuItems.map((item, index) => {
-                  const isActive = pathname === item.path;
-                  return (
-                    <Link key={item.name} href={item.path}>
-                      <div
-                        onClick={() => {
-                          setActiveSection(item.name);
-                          setIsSidebarOpen(false); // Close mobile menu on item click
-                        }}
-                        className={`
-                          ${index !== menuItems.length - 1 ? 'border-b border-gray-300' : ''}
-                          ${isActive ? 'text-white hover:bg-green-50' : 'hover:bg-green-50'}
-                          text-center py-3 md:py-4 px-3 md:px-4 font-bold text-xs sm:text-xs uppercase tracking-wide cursor-pointer transition-all duration-200 
-                          font-sans leading-tight
-                        `}
-                        style={{
-                          fontFamily: 'Arial, sans-serif',
-                          letterSpacing: '1px',
-                          backgroundColor: isActive ? '#39702E' : 'white',
-                          color: isActive ? 'white' : '#39702E'
-                        }}
-                      >
-                        {item.name}
-                      </div>
-                    </Link>
-                  );
-                })}
+              <div className="bg-white shadow-lg rounded-md border border-gray-200 p-2">
+                {menuItems.map((item) => (
+                  <Link
+                    key={item.name}
+                    href={item.path}
+                    onClick={() => setIsSidebarOpen(false)}
+                    className={`
+                      block w-full text-left py-3 px-4 font-bold text-sm uppercase tracking-wider rounded-md transition-colors duration-200
+                      ${pathname === item.path 
+                        ? 'bg-[#39702E] text-white' 
+                        : 'text-gray-700 hover:bg-green-50 hover:text-[#39702E]'
+                      }
+                    `}
+                  >
+                    {item.name}
+                  </Link>
+                ))}
               </div>
-            </div>
+            </aside>
 
-            {/* Right Content */}
-            <div className="flex-1 w-full">
-              <div className="flex flex-col gap-8 md:gap-10 items-start">
-                
-                {/* CEO Image - Mobile first, desktop right */}
-                <div className="w-full flex justify-center md:hidden">
-                  <div className="w-48 h-48 sm:w-56 sm:h-56 rounded-full border-4 shadow-2xl overflow-hidden" 
-                       style={{ borderColor: '#39702E' }}>
-                    <Image
-                      src="/photos/ceo.png"
-                      alt="Arvind Jain - Chief Executive Officer"
-                      width={224}
-                      height={224}
-                      className="rounded-full object-cover w-full h-full"
-                    />
-                  </div>
+            {/* Right Content Area */}
+            <div className="flex-1 w-full bg-white p-6 sm:p-8 lg:p-10 rounded-lg shadow-lg border border-gray-200">
+              <div className="text-center mb-10">
+                <h2 className="text-3xl lg:text-4xl font-bold tracking-tight"
+                    style={{color: '#39702E'}}>
+                  A Message from Our CEO
+                </h2>
+              </div>
+              
+              <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed">
+                <div className="relative w-48 h-48 sm:w-64 sm:h-64 md:float-right my-4 sm:ml-8 rounded-full overflow-hidden shadow-xl border-4 border-[#39702E]">
+                  <Image
+                    src="/photos/ceo.png"
+                    alt="Mr. Arvind Jain, Chief Executive Officer"
+                    fill
+                    className="object-cover"
+                  />
                 </div>
+                
+                <p>
+                  At <strong>Bio Green Fertilizer</strong>, our mission is clear—to transform agriculture with sustainable, future-ready solutions. We are committed to replacing harmful, chemical-based inputs with safe, effective, plant-based fertilizers derived from avocado by-products. These solutions not only nurture the soil but also enhance productivity while safeguarding our planet for future generations.
+                </p>
+                
+                <p>
+                  With <strong>innovation and integrity</strong> at the heart of everything we do, Bio Green is building a greener tomorrow for farmers and communities across the world. Together, we are shaping agriculture that is resilient, regenerative, and truly sustainable.
+                </p>
 
-                {/* Content Container - Desktop layout */}
-                <div className="w-full flex flex-col lg:flex-row gap-8 lg:gap-10 items-start">
-                  {/* Text Content */}
-                  <div className="flex-1 lg:flex-[2] w-full">
-                    <h2 className="text-xl sm:text-2xl lg:text-3xl font-light tracking-wide mb-6 md:mb-8 pb-2 md:pb-3 border-b-2 md:border-b-3 inline-block"
-                        style={{ color: '#39702E', borderColor: '#39702E' }}>
-                      READ THE MESSAGE FROM OUR CEO
-                    </h2>
-                    
-                    <div className="space-y-4 md:space-y-5">
-                      <p className="text-gray-600 text-sm sm:text-base lg:text-lg leading-relaxed text-justify">
-                        At <strong>Bio Green Fertilizer</strong>, our mission is clear—to transform agriculture with sustainable, future-ready solutions. We are committed to replacing harmful, chemical-based inputs with safe, effective, plant-based fertilizers derived from avocado by-products. These solutions not only nurture the soil but also enhance productivity while safeguarding our planet for future generations.
-                      </p>
-                      
-                      <p className="text-gray-600 text-sm sm:text-base lg:text-lg leading-relaxed text-justify">
-                        With <strong>innovation and integrity</strong> at the heart of everything we do, Bio Green is building a greener tomorrow for farmers and communities across the world. Together, we are shaping agriculture that is resilient, regenerative, and truly sustainable.
-                      </p>
-                    </div>
-
-                    {/* Signature */}
-                    <div className="mt-8 md:mt-10 pt-4 md:pt-5 border-t-2 border-gray-300">
-                      <p className="text-lg sm:text-xl font-semibold mb-1" style={{ color: '#39702E' }}>
-                        – Mr. Arvind Jain
-                      </p>
-                      <p className="text-gray-500 italic text-sm sm:text-base">
-                        Chief Executive Officer
-                      </p>
-                    </div>
-                  </div>
-
-                  {/* CEO Image - Desktop only */}
-                  <div className="hidden lg:flex flex-1 justify-center lg:justify-start">
-                    <div className="w-64 xl:w-72 h-64 xl:h-72 rounded-full border-4 shadow-2xl overflow-hidden" 
-                         style={{ borderColor: '#39702E' }}>
-                      <Image
-                        src="/photos/ceo.png"
-                        alt="Arvind Jain - Chief Executive Officer"
-                        width={288}
-                        height={288}
-                        className="rounded-full object-cover w-full h-full"
-                      />
-                    </div>
-                  </div>
+                {/* Signature */}
+                <div className="clear-both pt-6">
+                  <p className="text-xl font-semibold mb-1" style={{ color: '#39702E' }}>
+                    – Mr. Arvind Jain
+                  </p>
+                  <p className="text-gray-600 italic">
+                    Chief Executive Officer
+                  </p>
                 </div>
               </div>
             </div>
@@ -164,4 +123,4 @@ const CEOSection = () => {
   );
 };
 
-export default CEOSection;
+export default PresidentMessagePage;
