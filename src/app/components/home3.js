@@ -32,7 +32,7 @@ export default function AboutBiogreen() {
             <Link href="/about/what-we-do" className="flex flex-col items-center w-80 h-96 bg-gray-100 p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow cursor-pointer">
               <div className="w-full mb-4 relative h-32">
                 <Image
-                  src="/photos/home3_2.png"
+                  src="/photos/home3_2.jpg"
                   alt="Our Mission section image"
                   fill
                   style={{ objectFit: 'cover', borderRadius: '0.5rem' }}
@@ -48,7 +48,7 @@ export default function AboutBiogreen() {
             <Link href="/about/how-we-do-it" className="flex flex-col items-center w-80 h-96 bg-gray-100 p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow cursor-pointer">
               <div className="w-full mb-4 relative h-32">
                 <Image
-                  src="/photos/home3_3.png"
+                  src="/photos/home3_3.jpg"
                   alt="Our Core Values section image"
                   fill
                   style={{ objectFit: 'cover', borderRadius: '0.5rem' }}

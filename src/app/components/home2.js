@@ -45,7 +45,7 @@ const Home2 = () => {
             <div className="md:w-1/2 w-full">
               <div className="relative aspect-video rounded-lg overflow-hidden shadow-lg">
                 <Image
-                  src="/photos/home2_1.png"
+                  src="/photos/home2_1.jpg"
                   alt="Bio Green facility with compost piles and green containers"
                   fill
                   style={{ objectFit: 'cover' }}
