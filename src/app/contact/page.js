@@ -17,13 +17,12 @@ const ContactPage = () => {
             priority
           />
         </div>
-        {/* The black background overlay is now permanently removed */}
         <div className="relative z-20 px-4">
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tighter drop-shadow-lg">
             Contact Us
           </h1>
           <p className="mt-4 text-lg md:text-xl max-w-2xl mx-auto drop-shadow-md">
-            We're here to help. Reach out to us with any questions or inquiries.
+            We&apos;re here to help. Reach out to us with any questions or inquiries.
           </p>
         </div>
       </section>
