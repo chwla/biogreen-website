@@ -1,123 +1,117 @@
 'use client';
+
 import { useState } from 'react';
-import Link from 'next/link';
 import Image from 'next/image';
+import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
 const WhoWeArePage = () => {
-  const pathname = usePathname();
-  const [activeSection, setActiveSection] = useState('WHO ARE WE?');
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const pathname = usePathname(); // Hook to get the current page path
 
   const menuItems = [
-    { name: 'OUR PRESIDENT MESSAGE', path: '/about' },
-    { name: 'OUR HISTORY', path: '/about/history' },
-    { name: 'WHO ARE WE?', path: '/about/who-we-are' },
-    { name: 'WHAT DO WE DO?', path: '/about/what-we-do' },
-    { name: 'HOW DO WE DO IT?', path: '/about/how-do-we-do-it' },
-    { name: 'ACHIEVEMENTS', path: '/about/achievements' }
+    { name: 'Our President Message', path: '/about' },
+    { name: 'Our History', path: '/about/history' },
+    { name: 'Who Are We?', path: '/about/who-we-are' },
+    { name: 'What Do We Do?', path: '/about/what-we-do' },
+    { name: 'How Do We Do It?', path: '/about/how-do-we-do-it' },
+    { name: 'Achievements', path: '/about/achievements' }
   ];
 
   return (
     <>
       {/* Hero Section */}
-      <div className="w-full relative overflow-hidden" style={{ height: '400px' }}>
-        <Image
-          src="/photos/about.jpeg"
+      <div className="w-full relative overflow-hidden h-64 sm:h-80 md:h-96 lg:h-[32rem]">
+        <Image 
+          src="/photos/about.jpeg" 
           alt="About BioGreen"
           fill
-          style={{ objectFit: 'cover', transform: 'scale(1.1)', transformOrigin: 'center' }}
+          className="object-cover object-center"
+          style={{ transform: 'scale(1.1)', transformOrigin: 'center' }}
+          priority
         />
-
-        {/* Title overlay */}
-        <div className="absolute inset-0 flex items-center justify-center">
-          <h1 className="text-amber-800 text-4xl font-bold tracking-wide uppercase text-center drop-shadow-lg">
-            Who are we?
+        <div className="absolute inset-0 flex items-center justify-center px-4">
+          <h1 className="text-amber-800 text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold tracking-wide uppercase text-center drop-shadow-lg">
+            Who We Are
           </h1>
         </div>
       </div>
 
       {/* Main Content Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-6xl mx-auto px-5">
-          <div className="flex flex-col lg:flex-row gap-10 items-start">
-            {/* Sidebar */}
-            <div className="w-full lg:w-72 flex-shrink-0">
-              <div className="bg-white shadow-lg border border-gray-200">
-                {menuItems.map((item, index) => {
-                  const isActive = pathname === item.path;
-                  return (
-                    <Link key={item.name} href={item.path}>
-                      <div
-                        onClick={() => setActiveSection(item.name)}
-                        className={`
-                          ${index !== menuItems.length - 1 ? 'border-b border-gray-300' : ''}
-                          ${isActive ? 'text-white hover:bg-green-50' : 'hover:bg-green-50'}
-                          text-center py-4 px-4 font-bold text-xs uppercase tracking-widest cursor-pointer transition-all duration-200 
-                          font-sans leading-tight
-                        `}
-                        style={{
-                          fontFamily: 'Arial, sans-serif',
-                          letterSpacing: '1px',
-                          backgroundColor: isActive ? '#39702E' : 'white',
-                          color: isActive ? 'white' : '#39702E'
-                        }}
-                      >
-                        {item.name}
-                      </div>
-                    </Link>
-                  );
-                })}
+      <section className="py-12 md:py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Mobile Menu Toggle */}
+          <div className="lg:hidden mb-8">
+            <button
+              onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+              className="w-full text-white py-3 px-4 rounded-md font-semibold uppercase tracking-wider text-sm flex items-center justify-between shadow-md"
+              style={{backgroundColor: '#39702E'}}
+            >
+              <span>About Us Menu</span>
+              <svg className={`w-5 h-5 transform transition-transform ${isSidebarOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+          </div>
+
+          <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start">
+            {/* Left Sidebar Navigation */}
+            <aside className={`
+              w-full lg:w-72 lg:flex-shrink-0
+              ${isSidebarOpen ? 'block' : 'hidden lg:block'}
+            `}>
+              <div className="bg-white shadow-lg rounded-md border border-gray-200 p-2">
+                {menuItems.map((item) => (
+                  <Link
+                    key={item.name}
+                    href={item.path}
+                    onClick={() => setIsSidebarOpen(false)}
+                    className={`
+                      block w-full text-left py-3 px-4 font-bold text-sm uppercase tracking-wider rounded-md transition-colors duration-200
+                      ${pathname === item.path 
+                        ? 'bg-[#39702E] text-white' 
+                        : 'text-gray-700 hover:bg-green-50 hover:text-[#39702E]'
+                      }
+                    `}
+                  >
+                    {item.name}
+                  </Link>
+                ))}
               </div>
-            </div>
+            </aside>
 
-            {/* Right Content */}
-            <div className="flex-1">
-              <div className="w-full">
-                <h2 className="text-3xl font-light tracking-wide mb-8 pb-3 border-b-3 inline-block"
-                    style={{color: '#39702E', borderColor: '#39702E'}}>
-                  WHO ARE WE?
+            {/* Right Content Area */}
+            <div className="flex-1 w-full bg-white p-6 sm:p-8 lg:p-10 rounded-lg shadow-lg border border-gray-200">
+              <div className="text-center mb-10">
+                <h2 className="text-3xl lg:text-4xl font-bold tracking-tight"
+                    style={{color: '#39702E'}}>
+                  Who We Are
                 </h2>
+                <p className="mt-4 font-semibold text-xl text-gray-800">
+                  Advancing Organic Farming Through Innovation
+                </p>
+              </div>
+              
+              <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed">
+                <p>
+                  We are an agricultural solutions company dedicated to advancing organic farming. With expertise in <strong>soil science and plant nutrition</strong>, we bridge the gap between farmers&apos; needs and sustainable practices.
+                </p>
+                
+                <p>
+                  Our operations are anchored in one of <strong>East Africa&apos;s largest organic fertilizer facilities</strong>, spanning <strong>50,000 square meters in Jimma, Ethiopia</strong>. This state-of-the-art facility enables the large-scale production of high-quality organic fertilizers, meeting the growing demand for sustainable agricultural solutions across the region.
+                </p>
 
-                <div className="space-y-5 mb-8">
-                  <p className="font-semibold text-gray-700 text-lg">
-                    Advancing Organic Farming Through Innovation
-                  </p>
-
-                  <p className="text-gray-600 text-lg leading-relaxed text-justify">
-                    We are an agricultural solutions company dedicated to advancing organic farming. With expertise in <strong>soil science and plant nutrition</strong>, we bridge the gap between farmers&apos; needs and sustainable practices.
-                  </p>
-
-                  <p className="text-gray-600 text-lg leading-relaxed text-justify">
-                    Our operations are anchored in one of <strong>East Africa&apos;s largest organic fertilizer facilities</strong>, spanning <strong>50,000 square meters in Jimma, Ethiopia</strong>. This state-of-the-art facility enables the large-scale production of high-quality organic fertilizers, meeting the growing demand for sustainable agricultural solutions across the region.
-                  </p>
-
-                  <p className="text-gray-600 text-lg leading-relaxed text-justify">
-                    At Bio Green, we stand for <strong>integrity, innovation, and impact</strong>.
-                  </p>
-                </div>
-
-                {/* Global Operations Section */}
-                <div className="mb-6">
-                  <h3 className="text-xl font-semibold mb-4 uppercase tracking-wide"
-                      style={{color: '#39702E'}}>
-                    Our Global Operations
-                  </h3>
-                </div>
-
-                {/* World Map */}
-                <div className="w-full max-w-2xl">
-                  <div className="w-full h-80 bg-gray-100 rounded-lg overflow-hidden shadow-lg flex items-center justify-center relative">
-                    <Image
-                      src="/photos/home3_1.png"
-                      alt="Bio Green Operations Facility"
-                      fill
-                      style={{ objectFit: 'contain' }}
+                <div className="relative w-full my-8 rounded-lg overflow-hidden shadow-lg">
+                   <Image
+                      src="/photos/about/who-we-are.jpg"
+                      alt="A sprawling, state-of-the-art agricultural facility in Ethiopia."
+                      width={1000}
+                      height={500}
+                      className="object-cover w-full h-auto"
                     />
-                    <div className="w-full h-full bg-gradient-to-br from-green-100 to-green-200 flex items-center justify-center text-green-600 font-semibold" style={{ display: 'none' }}>
-                      Global Operations Map
-                    </div>
-                  </div>
                 </div>
+                
+                <p className="text-center text-xl font-semibold text-gray-800">
+                  At BioGreen, we stand for <strong>integrity, innovation, and impact</strong>.
+                </p>
               </div>
             </div>
           </div>
