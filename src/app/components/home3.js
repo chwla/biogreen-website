@@ -13,7 +13,7 @@ export default function AboutBiogreen() {
 
           <div className="flex flex-wrap justify-center gap-8 items-start">
             {/* Our Vision */}
-            <Link href="/about/who-we-are" className="flex flex-col items-center w-80 h-96 bg-gray-100 p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow cursor-pointer">
+            <div className="flex flex-col items-center w-80 h-96 bg-gray-100 p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
               <div className="w-full mb-4 relative h-32">
                 <Image
                   src="/photos/home3_1.png"
@@ -26,10 +26,10 @@ export default function AboutBiogreen() {
               <p className="text-sm text-gray-600 text-center leading-relaxed flex-1 overflow-hidden">
                 We envision a world where agriculture is productive, sustainable, and regenerative—restoring soils, empowering farmers, and protecting the planet for generations to come.
               </p>
-            </Link>
+            </div>
 
             {/* Our Mission */}
-            <Link href="/about/what-we-do" className="flex flex-col items-center w-80 h-96 bg-gray-100 p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow cursor-pointer">
+            <div className="flex flex-col items-center w-80 h-96 bg-gray-100 p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
               <div className="w-full mb-4 relative h-32">
                 <Image
                   src="/photos/home3_2.jpg"
@@ -42,10 +42,10 @@ export default function AboutBiogreen() {
               <p className="text-sm text-gray-600 text-center leading-relaxed flex-1 overflow-hidden">
                 Our mission is to nourish the world organically by transforming avocado by-products into high-quality, plant-based fertilizers that improve soil health, boost yields, and reduce chemical dependency.
               </p>
-            </Link>
+            </div>
 
             {/* Our Core Values */}
-            <Link href="/about/how-we-do-it" className="flex flex-col items-center w-80 h-96 bg-gray-100 p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow cursor-pointer">
+            <div className="flex flex-col items-center w-80 h-96 bg-gray-100 p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
               <div className="w-full mb-4 relative h-32">
                 <Image
                   src="/photos/home3_3.jpg"
@@ -58,7 +58,7 @@ export default function AboutBiogreen() {
               <p className="text-sm text-gray-600 text-center leading-relaxed flex-1 overflow-hidden">
                 At Bio Green, we are driven by sustainability, innovation, and integrity. We put farmers first, collaborate with communities, and act as stewards of the land—ensuring agriculture thrives today while preserving fertility for tomorrow.
               </p>
-            </Link>
+            </div>
           </div>
         </div>
       </div>
