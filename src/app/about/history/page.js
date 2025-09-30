@@ -120,8 +120,8 @@ const HistoryPage = () => {
                     />
                 </div>
                 
-                {/* THE FIX: Added `clear-both` to this paragraph to fix the indentation */}
-                <p className="clear-both">
+                {/* THE FIX: Removed the `clear-both` class from this paragraph */}
+                <p>
                   As the youngest member of a multi-diverse family group with over seven decades of experience, BioGreen carries forward a strong legacy while shaping a <strong>greener, more resilient future</strong>. Our vision is to become the most reputed and trusted name in organic fertilizers—empowering farmers, restoring soils, and cultivating sustainability for generations to come.
                 </p>
               </div>
