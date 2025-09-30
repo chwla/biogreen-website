@@ -61,34 +61,6 @@ export default function AboutBiogreen() {
             </Link>
           </div>
         </div>
-
-        {/* Sustainability Section */}
-        <div className="mt-16 bg-gray-100 p-8 rounded-lg shadow-sm">
-          <h2 className="text-3xl font-bold mb-8 text-center" style={{ color: '#39702E' }}>
-            SUSTAINABILITY FOR THE ENTIRE FERTILIZER SUPPLY CHAIN
-          </h2>
-
-          <div className="space-y-6 text-gray-700 leading-relaxed">
-            <p>
-              The manufacturing and application of fertilizers have a significant environmental impact. NAQ Global focuses on the efficient use of natural resources to drive sustainability in the fertilizer quality improvement industry, thereby reducing the fertilizer carbon footprint. We continuously work toward more sustainable operations, offering products and services to decarbonize and mitigate environmental impacts across production and application stages.
-            </p>
-
-            <p>
-              Over decades, NAQ Global&apos;s research and development teams have developed solutions to address various challenges in the fertilizer supply chain. Our motto, &quot;Fertilizer Quality Improvement,&quot; reflects our commitment to helping the industry produce high-efficiency fertilizers with minimal environmental impact. Quality issues can arise throughout manufacturing and distribution, and we provide sustainable solutions at every stage—from mining and production to storage and transport.
-            </p>
-
-            <div className="mt-8">
-              <h3 className="text-xl font-semibold text-gray-800 mb-4">Green Technology for Fertilizer Quality Improvement</h3>
-              <p>
-                Our products are categorized according to different stages of fertilizer manufacturing to help you find the most effective solution. We are committed to delivering sustainable fertilizer quality improvement solutions and welcome inquiries about product customization and specialized services.
-              </p>
-            </div>
-
-            <p className="mt-6">
-              Fertilizers are essential to global food security. To feed the world&apos;s projected ten billion people by 2050, sustainable fertilizer innovation is crucial to improving food production and agricultural efficiency.
-            </p>
-          </div>
-        </div>
       </div>
     </div>
   );
