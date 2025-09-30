@@ -31,10 +31,10 @@ const WhyBioGreenPage = () => {
         {/* Removed the black background overlay */}
         {/* <div className="absolute inset-0 bg-black bg-opacity-40 z-10"></div> */}
         <div className="relative z-20 px-4">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tighter" style={{ color: '#000000' }}>
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tighter">
             Why BioGreen?
           </h1>
-          <p className="mt-4 text-lg md:text-xl max-w-3xl mx-auto" style={{ color: '#000000' }}>
+          <p className="mt-4 text-lg md:text-xl max-w-3xl mx-auto">
             Choosing BioGreen means investing in a sustainable future for agriculture, your soil, and our planet.
           </p>
         </div>

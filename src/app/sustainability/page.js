@@ -49,9 +49,8 @@ const SustainabilityPage = () => {
             priority
           />
         </div>
-        {/* The black background overlay has been removed */}
         <div className="relative z-20 px-4">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tighter drop-shadow-lg" style={{ color: '#000000' }}>
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tighter drop-shadow-lg">
             Sustainability & Regenerative Agriculture
           </h1>
         </div>
