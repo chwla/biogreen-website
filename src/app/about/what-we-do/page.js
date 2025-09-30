@@ -1,173 +1,140 @@
 'use client';
+
 import { useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
-const WhatWeDoSection = () => {
-  const [activeSection, setActiveSection] = useState('WHAT DO WE DO?');
+const WhatWeDoPage = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const pathname = usePathname(); // Hook to get the current page path
 
   const menuItems = [
-    { name: 'OUR PRESIDENT MESSAGE', path: '/about' },
-    { name: 'OUR HISTORY', path: '/about/history' },
-    { name: 'WHO ARE WE?', path: '/about/who-we-are' },
-    { name: 'WHAT DO WE DO?', path: '/about/what-we-do' },
-    { name: 'HOW DO WE DO IT?', path: '/about/how-do-we-do-it' },
-    { name: 'ACHIEVEMENTS', path: '/about/achievements' }
+    { name: 'Our President Message', path: '/about' },
+    { name: 'Our History', path: '/about/history' },
+    { name: 'Who Are We?', path: '/about/who-we-are' },
+    { name: 'What Do We Do?', path: '/about/what-we-do' },
+    { name: 'How Do We Do It?', path: '/about/how-do-we-do-it' },
+    { name: 'Achievements', path: '/about/achievements' }
   ];
-
-  const handleMenuClick = (item) => {
-    setActiveSection(item.name);
-    setIsSidebarOpen(false); // Close mobile menu on item click
-    window.location.href = item.path;
-  };
 
   return (
     <>
-      {/* Hero Section - Responsive height */}
-      <div className="w-full relative overflow-hidden h-48 sm:h-64 md:h-80 lg:h-96">
+      {/* Hero Section */}
+      <div className="w-full relative overflow-hidden h-64 sm:h-80 md:h-96 lg:h-[32rem]">
         <Image 
           src="/photos/about.jpeg" 
-          alt="About NAQ Global"
+          alt="About BioGreen"
           fill
           className="object-cover object-center"
           style={{ transform: 'scale(1.1)', transformOrigin: 'center' }}
           priority
         />
-        
-        {/* Title overlay */}
         <div className="absolute inset-0 flex items-center justify-center px-4">
           <h1 className="text-amber-800 text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold tracking-wide uppercase text-center drop-shadow-lg">
-            What do we do
+            What Do We Do
           </h1>
         </div>
       </div>
 
       {/* Main Content Section */}
-      <section className="py-8 md:py-16 bg-gray-50">
-        <div className="max-w-6xl mx-auto px-4 sm:px-5">
+      <section className="py-12 md:py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Mobile Menu Toggle */}
-          <div className="md:hidden mb-6">
+          <div className="lg:hidden mb-8">
             <button
               onClick={() => setIsSidebarOpen(!isSidebarOpen)}
-              className="w-full text-white py-3 px-4 rounded-lg font-semibold uppercase tracking-wide text-sm flex items-center justify-between"
+              className="w-full text-white py-3 px-4 rounded-md font-semibold uppercase tracking-wider text-sm flex items-center justify-between shadow-md"
               style={{backgroundColor: '#39702E'}}
             >
-              <span>Navigation Menu</span>
-              <span className={`transform transition-transform ${isSidebarOpen ? 'rotate-180' : ''}`}>
-                ▼
-              </span>
+              <span>About Us Menu</span>
+              <svg className={`w-5 h-5 transform transition-transform ${isSidebarOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
             </button>
           </div>
 
-          <div className="flex flex-col md:flex-row gap-6 md:gap-10 items-start">
-            {/* Left Sidebar Navigation - Mobile dropdown, desktop fixed */}
-            <div className={`
-              w-full md:w-72 md:flex-shrink-0
-              ${isSidebarOpen ? 'block' : 'hidden md:block'}
+          <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start">
+            {/* Left Sidebar Navigation */}
+            <aside className={`
+              w-full lg:w-72 lg:flex-shrink-0
+              ${isSidebarOpen ? 'block' : 'hidden lg:block'}
             `}>
-              <div className="bg-white shadow-lg border border-gray-200 rounded-lg md:rounded-none overflow-hidden">
-                {menuItems.map((item, index) => (
-                  <div
+              <div className="bg-white shadow-lg rounded-md border border-gray-200 p-2">
+                {menuItems.map((item) => (
+                  <Link
                     key={item.name}
-                    onClick={() => handleMenuClick(item)}
+                    href={item.path}
+                    onClick={() => setIsSidebarOpen(false)}
                     className={`
-                      ${index !== menuItems.length - 1 ? 'border-b border-gray-300' : ''}
-                      ${activeSection === item.name 
-                        ? 'text-white' 
-                        : 'hover:bg-green-50'
+                      block w-full text-left py-3 px-4 font-bold text-sm uppercase tracking-wider rounded-md transition-colors duration-200
+                      ${pathname === item.path 
+                        ? 'bg-[#39702E] text-white' 
+                        : 'text-gray-700 hover:bg-green-50 hover:text-[#39702E]'
                       }
-                      text-center py-3 md:py-4 px-3 md:px-4 font-bold text-xs sm:text-xs uppercase tracking-wide cursor-pointer transition-all duration-200 
-                      font-sans leading-tight
                     `}
-                    style={{
-                      fontFamily: 'Arial, sans-serif',
-                      letterSpacing: '1px',
-                      backgroundColor: activeSection === item.name ? '#39702E' : 'white',
-                      color: activeSection === item.name ? 'white' : '#39702E'
-                    }}
                   >
                     {item.name}
-                  </div>
+                  </Link>
                 ))}
               </div>
-            </div>
+            </aside>
 
             {/* Right Content Area */}
-            <div className="flex-1 w-full">
-              <div className="flex flex-col gap-8 md:gap-10">
+            <div className="flex-1 w-full bg-white p-6 sm:p-8 lg:p-10 rounded-lg shadow-lg border border-gray-200">
+              <div className="text-center mb-10">
+                <h2 className="text-3xl lg:text-4xl font-bold tracking-tight"
+                    style={{color: '#39702E'}}>
+                  What Do We Do
+                </h2>
+              </div>
+              
+              <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed">
+                <p>
+                  At BioGreen, we manufacture <strong>premium organic fertilizers</strong> derived from avocado by-products, transforming agricultural waste into <strong>sustainable farming solutions</strong>. Our products are meticulously designed to achieve several key objectives for modern, responsible agriculture.
+                </p>
                 
-                {/* Main Text Content */}
-                <div className="w-full">
-                  <h2 className="text-xl sm:text-2xl lg:text-3xl font-light tracking-wide mb-6 md:mb-8 pb-2 md:pb-3 border-b-2 md:border-b-3 inline-block"
-                      style={{color: '#39702E', borderColor: '#39702E'}}>
-                    WHAT DO WE DO?
-                  </h2>
+                <h3 className="text-2xl font-semibold text-gray-800 mt-8">Our Core Objectives</h3>
+                <ul className="space-y-3 not-prose">
+                  {[
+                    'Enhance soil fertility by enriching the soil ecosystem.',
+                    'Reduce environmental impact by replacing harmful chemical inputs.',
+                    'Improve crop yields through efficient, balanced nutrient release.',
+                    'Support certified organic farming with plant-based, eco-friendly formulations.'
+                  ].map((item, index) => (
+                    <li key={index} className="flex items-start">
+                      <svg className="flex-shrink-0 w-6 h-6 mt-1" style={{ color: '#39702E' }} fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                      </svg>
+                      <span className="ml-3 text-gray-700">{item}</span>
+                    </li>
+                  ))}
+                </ul>
 
-                  <div className="space-y-4 md:space-y-5 mb-8 md:mb-10">
-                    <p className="text-gray-600 text-sm sm:text-base lg:text-lg leading-relaxed text-justify">
-                      At Bio Green, we manufacture <strong>premium organic fertilizers</strong> derived from avocado by-products, transforming agricultural waste into <strong>sustainable farming solutions</strong>.
-                    </p>
+                <p className="mt-6">
+                  What makes our fertilizers unique is that they go beyond performance—they are <strong>cost-effective, environmentally responsible, and farmer-friendly</strong>.
+                </p>
 
-                    <p className="text-gray-600 text-sm sm:text-base lg:text-lg leading-relaxed">
-                      Our products are designed to:
-                    </p>
-
-                    <ul className="text-gray-600 text-sm sm:text-base lg:text-lg leading-relaxed ml-6 space-y-2">
-                      <li>• Enhance soil fertility by enriching the soil ecosystem</li>
-                      <li>• Reduce environmental impact by replacing harmful chemical inputs</li>
-                      <li>• Improve crop yields through efficient, balanced nutrient release</li>
-                      <li>• Support certified organic farming with plant-based, eco-friendly formulations</li>
-                    </ul>
-
-                    <p className="text-gray-600 text-sm sm:text-base lg:text-lg leading-relaxed text-justify">
-                      What makes our fertilizers unique is that they go beyond performance—they are <strong>cost-effective, environmentally responsible, and farmer-friendly</strong>.
-                    </p>
-                  </div>
-
-                  {/* Global Operations Section */}
-                  <div className="mb-6">
-                    <h3 className="text-lg sm:text-xl font-semibold mb-4 uppercase tracking-wide"
-                        style={{color: '#39702E'}}>
-                      Our Global Operations
-                    </h3>
-                    <p className="text-gray-600 text-sm sm:text-base lg:text-lg leading-relaxed mb-6">
-                      Our technical services extend worldwide, helping fertilizer plants across different continents 
-                      achieve optimal performance through our expert guidance and innovative solutions.
-                    </p>
-                  </div>
-
-                  {/* World Map - Responsive */}
-                  <div className="w-full">
-                    <div className="w-full h-64 sm:h-72 md:h-80 lg:h-96 bg-gray-100 rounded-lg overflow-hidden shadow-lg flex items-center justify-center relative">
-                      <Image
-                        src="/photos/home3_1.png"
-                        alt="NAQ Global Operations World Map"
-                        fill
-                        style={{ objectFit: 'contain' }}
-                        className="p-4"
-                        onError={(e) => {
-                          e.currentTarget.style.display = 'none';
-                          e.currentTarget.nextElementSibling.style.display = 'flex';
-                        }}
-                      />
-                      <div className="w-full h-full flex items-center justify-center text-center px-4" 
-                           style={{display: 'none', background: 'linear-gradient(135deg, #f0fdf4, #dcfce7)', color: '#39702E'}}>
-                        <div>
-                          <div className="text-4xl md:text-6xl mb-4">🌍</div>
-                          <div className="text-base md:text-lg font-semibold">Global Operations Map</div>
-                          <div className="text-sm md:text-base text-gray-600 mt-2">Serving clients worldwide</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                <div className="relative w-full my-8 rounded-lg overflow-hidden shadow-lg">
+                   <Image
+                      src="/photos/about/what-we-do.png"
+                      alt="A world map highlighting BioGreen's global operations and reach."
+                      width={1000}
+                      height={500}
+                      className="object-cover w-full h-auto"
+                    />
                 </div>
+
+                <h3 className="text-2xl font-semibold text-gray-800">Our Global Operations</h3>
+                <p>
+                  Our technical services extend worldwide, helping fertilizer plants across different continents achieve optimal performance through our expert guidance and innovative solutions.
+                </p>
+
               </div>
             </div>
           </div>
         </div>
       </section>
     </>
-  )
-}
+  );
+};
 
-export default WhatWeDoSection;
+export default WhatWeDoPage;
