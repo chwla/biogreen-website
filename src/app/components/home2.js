@@ -69,11 +69,11 @@ const Home2 = () => {
               </h2>
 
               <p className="text-gray-700 text-base leading-relaxed mb-6">
-                "At <strong>Bio Green Fertilizer</strong>, our mission is to transform agriculture with sustainable, future-ready solutions. We are committed to replacing harmful chemical inputs with safe, plant-based fertilizers that nurture the soil and safeguard our planet for future generations."
+                &ldquo;At <strong>Bio Green Fertilizer</strong>, our mission is to transform agriculture with sustainable, future-ready solutions. We are committed to replacing harmful chemical inputs with safe, plant-based fertilizers that nurture the soil and safeguard our planet for future generations.&rdquo;
               </p>
 
               <p className="text-gray-700 text-base leading-relaxed mb-6">
-                "With <strong>innovation and integrity</strong> at our core, we are building a greener tomorrow for farmers and communities worldwide. Together, we are shaping an agricultural future that is resilient, regenerative, and truly sustainable."
+                &ldquo;With <strong>innovation and integrity</strong> at our core, we are building a greener tomorrow for farmers and communities worldwide. Together, we are shaping an agricultural future that is resilient, regenerative, and truly sustainable.&rdquo;
               </p>
 
               <div className="mt-8 mb-8 text-center md:text-left">
