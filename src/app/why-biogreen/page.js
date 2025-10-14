@@ -18,23 +18,24 @@ const WhyBioGreenPage = () => {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative h-[60vh] flex items-center justify-center text-center text-white">
+      <section className="relative h-[500px] md:h-[600px] lg:h-[700px] flex items-center justify-center text-center text-white overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
             src="/photos/steptodown.com911847.jpg"
             alt="Vast, vibrant green agricultural field under a clear blue sky."
             fill
             className="object-cover"
+            style={{ objectPosition: 'center 35%' }}
             priority
+            quality={100}
           />
         </div>
-        {/* Removed the black background overlay */}
-        {/* <div className="absolute inset-0 bg-black bg-opacity-40 z-10"></div> */}
+        <div className="absolute inset-0 bg-black/30"></div>
         <div className="relative z-20 px-4">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tighter">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tighter" style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.8)' }}>
             Why BioGreen?
           </h1>
-          <p className="mt-4 text-lg md:text-xl max-w-3xl mx-auto">
+          <p className="mt-4 text-lg md:text-xl max-w-3xl mx-auto" style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.8)' }}>
             Choosing BioGreen means investing in a sustainable future for agriculture, your soil, and our planet.
           </p>
         </div>
