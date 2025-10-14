@@ -21,17 +21,19 @@ const AchievementsPage = () => {
   return (
     <>
       {/* Hero Section */}
-      <div className="w-full relative overflow-hidden h-64 sm:h-80 md:h-96 lg:h-[32rem]">
+      <div className="w-full relative overflow-hidden h-[500px] md:h-[600px] lg:h-[700px]">
         <Image 
           src="/photos/new_about.jpeg" 
           alt="About BioGreen"
           fill
-          className="object-cover object-center"
-          style={{ transform: 'scale(1.1)', transformOrigin: 'center' }}
+          className="object-cover"
+          style={{ objectPosition: 'center 35%' }}
           priority
+          quality={100}
         />
+        <div className="absolute inset-0 bg-black/30"></div>
         <div className="absolute inset-0 flex items-center justify-center px-4">
-          <h1 className="text-amber-800 text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold tracking-wide uppercase text-center drop-shadow-lg">
+          <h1 className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-wide uppercase text-center" style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.8)' }}>
             Achievements
           </h1>
         </div>
