@@ -2,13 +2,15 @@ import Image from 'next/image';
 
 const Hero = () => {
   return (
-    <div className="relative w-full" style={{ height: 'calc(100dvh - var(--header-height, 5rem))' }}>
+    <div className="relative w-full overflow-hidden" style={{ height: 'calc(100dvh - var(--header-height, 5rem))' }}>
       <Image 
-        src="/photos/updated_hero.jpeg" 
+        src="/photos/hero2.jpeg" 
         alt="BioGreen sustainable fertilizer hero banner"
         fill
         className="object-cover"
         priority
+        sizes="100vw"
+        quality={100}
       />
       
       {/* THE FIX: Replaced Tailwind's opacity classes with a direct RGBA value */}
@@ -32,7 +34,7 @@ const Hero = () => {
               letterSpacing: '0.15em'
             }}
           >
-            SUSTAINABLE FERTILIZER PROCESS & QUALITY
+            ADVANCING ORGANIC AGRICULTURE THROUGH SCIENCE, SUSTAINABILITY AND SINCERITY
           </p>
         </div>
       </div>

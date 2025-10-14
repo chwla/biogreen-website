@@ -45,7 +45,7 @@ const Home2 = () => {
             <div className="md:w-1/2 w-full">
               <div className="relative aspect-video rounded-lg overflow-hidden shadow-lg">
                 <Image
-                  src="/photos/home2_1.jpg"
+                  src="/photos/home_new.jpeg"
                   alt="Bio Green facility with compost piles and green containers"
                   fill
                   style={{ objectFit: 'cover' }}
@@ -69,11 +69,11 @@ const Home2 = () => {
               </h2>
 
               <p className="text-gray-700 text-base leading-relaxed mb-6">
-                “At <strong>Bio Green Fertilizer</strong>, our mission is to transform agriculture with sustainable, future-ready solutions. We are committed to replacing harmful chemical inputs with safe, plant-based fertilizers that nurture the soil and safeguard our planet for future generations.”
+                "At <strong>Bio Green Fertilizer</strong>, our mission is to transform agriculture with sustainable, future-ready solutions. We are committed to replacing harmful chemical inputs with safe, plant-based fertilizers that nurture the soil and safeguard our planet for future generations."
               </p>
 
               <p className="text-gray-700 text-base leading-relaxed mb-6">
-                “With <strong>innovation and integrity</strong> at our core, we are building a greener tomorrow for farmers and communities worldwide. Together, we are shaping an agricultural future that is resilient, regenerative, and truly sustainable.”
+                "With <strong>innovation and integrity</strong> at our core, we are building a greener tomorrow for farmers and communities worldwide. Together, we are shaping an agricultural future that is resilient, regenerative, and truly sustainable."
               </p>
 
               <div className="mt-8 mb-8 text-center md:text-left">
@@ -96,15 +96,15 @@ const Home2 = () => {
               </button>
             </div>
 
-            {/* Right CEO Image */}
+            {/* Right CEO Image - INCREASED SIZE */}
             <div className="md:w-1/2 flex justify-center">
-              <div className="relative w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 rounded-full overflow-hidden shadow-xl">
+              <div className="relative w-80 h-80 sm:w-96 sm:h-96 md:w-[450px] md:h-[450px] lg:w-[500px] lg:h-[500px] rounded-full overflow-hidden shadow-xl">
                 <Image
                   src="/photos/ceo.png"
                   alt="Mr. Arvind Jain - Chief Executive Officer"
                   fill
                   style={{ objectFit: 'cover', objectPosition: 'center' }}
-                  sizes="(max-width: 640px) 256px, (max-width: 768px) 288px, 320px"
+                  sizes="(max-width: 640px) 320px, (max-width: 768px) 384px, (max-width: 1024px) 450px, 500px"
                 />
               </div>
             </div>
