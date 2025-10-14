@@ -7,21 +7,24 @@ const ContactPage = () => {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative h-[50vh] flex items-center justify-center text-center text-white">
+      <section className="relative h-[500px] md:h-[600px] lg:h-[700px] flex items-center justify-center text-center text-white overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
             src="/photos/Radio-and-Rice-2.jpg"
             alt="A farmer in a field on the phone, representing global contact and support."
             fill
             className="object-cover"
+            style={{ objectPosition: 'center 35%' }}
             priority
+            quality={100}
           />
         </div>
+        <div className="absolute inset-0 bg-black/30"></div>
         <div className="relative z-20 px-4">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tighter drop-shadow-lg">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tighter" style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.8)' }}>
             Contact Us
           </h1>
-          <p className="mt-4 text-lg md:text-xl max-w-2xl mx-auto drop-shadow-md">
+          <p className="mt-4 text-lg md:text-xl max-w-2xl mx-auto" style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.8)' }}>
             We&apos;re here to help. Reach out to us with any questions or inquiries.
           </p>
         </div>
