@@ -23,7 +23,7 @@ const HistoryPage = () => {
       {/* Hero Section */}
       <div className="w-full relative overflow-hidden h-64 sm:h-80 md:h-96 lg:h-[32rem]">
         <Image 
-          src="/photos/about.jpeg" 
+          src="/photos/new_about.jpeg" 
           alt="About BioGreen"
           fill
           className="object-cover object-center"
@@ -82,48 +82,53 @@ const HistoryPage = () => {
             <div className="flex-1 w-full bg-white p-6 sm:p-8 lg:p-10 rounded-lg shadow-lg border border-gray-200">
               {/* Centered Header */}
               <div className="text-center mb-10">
-                <h2 className="text-3xl lg:text-4xl font-bold tracking-tight"
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight"
                     style={{color: '#39702E'}}>
                   Our History
                 </h2>
-                <p className="mt-4 font-semibold text-xl text-gray-800">
+                <p className="mt-4 font-semibold text-lg sm:text-xl text-gray-800">
                   Our Journey Through Time
                 </p>
               </div>
               
-              <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed">
-                <div className="relative w-full sm:w-[45%] md:float-right my-4 sm:ml-8 rounded-lg overflow-hidden shadow-lg">
+              {/* Content with floating images */}
+              <div className="space-y-6 text-gray-700">
+                {/* First Image - Float Right on Desktop */}
+                <div className="w-full md:w-[45%] md:float-right md:ml-6 mb-4 rounded-lg overflow-hidden shadow-lg">
                   <Image
-                    src="/photos/home3_1.png"
+                    src="/photos/about_history.jpeg"
                     alt="BioGreen's facility with green containers"
                     width={500}
                     height={400}
-                    className="object-cover"
+                    className="object-cover w-full h-auto"
                   />
                 </div>
                 
-                <p>
+                <p className="text-base sm:text-lg leading-relaxed">
                   BioGreen was founded with a vision to transform agriculture through sustainable innovation. Rooted in the legacy of <strong>AEV Oil</strong>, the first company of our group and a trusted name in avocado oil extraction, BioGreen represents the next step in our journey of <strong>excellence, quality, and trust</strong>.
                 </p>
                 
-                <p>
+                <p className="text-base sm:text-lg leading-relaxed">
                   With professional expertise in soil science and plant nutrition, we specialize in producing <strong>organic fertilizers from avocado by-products</strong> sourced directly from AEV Oil&apos;s operations. By transforming what was once considered waste into high-quality, eco-friendly fertilizers, we <strong>close the loop in agriculture</strong>—supporting farmers with sustainable solutions while reducing environmental impact.
                 </p>
 
-                <div className="relative w-full sm:w-[45%] md:float-left my-4 sm:mr-8 rounded-lg overflow-hidden shadow-lg">
+                {/* Second Image - Float Left on Desktop */}
+                <div className="w-full md:w-[45%] md:float-left md:mr-6 mb-4 rounded-lg overflow-hidden shadow-lg clear-both md:clear-none">
                    <Image
                       src="/photos/about/about_history2.jpg"
                       alt="A pile of rich, dark compost"
                       width={500}
                       height={400}
-                      className="object-cover"
+                      className="object-cover w-full h-auto"
                     />
                 </div>
                 
-                {/* THE FIX: Removed the `clear-both` class from this paragraph */}
-                <p>
+                <p className="text-base sm:text-lg leading-relaxed">
                   As the youngest member of a multi-diverse family group with over seven decades of experience, BioGreen carries forward a strong legacy while shaping a <strong>greener, more resilient future</strong>. Our vision is to become the most reputed and trusted name in organic fertilizers—empowering farmers, restoring soils, and cultivating sustainability for generations to come.
                 </p>
+
+                {/* Clear floats */}
+                <div className="clear-both"></div>
               </div>
             </div>
           </div>

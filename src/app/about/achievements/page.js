@@ -23,7 +23,7 @@ const AchievementsPage = () => {
       {/* Hero Section */}
       <div className="w-full relative overflow-hidden h-64 sm:h-80 md:h-96 lg:h-[32rem]">
         <Image 
-          src="/photos/about.jpeg" 
+          src="/photos/new_about.jpeg" 
           alt="About BioGreen"
           fill
           className="object-cover object-center"
@@ -87,7 +87,7 @@ const AchievementsPage = () => {
                     <div className="md:w-1/2 w-full">
                        <div className="relative aspect-video rounded-lg overflow-hidden shadow-lg">
                         <Image
-                          src="/dl.beatsnoop.com-ultra-bgGZEprNPa.jpg"
+                          src="/photos/new_achievments1.jpeg"
                           alt="A farmer plowing a field with oxen, representing decades of agricultural expertise."
                           fill
                           className="object-cover"
@@ -108,17 +108,18 @@ const AchievementsPage = () => {
                 {/* Section 2: Global Recognition */}
                 <div className="pt-10">
                   <div className="flex flex-col md:flex-row gap-8 items-center">
-                    <div className="md:w-1/2 w-full md:order-last">
-                      <div className="relative aspect-video rounded-lg overflow-hidden shadow-lg">
+                    <div className="md:w-3/5 w-full md:order-last">
+                      <div className="relative aspect-[4/3] rounded-lg overflow-hidden shadow-lg bg-gray-50">
                         <Image
-                          src="/Ethiopia_Map_Agriculture.jpg"
+                          src="/photos/new_achievments2.jpeg"
                           alt="A stylized map of Ethiopia made from agricultural icons."
                           fill
-                          className="object-cover"
+                          className="object-contain"
+                          style={{ objectPosition: 'center' }}
                         />
                       </div>
                     </div>
-                    <div className="md:w-1/2 w-full">
+                    <div className="md:w-2/5 w-full">
                        <h2 className="text-3xl font-bold tracking-tight mb-4" style={{color: '#39702E'}}>
                         Global Recognition
                       </h2>

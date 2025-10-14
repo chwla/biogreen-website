@@ -23,7 +23,7 @@ const WhatWeDoPage = () => {
       {/* Hero Section */}
       <div className="w-full relative overflow-hidden h-64 sm:h-80 md:h-96 lg:h-[32rem]">
         <Image 
-          src="/photos/about.jpeg" 
+          src="/photos/new_about.jpeg" 
           alt="About BioGreen"
           fill
           className="object-cover object-center"
