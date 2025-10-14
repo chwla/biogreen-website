@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import React from 'react';
 
-// A reusable, restyled component for product data tables
 const NutritionTable = ({ title, data, className = '' }) => (
   <div className={`mt-8 ${className}`}>
     <h3 className="text-lg font-semibold text-black mb-4">{title}</h3>
@@ -30,7 +29,6 @@ const NutritionTable = ({ title, data, className = '' }) => (
   </div>
 );
 
-// A reusable component for a single product section
 const ProductSection = ({
   imageSrc,
   altText,
@@ -40,11 +38,10 @@ const ProductSection = ({
   benefits,
   tableData,
   tableTitle,
-  reverse = false, // To alternate image/text layout
+  reverse = false,
 }) => (
   <section className="py-12 md:py-16">
     <div className={`flex flex-col ${reverse ? 'lg:flex-row-reverse' : 'lg:flex-row'} items-start gap-10 md:gap-16`}>
-      {/* Image Column */}
       <div className="lg:w-5/12 w-full">
         <div className="relative aspect-square w-full rounded-xl shadow-lg overflow-hidden">
           <Image
@@ -57,7 +54,6 @@ const ProductSection = ({
         </div>
       </div>
       
-      {/* Content Column */}
       <div className="lg:w-7/12 w-full">
         <h2 className="text-3xl md:text-4xl font-bold tracking-tight" style={{ color: '#39702E' }}>{title}</h2>
         <p className="mt-2 text-lg text-gray-600">{subtitle}</p>
@@ -87,7 +83,6 @@ const ProductSection = ({
   </section>
 );
 
-
 const ProductsPage = () => {
   const powderFertilizer = {
     overview: 'A next-generation solid fertilizer designed to enrich soils, strengthen root systems, and promote long-lasting fertility. Its nutrient-rich, eco-friendly formulation improves crop performance while supporting sustainable agriculture.',
@@ -100,7 +95,11 @@ const ProductsPage = () => {
       'Heat-treated to eliminate pathogens, weed seeds, and harmful organisms.',
     ],
     data: [
-      { characteristic: 'pH', value: '6.5 – 7.0' }, { characteristic: 'Total Nitrogen (N)', value: '3 – 4%' }, { characteristic: 'Total P₂O₅ (Phosphate)', value: '2.0 – 2.5%' }, { characteristic: 'Total K₂O (Potash)', value: '3.5 – 4.5%' }, { characteristic: 'Organic Matter', value: '75 – 85%' },
+      { characteristic: 'pH', value: '6.5 - 7.0' },
+      { characteristic: 'Total Nitrogen (N)', value: '3 - 4%' },
+      { characteristic: 'Total P2O5 (Phosphate)', value: '2.0 - 2.5%' },
+      { characteristic: 'Total K2O (Potash)', value: '3.5 - 4.5%' },
+      { characteristic: 'Organic Matter', value: '75 - 85%' },
     ],
   };
 
@@ -114,7 +113,11 @@ const ProductsPage = () => {
       'Protects crops against stress from drought, salinity, and heat.',
     ],
     data: [
-      { characteristic: 'pH', value: '4.5 – 5.0' }, { characteristic: 'Total Nitrogen', value: '1-2%' }, { characteristic: 'Total P₂O₅', value: '1-2%' }, { characteristic: 'Total K₂O', value: '3-3.5%' }, { characteristic: 'Organic Matter', value: '10– 20%' },
+      { characteristic: 'pH', value: '4.5 - 5.0' },
+      { characteristic: 'Total Nitrogen', value: '1-2%' },
+      { characteristic: 'Total P2O5', value: '1-2%' },
+      { characteristic: 'Total K2O', value: '3-3.5%' },
+      { characteristic: 'Organic Matter', value: '10 - 20%' },
     ],
   };
 
@@ -129,39 +132,41 @@ const ProductsPage = () => {
       'Prevents pest resistance commonly developed against chemical agents.',
     ],
     data: [
-        { characteristic: 'Viable Microbial Count', value: '1 × 10⁸ – 1 × 10⁹ CFU/g or ml' }, { characteristic: 'pH', value: '6.0 – 7.5' }, { characteristic: 'Moisture Content', value: '< 10% (powder) / 90-95% (liquid)' }, { characteristic: 'Shelf Life', value: '12 months (sealed, cool storage)' },
+      { characteristic: 'Viable Microbial Count', value: '1 x 10^8 - 1 x 10^9 CFU/g or ml' },
+      { characteristic: 'pH', value: '6.0 - 7.5' },
+      { characteristic: 'Moisture Content', value: '< 10% (powder) / 90-95% (liquid)' },
+      { characteristic: 'Shelf Life', value: '12 months (sealed, cool storage)' },
     ],
   };
 
   return (
     <main className="bg-white">
-        {/* Hero Section */}
-        <section className="relative h-[50vh] flex items-center justify-center text-center text-white">
-            <div className="absolute inset-0 z-0">
-                <Image
-                    src="/photos/product_hero.jpeg"
-                    alt="Lush agricultural landscape showing healthy crops."
-                    fill
-                    className="object-cover"
-                    priority
-                />
-            </div>
-            <div className="relative z-20 px-4">
-                <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tighter drop-shadow-lg">
-                    Our Agricultural Solutions
-                </h1>
-                <p className="mt-4 text-lg md:text-xl max-w-3xl mx-auto drop-shadow-md">
-                    Explore our innovative, eco-friendly products designed to enhance soil health and boost crop vitality.
-                </p>
-            </div>
-        </section>
+      <section className="relative h-[50vh] flex items-center justify-center text-center text-white">
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/photos/new_products.jpeg"
+            alt="Lush agricultural landscape showing healthy crops."
+            fill
+            className="object-cover"
+            priority
+          />
+        </div>
+        <div className="relative z-20 px-4">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tighter drop-shadow-lg">
+            Our Agricultural Solutions
+          </h1>
+          <p className="mt-4 text-lg md:text-xl max-w-3xl mx-auto drop-shadow-md">
+            Explore our innovative, eco-friendly products designed to enhance soil health and boost crop vitality.
+          </p>
+        </div>
+      </section>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="divide-y divide-gray-200">
           <ProductSection
-            imageSrc="/photos/product/product1.png"
+            imageSrc="/photos/product/product1.1.png"
             altText="Bags of Nano Avo Magic Powder Fertilizer"
-            title="Nano Avo Magic – Powder"
+            title="Nano Avo Magic - Powder"
             subtitle="Innovative Solid Fertilizer for Long-Term Soil Health"
             overview={powderFertilizer.overview}
             benefits={powderFertilizer.benefits}
@@ -170,9 +175,9 @@ const ProductsPage = () => {
           />
           
           <ProductSection
-            imageSrc="/photos/product/product2.png"
+            imageSrc="/photos/product/product2.1.png"
             altText="Bottles of Nano Avo Magic Liquid Fertilizer"
-            title="Nano Avo Magic – Liquid"
+            title="Nano Avo Magic - Liquid"
             subtitle="Premium Bio-Organic Liquid Fertilizer for Healthy Crops"
             overview={liquidFertilizer.overview}
             benefits={liquidFertilizer.benefits}
@@ -182,7 +187,7 @@ const ProductsPage = () => {
           />
 
           <ProductSection
-            imageSrc="/photos/product/product3.png"
+            imageSrc="/photos/product/product3.1.png"
             altText="Bottles of Bio Green Microbial Biopesticide"
             title="Microbial Biopesticide"
             subtitle="Nature-Powered Protection for Sustainable Farming"
@@ -194,23 +199,20 @@ const ProductsPage = () => {
         </div>
       </div>
 
-      {/* Closing Section */}
       <section className="bg-gray-50 mt-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
           <div className="flex flex-col lg:flex-row items-center gap-12">
-            {/* Image Collage */}
             <div className="lg:w-1/2 w-full grid grid-cols-2 grid-rows-2 gap-4 h-96">
-                <div className="relative col-span-1 row-span-2 rounded-lg overflow-hidden shadow-lg">
-                    <Image src="/photos/Empowering-women-coffee-farmers-in-Ethiopia (1).jpg" alt="Women farmers harvesting coffee beans." fill className="object-cover"/>
-                </div>
-                <div className="relative col-span-1 row-span-1 rounded-lg overflow-hidden shadow-lg">
-                    <Image src="/photos/b.jpg" alt="Hands holding seedlings" fill className="object-cover"/>
-                </div>
-                <div className="relative col-span-1 row-span-1 rounded-lg overflow-hidden shadow-lg">
-                     <Image src="/photos/photo - D.png" alt="Harvesting fresh carrots from rich soil" fill className="object-cover"/>
-                </div>
+              <div className="relative col-span-1 row-span-2 rounded-lg overflow-hidden shadow-lg">
+                <Image src="/photos/Empowering-women-coffee-farmers-in-Ethiopia (1).jpg" alt="Women farmers harvesting coffee beans." fill className="object-cover" />
+              </div>
+              <div className="relative col-span-1 row-span-1 rounded-lg overflow-hidden shadow-lg">
+                <Image src="/photos/b.jpg" alt="Hands holding seedlings" fill className="object-cover" />
+              </div>
+              <div className="relative col-span-1 row-span-1 rounded-lg overflow-hidden shadow-lg">
+                <Image src="/photos/photo - D.png" alt="Harvesting fresh carrots from rich soil" fill className="object-cover" />
+              </div>
             </div>
-            {/* Text Content */}
             <div className="lg:w-1/2 text-center lg:text-left">
               <h2 className="text-3xl md:text-4xl font-bold tracking-tight" style={{ color: '#39702E' }}>
                 Committed to a Greener Future
@@ -218,11 +220,7 @@ const ProductsPage = () => {
               <p className="mt-4 text-lg text-gray-700 leading-relaxed">
                 Our commitment goes beyond products. We partner with farming communities to promote sustainable practices that enrich the soil, protect biodiversity, and ensure a prosperous future for generations to come.
               </p>
-              <a
-                href="/sustainability"
-                className="mt-8 inline-block text-white px-8 py-3 font-semibold rounded-md shadow-md transition-transform transform hover:scale-105"
-                style={{ backgroundColor: '#39702E' }}
-              >
+              <a href="/sustainability" className="mt-8 inline-block text-white px-8 py-3 font-semibold rounded-md shadow-md transition-transform transform hover:scale-105" style={{ backgroundColor: '#39702E' }}>
                 Learn About Our Mission
               </a>
             </div>
