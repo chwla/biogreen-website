@@ -34,7 +34,7 @@ const PresidentMessagePage = () => {
         <div className="absolute inset-0 bg-black/30"></div>
         <div className="absolute inset-0 flex items-center justify-center px-4">
           <h1 className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-wide uppercase text-center" style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.8)' }}>
-            Message from Our President
+            Message from Our Chairman
           </h1>
         </div>
       </div>
@@ -85,7 +85,7 @@ const PresidentMessagePage = () => {
               <div className="text-center mb-10">
                 <h2 className="text-3xl lg:text-4xl font-bold tracking-tight"
                     style={{color: '#39702E'}}>
-                  A Message from Our CEO
+                  A Message from Our Chairman
                 </h2>
               </div>
               
@@ -93,7 +93,7 @@ const PresidentMessagePage = () => {
                 <div className="relative w-48 h-48 sm:w-64 sm:h-64 md:float-right my-4 sm:ml-8 rounded-full overflow-hidden shadow-xl border-4 border-[#39702E]">
                   <Image
                     src="/photos/ceo.png"
-                    alt="Mr. Arvind Jain, Chief Executive Officer"
+                    alt="Mr. Arvind Jain, Chairman"
                     fill
                     className="object-cover"
                   />
