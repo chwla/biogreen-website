@@ -23,7 +23,7 @@ const PresidentMessagePage = () => {
       {/* Hero Section */}
       <div className="w-full relative overflow-hidden h-[500px] md:h-[600px] lg:h-[700px]">
         <Image 
-          src="/photos/new_about.jpeg" 
+          src="/photos/updated_hero.jpeg" 
           alt="About BioGreen - Team meeting with avocados"
           fill
           className="object-cover"
