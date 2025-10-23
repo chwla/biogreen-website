@@ -65,7 +65,7 @@ const Home2 = () => {
             {/* Left Content */}
             <div className="md:w-1/2 text-center md:text-left">
               <h2 className="text-3xl lg:text-4xl font-light mb-8 uppercase tracking-wide" style={{ color: '#39702E' }}>
-                A Message from Our CEO
+                A Message from Our Chairman
               </h2>
 
               <p className="text-gray-700 text-base leading-relaxed mb-6">
@@ -101,7 +101,7 @@ const Home2 = () => {
               <div className="relative w-80 h-80 sm:w-96 sm:h-96 md:w-[450px] md:h-[450px] lg:w-[500px] lg:h-[500px] rounded-full overflow-hidden shadow-xl">
                 <Image
                   src="/photos/ceo.png"
-                  alt="Mr. Arvind Jain - Chief Executive Officer"
+                  alt="Mr. Arvind Jain - Chairman"
                   fill
                   style={{ objectFit: 'cover', objectPosition: 'center' }}
                   sizes="(max-width: 640px) 320px, (max-width: 768px) 384px, (max-width: 1024px) 450px, 500px"
