@@ -42,11 +42,11 @@ const Home2 = () => {
             </div>
 
             {/* Right Image */}
-            <div className="md:w-1/2 w-full">
-              <div className="relative aspect-video rounded-lg overflow-hidden shadow-lg">
+            <div className="md:w-1/2 w-full flex justify-center">
+              <div className="relative w-full max-w-md aspect-[3/4] rounded-lg overflow-hidden shadow-lg">
                 <Image
-                  src="/photos/home_new.jpeg"
-                  alt="Bio Green facility with compost piles and green containers"
+                  src="/photos/new_img.jpeg"
+                  alt="Farmer with tractor in agricultural field"
                   fill
                   style={{ objectFit: 'cover' }}
                   sizes="(max-width: 768px) 100vw, 50vw"
