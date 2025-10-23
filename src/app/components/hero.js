@@ -18,7 +18,7 @@ const Hero = () => {
       <div className="absolute inset-0 z-10 flex items-center justify-center pt-8 md:pt-0">
         <div className="text-center text-white px-4 max-w-6xl">
           <h1 
-            className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-extrabold mb-4 md:mb-6 tracking-wide uppercase" 
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-extrabold mb-4 md:mb-6 tracking-wide uppercase" 
             style={{ 
               fontFamily: 'Arial, sans-serif',
               textShadow: '2px 2px 8px rgba(0,0,0,0.8)',
