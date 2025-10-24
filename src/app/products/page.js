@@ -167,7 +167,7 @@ const ProductsPage = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="divide-y divide-gray-200">
           <ProductSection
-            imageSrc="/photos/product/product1.1.png"
+            imageSrc="/photos/product/product1.1.jpeg"
             altText="Bags of Nano Avo Magic Powder Fertilizer"
             title="Nano Avo Magic - Powder"
             subtitle="Innovative Solid Fertilizer for Long-Term Soil Health"
@@ -178,7 +178,7 @@ const ProductsPage = () => {
           />
           
           <ProductSection
-            imageSrc="/photos/product/product2.1.png"
+            imageSrc="/photos/product/product2.1.jpeg"
             altText="Bottles of Nano Avo Magic Liquid Fertilizer"
             title="Nano Avo Magic - Liquid"
             subtitle="Premium Bio-Organic Liquid Fertilizer for Healthy Crops"
@@ -190,7 +190,7 @@ const ProductsPage = () => {
           />
 
           <ProductSection
-            imageSrc="/photos/product/product3.1.png"
+            imageSrc="/photos/product/product3.1.jpeg"
             altText="Bottles of Bio Green Microbial Biopesticide"
             title="Microbial Biopesticide"
             subtitle="Nature-Powered Protection for Sustainable Farming"
