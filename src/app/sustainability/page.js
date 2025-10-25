@@ -42,7 +42,7 @@ const SustainabilityPage = () => {
       <section className="relative h-[500px] md:h-[600px] lg:h-[700px] flex items-center justify-center text-center text-white overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/photos/steptodown.com947263.jpg"
+            src="/photos/hero.jpeg"
             alt="A beautiful green valley representing sustainability and a healthy planet."
             fill
             className="object-cover"
@@ -51,7 +51,6 @@ const SustainabilityPage = () => {
             quality={100}
           />
         </div>
-        <div className="absolute inset-0 bg-black/30"></div>
         <div className="relative z-20 px-4">
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tighter" style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.8)' }}>
             Sustainability & Regenerative Agriculture
