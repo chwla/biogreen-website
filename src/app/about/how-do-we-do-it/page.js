@@ -21,19 +21,21 @@ const HowWeDoItPage = () => {
   return (
     <>
       {/* Hero Section */}
-      <div className="w-full relative overflow-hidden h-[500px] md:h-[600px] lg:h-[700px]">
-        <Image 
-          src="/photos/updated_hero.jpeg" 
-          alt="About BioGreen"
-          fill
-          className="object-cover"
-          style={{ objectPosition: 'center 35%' }}
-          priority
-          quality={100}
-        />
-        <div className="absolute inset-0 bg-black/30"></div>
-        <div className="absolute inset-0 flex items-center justify-center px-4">
-          <h1 className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-wide uppercase text-center" style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.8)' }}>
+      <div className="w-full relative overflow-hidden">
+        <div className="relative w-full aspect-[16/6] sm:aspect-[21/7] md:aspect-[21/6] lg:aspect-[21/5]">
+          <Image 
+            src="/photos/steptodown.com551422.jpg" 
+            alt="About BioGreen"
+            fill
+            className="object-cover"
+            style={{ objectPosition: 'center 40%' }}
+            priority
+            quality={100}
+          />
+          <div className="absolute inset-0 bg-black/20"></div>
+        </div>
+        <div className="absolute inset-0 flex items-center justify-center px-4 z-10">
+          <h1 className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold tracking-wide uppercase text-center" style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.8)' }}>
             How Do We Do It
           </h1>
         </div>
@@ -96,8 +98,8 @@ const HowWeDoItPage = () => {
 
                 <div className="relative w-full sm:w-[45%] md:float-right my-4 sm:ml-8 rounded-lg overflow-hidden shadow-lg">
                   <Image
-                    src="/photos/about/about_how-do-we-do-it.jpg"
-                    alt="A scientist inspecting a plant in a modern laboratory, representing agricultural innovation."
+                    src="/photos/about/about_how-do-we-do-it2.jpg"
+                    alt="A perfect avocado, representing the natural and high-quality source of BioGreen's products."
                     width={500}
                     height={400}
                     className="object-cover"
@@ -126,15 +128,15 @@ const HowWeDoItPage = () => {
 
                 <div className="relative w-full sm:w-[45%] md:float-left my-4 sm:mr-8 rounded-lg overflow-hidden shadow-lg">
                    <Image
-                      src="/photos/about/about_how-do-we-do-it2.jpg"
-                      alt="A perfect avocado, representing the natural and high-quality source of BioGreen's products."
+                      src="/photos/about/about_how-do-we-do-it.jpg"
+                      alt="A scientist inspecting a plant in a modern laboratory, representing agricultural innovation."
                       width={500}
                       height={400}
                       className="object-cover"
                     />
                 </div>
 
-                <p>
+                <p className="mt-0">
                   By using <strong>avocado by-products</strong> as a renewable resource, we turn agricultural waste into powerful, plant-based fertilizers—helping both farmers and the planet thrive.
                 </p>
               </div>

@@ -21,19 +21,21 @@ const AchievementsPage = () => {
   return (
     <>
       {/* Hero Section */}
-      <div className="w-full relative overflow-hidden h-[500px] md:h-[600px] lg:h-[700px]">
-        <Image 
-          src="/photos/updated_hero.jpeg" 
-          alt="About BioGreen"
-          fill
-          className="object-cover"
-          style={{ objectPosition: 'center 35%' }}
-          priority
-          quality={100}
-        />
-        <div className="absolute inset-0 bg-black/30"></div>
-        <div className="absolute inset-0 flex items-center justify-center px-4">
-          <h1 className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-wide uppercase text-center" style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.8)' }}>
+      <div className="w-full relative overflow-hidden">
+        <div className="relative w-full aspect-[16/6] sm:aspect-[21/7] md:aspect-[21/6] lg:aspect-[21/5]">
+          <Image 
+            src="/photos/steptodown.com551422.jpg" 
+            alt="About BioGreen"
+            fill
+            className="object-cover"
+            style={{ objectPosition: 'center 40%' }}
+            priority
+            quality={100}
+          />
+          <div className="absolute inset-0 bg-black/20"></div>
+        </div>
+        <div className="absolute inset-0 flex items-center justify-center px-4 z-10">
+          <h1 className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold tracking-wide uppercase text-center" style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.8)' }}>
             Achievements
           </h1>
         </div>
