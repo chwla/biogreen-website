@@ -20,14 +20,14 @@ const PresidentMessagePage = () => {
 
   return (
     <>
-      {/* Hero Section */}
-      <div className="w-full relative overflow-hidden h-[500px] md:h-[600px] lg:h-[700px]">
+      {/* Hero Section - Fixed with viewport heights */}
+      <div className="w-full relative overflow-hidden h-[50vh] md:h-[60vh] lg:h-[70vh] min-h-[400px] max-h-[800px]">
         <Image 
-          src="/photos/updated_hero.jpeg" 
-          alt="About BioGreen - Team meeting with avocados"
+          src="/photos/fixed_about2.jpeg" 
+          alt="About BioGreen - Sustainability and Agriculture"
           fill
           className="object-cover"
-          style={{ objectPosition: 'center 35%' }}
+          style={{ objectPosition: 'center center' }}
           priority
           quality={100}
         />
@@ -113,7 +113,7 @@ const PresidentMessagePage = () => {
                     – Mr. Arvind Jain
                   </p>
                   <p className="text-gray-600 italic">
-                    Chief Executive Officer
+                    Chairman
                   </p>
                 </div>
               </div>
