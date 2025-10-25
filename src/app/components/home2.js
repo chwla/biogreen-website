@@ -81,7 +81,7 @@ const Home2 = () => {
                   Mr. Arvind Jain
                 </p>
                 <p className="text-gray-600 text-base">
-                  Chief Executive Officer
+                  Chairman
                 </p>
               </div>
 
