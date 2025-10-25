@@ -21,10 +21,10 @@ const WhatWeDoPage = () => {
   return (
     <>
       {/* Hero Section */}
-      <div className="w-full relative overflow-hidden">
-        <div className="relative w-full aspect-[16/6] sm:aspect-[21/7] md:aspect-[21/6] lg:aspect-[21/5]">
-          <Image 
-            src="/photos/steptodown.com551422.jpg" 
+      <section className="relative h-[500px] md:h-[600px] lg:h-[700px] flex items-center justify-center text-center text-white overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/photos/steptodown.com551422.jpg"
             alt="About BioGreen"
             fill
             className="object-cover"
@@ -32,14 +32,13 @@ const WhatWeDoPage = () => {
             priority
             quality={100}
           />
-          <div className="absolute inset-0 bg-black/20"></div>
         </div>
-        <div className="absolute inset-0 flex items-center justify-center px-4 z-10">
-          <h1 className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold tracking-wide uppercase text-center" style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.8)' }}>
+        <div className="relative z-20 px-4">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tighter" style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.8)' }}>
             What Do We Do
           </h1>
         </div>
-      </div>
+      </section>
 
       {/* Main Content Section */}
       <section className="py-12 md:py-20 bg-gray-50">
