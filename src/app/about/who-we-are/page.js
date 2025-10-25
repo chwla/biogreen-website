@@ -10,7 +10,7 @@ const WhoWeArePage = () => {
   const pathname = usePathname();
 
   const menuItems = [
-    { name: 'Our President Message', path: '/about' },
+    { name: "Our Chairman's Message", path: '/about' },
     { name: 'Our History', path: '/about/history' },
     { name: 'Who Are We?', path: '/about/who-we-are' },
     { name: 'What Do We Do?', path: '/about/what-we-do' },
