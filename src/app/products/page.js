@@ -148,17 +148,17 @@ const ProductsPage = () => {
             alt="Lush agricultural landscape showing healthy crops."
             fill
             className="object-cover"
-            style={{ objectPosition: 'center 35%' }}
+            style={{ objectPosition: 'center 65%' }}
             priority
             quality={100}
           />
         </div>
-        <div className="absolute inset-0 bg-black/30"></div>
-        <div className="relative z-20 px-4">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tighter" style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.8)' }}>
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/20 to-black/50"></div>
+        <div className="relative z-20 px-4 max-w-5xl mx-auto mt-32 md:mt-40 lg:mt-48">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tighter mb-4" style={{ textShadow: '3px 3px 12px rgba(0,0,0,0.9)' }}>
             Our Agricultural Solutions
           </h1>
-          <p className="mt-4 text-lg md:text-xl max-w-3xl mx-auto" style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.8)' }}>
+          <p className="mt-4 text-base sm:text-lg md:text-xl max-w-3xl mx-auto leading-relaxed" style={{ textShadow: '2px 2px 10px rgba(0,0,0,0.9)' }}>
             Explore our innovative, eco-friendly products designed to enhance soil health and boost crop vitality.
           </p>
         </div>
