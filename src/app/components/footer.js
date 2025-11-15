@@ -21,23 +21,10 @@ export default function Footer() {
           
           {/* Column 1: Logo and Description */}
           <div className="space-y-4">
-            <Link href="/" className="inline-block">
-              <Image 
-                src="/photos/Untitled.jpeg"
-                alt="BioGreen Logo" 
-                width={72}
-                height={72}
-                className="object-contain"
-              />
-            </Link>
             <p className="text-sm text-gray-300 leading-relaxed">
               Pioneering sustainable agriculture through innovative, plant-based fertilizers for a healthier planet.
             </p>
-            <div className="flex space-x-4 pt-2">
-              <SocialIcon href="#"><FacebookIcon /></SocialIcon>
-              <SocialIcon href="#"><TwitterIcon /></SocialIcon>
-              <SocialIcon href="#"><LinkedInIcon /></SocialIcon>
-            </div>
+
           </div>
 
           {/* Column 2: Quick Links */}
