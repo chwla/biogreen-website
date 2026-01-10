@@ -35,7 +35,7 @@ const Hero = () => {
               letterSpacing: '0.15em'
             }}
           >
-            ADVANCING ORGANIC AGRICULTURE THROUGH SCIENCE, SUSTAINABILITY AND SINCERITY
+            ADVANCING ORGANIC AGRICULTURE THROUGH SCIENCE, SUSTAINABILITY AND SINCERITY 
           </p>
         </div>
       </div>
