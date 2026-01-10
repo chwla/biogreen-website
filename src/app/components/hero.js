@@ -4,9 +4,10 @@ const Hero = () => {
   return (
     <div className="relative w-full overflow-hidden" style={{ height: 'calc(100vh - 5rem)' }}>
       <Image 
-        src="/photos/new_hero.jpeg?v=3" 
+        src="/photos/new_hero.jpeg?ver=2026" 
         alt="BioGreen sustainable fertilizer hero banner"
         fill
+        unoptimized
         className="object-cover"
         style={{ objectPosition: 'center 40%' }}
         priority
