@@ -4,7 +4,7 @@ import React from 'react';
 const IconCard = ({ iconSrc, title }) => (
   <div className="bg-white rounded-2xl shadow-sm border border-gray-50 p-6 flex flex-col items-center text-center h-full">
     <div className="relative w-16 h-16 mb-4">
-      <Image src={iconSrc} alt={title} fill className="object-contain" />
+      <Image src={iconSrc} alt={title} fill className="object-contain" sizes="64px" quality={80} />
     </div>
     <p className="text-xs text-gray-600 font-medium leading-relaxed">{title}</p>
   </div>
@@ -23,7 +23,10 @@ const SustainabilityPage = () => {
             className="object-cover"
             style={{ objectPosition: 'center 40%' }}
             priority
-            quality={80}
+            quality={75}
+            sizes="100vw"
+            placeholder="blur"
+            blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAMI/8QAHhAAAQQCAwEAAAAAAAAAAAAAAgABAxEEITFBYRL/xAAVAQEBAAAAAAAAAAAAAAAAAAADBf/EABcRAQEBAQAAAAAAAAAAAAAAAAEAAhH/2gAMAwEAAhEDEQA/ANFZGfj4OJyMfJRxb0dQv+oiUbOtln//2Q=="
           />
         </div>
         <div className="absolute inset-0 bg-black/30 z-10"></div>
@@ -52,7 +55,7 @@ const SustainabilityPage = () => {
             {/* From Waste to Wealth */}
             <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 flex flex-col items-center text-center">
               <div className="relative w-16 h-16 mb-6">
-                <Image src="/photos/sust_icon1.png" alt="Circular Model Icon" fill className="object-contain" />
+                <Image src="/photos/sust_icon1.png" alt="Circular Model Icon" fill className="object-contain" sizes="64px" quality={80} />
               </div>
               <h3 className="font-bold text-gray-800 text-lg mb-4 uppercase tracking-wider">FROM WASTE TO WEALTH: A CIRCULAR MODEL</h3>
               <p className="text-gray-600 text-sm leading-relaxed">
@@ -63,7 +66,7 @@ const SustainabilityPage = () => {
             {/* Feeding the Future */}
             <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 flex flex-col items-center text-center">
               <div className="relative w-16 h-16 mb-6">
-                <Image src="/photos/sust_icon2.png" alt="Responsibility Icon" fill className="object-contain" />
+                <Image src="/photos/sust_icon2.png" alt="Responsibility Icon" fill className="object-contain" sizes="64px" quality={80} />
               </div>
               <h3 className="font-bold text-gray-800 text-lg mb-4 uppercase tracking-wider">FEEDING THE FUTURE RESPONSIBLY</h3>
               <p className="text-gray-600 text-sm leading-relaxed">
@@ -86,6 +89,9 @@ const SustainabilityPage = () => {
                   alt="Harvest supporting organic farming"
                   fill
                   className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 40vw"
+                  quality={75}
+                  loading="lazy"
                 />
               </div>
             </div>

@@ -6,7 +6,7 @@ import React from 'react';
 const FeatureCard = ({ imageSrc, altText, title, children }) => (
   <div className="text-center p-8 bg-gray-50 rounded-lg shadow-sm transition-shadow hover:shadow-lg h-full flex flex-col">
     <div className="relative w-full h-40 mx-auto mb-5 rounded-md overflow-hidden">
-      <Image src={imageSrc} alt={altText} fill className="object-cover" />
+      <Image src={imageSrc} alt={altText} fill className="object-cover" sizes="(max-width: 768px) 100vw, 33vw" quality={75} />
     </div>
     <h3 className="text-2xl font-semibold mb-3" style={{ color: '#39702E' }}>{title}</h3>
     <p className="text-gray-600 leading-relaxed flex-grow">{children}</p>
@@ -27,7 +27,10 @@ const WhyBioGreenPage = () => {
             className="object-cover"
             style={{ objectPosition: 'center 35%' }}
             priority
-            quality={100}
+            quality={80}
+            sizes="100vw"
+            placeholder="blur"
+            blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAMI/8QAHhAAAQQCAwEAAAAAAAAAAAAAAgABAxEEITFBYRL/xAAVAQEBAAAAAAAAAAAAAAAAAAADBf/EABcRAQEBAQAAAAAAAAAAAAAAAAEAAhH/2gAMAwEAAhEDEQA/ANFZGfj4OJyMfJRxb0dQv+oiUbOtln//2Q=="
           />
         </div>
         <div className="absolute inset-0 bg-black/30"></div>
@@ -44,7 +47,7 @@ const WhyBioGreenPage = () => {
       {/* Main Content */}
       <section className="py-16 md:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
+
           {/* Introduction Section */}
           <div className="mb-20">
             <div className="max-w-4xl mx-auto text-center">
@@ -57,21 +60,21 @@ const WhyBioGreenPage = () => {
             </div>
 
             <div className="grid md:grid-cols-3 gap-8 mt-16">
-              <FeatureCard 
-                imageSrc="/photos/photo - D.png" 
+              <FeatureCard
+                imageSrc="/photos/photo - D.png"
                 altText="Hands harvesting fresh carrots from rich, dark soil."
                 title="Soil Health"
               >
                 Promote long-term soil health, plant growth, and crop resilience through natural, effective fertilization.
               </FeatureCard>
-              <FeatureCard 
+              <FeatureCard
                 imageSrc="/photos/steptodown.com551422.jpg"
                 altText="A modern irrigation system watering a green field."
                 title="Water Quality"
               >
                 Significantly reduce chemical runoff into waterways, protecting local ecosystems and improving water quality.
               </FeatureCard>
-              <FeatureCard 
+              <FeatureCard
                 imageSrc="/photos/b.jpg"
                 altText="Many diverse hands coming together to nurture a young seedling."
                 title="Climate Impact"
@@ -84,7 +87,7 @@ const WhyBioGreenPage = () => {
           {/* Innovation Section */}
           <div className="relative mb-20 py-20 px-8 rounded-2xl overflow-hidden text-center text-white">
             <div className="absolute inset-0 z-0">
-                <Image src="/photos/about/about_how-do-we-do-it2.jpg" alt="A perfect avocado, representing natural ingredients." fill className="object-cover"/>
+              <Image src="/photos/about/about_how-do-we-do-it2.jpg" alt="A perfect avocado, representing natural ingredients." fill className="object-cover" sizes="100vw" quality={75} loading="lazy" />
             </div>
             <div className="absolute inset-0 bg-[#39702E] bg-opacity-80 z-10"></div>
             <div className="relative z-20 max-w-4xl mx-auto">
@@ -147,19 +150,19 @@ const WhyBioGreenPage = () => {
                   <p className="text-gray-700 leading-relaxed mb-6">
                     To maximize efficiency, we deploy a trained team of agricultural engineers equipped with the necessary tools and technology for precise application of our organic fertilizers.
                   </p>
-                  
+
                   <h4 className="text-xl font-semibold mb-4" style={{ color: '#39702E' }}>Our Expert Support Includes:</h4>
                   <ul className="space-y-3 text-gray-700">
                     {[
-                        "Instrumentation and monitoring",
-                        "Application techniques",
-                        "Proper storage and product management",
-                        "On-site demonstrations and guidance"
+                      "Instrumentation and monitoring",
+                      "Application techniques",
+                      "Proper storage and product management",
+                      "On-site demonstrations and guidance"
                     ].map(item => (
-                        <li key={item} className="flex items-start">
-                           <span className="w-2 h-2 rounded-full mt-2.5 mr-3 flex-shrink-0" style={{ backgroundColor: '#39702E' }}></span>
-                          <span><strong>{item}</strong></span>
-                        </li>
+                      <li key={item} className="flex items-start">
+                        <span className="w-2 h-2 rounded-full mt-2.5 mr-3 flex-shrink-0" style={{ backgroundColor: '#39702E' }}></span>
+                        <span><strong>{item}</strong></span>
+                      </li>
                     ))}
                   </ul>
                 </div>
@@ -170,6 +173,9 @@ const WhyBioGreenPage = () => {
                     alt="A team of agricultural engineers collaborating in a modern greenhouse."
                     fill
                     className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    quality={75}
+                    loading="lazy"
                   />
                 </div>
               </div>

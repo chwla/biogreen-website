@@ -11,6 +11,8 @@ const ExpertiseCard = ({ iconSrc, title, description }) => (
         alt={title}
         fill
         style={{ objectFit: 'contain' }}
+        sizes="80px"
+        quality={80}
       />
     </div>
     <h3 className="text-lg font-bold text-gray-900 mb-3">{title}</h3>
@@ -76,6 +78,8 @@ const Home2 = () => {
                   fill
                   style={{ objectFit: 'cover' }}
                   sizes="(max-width: 768px) 100vw, 50vw"
+                  quality={75}
+                  loading="lazy"
                 />
               </div>
             </div>

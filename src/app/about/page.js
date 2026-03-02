@@ -15,7 +15,10 @@ const AboutPage = () => {
             className="object-cover"
             style={{ objectPosition: 'center 30%' }}
             priority
-            quality={80}
+            quality={75}
+            sizes="100vw"
+            placeholder="blur"
+            blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAUH/8QAIBAAAQQBBQEBAAAAAAAAAAAAAQACAxEEBRIhMUFRYf/EABUBAQEAAAAAAAAAAAAAAAAAAAUG/8QAGREBAAIDAQAAAAAAAAAAAAAAAQACAwQR/9oADAMBAAIRAxEAPwCtp+q5OobiNxpIG7d7Wl1E+kk/VIiLfx1GNSif/9k="
           />
         </div>
         <div className="absolute inset-0 bg-black/30 z-10"></div>
@@ -50,6 +53,9 @@ const AboutPage = () => {
                   alt="Mr. Arvind Jain - Chairman"
                   fill
                   className="object-cover object-top"
+                  sizes="(max-width: 768px) 256px, 288px"
+                  quality={75}
+                  loading="lazy"
                 />
               </div>
               <p className="mt-4 text-gray-800 text-xl" style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic', fontWeight: '600' }}>Mr. Arvind Jain</p>
@@ -70,6 +76,9 @@ const AboutPage = () => {
                   alt="Bio Green agricultural operations"
                   fill
                   className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  quality={75}
+                  loading="lazy"
                 />
               </div>
             </div>
@@ -104,6 +113,8 @@ const AboutPage = () => {
                     alt="Our Vision icon"
                     fill
                     className="object-contain"
+                    sizes="64px"
+                    quality={80}
                   />
                 </div>
                 <h3 className="text-xl font-bold" style={{ color: '#39702E' }}>Our Vision</h3>
@@ -122,6 +133,8 @@ const AboutPage = () => {
                     alt="Our Mission icon"
                     fill
                     className="object-contain"
+                    sizes="64px"
+                    quality={80}
                   />
                 </div>
                 <h3 className="text-xl font-bold" style={{ color: '#39702E' }}>Our Mission</h3>
@@ -149,6 +162,8 @@ const AboutPage = () => {
                   alt="Core values icon"
                   fill
                   className="object-contain"
+                  sizes="(max-width: 768px) 160px, 208px"
+                  quality={80}
                 />
               </div>
             </div>

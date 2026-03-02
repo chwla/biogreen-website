@@ -15,6 +15,8 @@ export default function Certificates() {
                 alt="OMRI Organic Listed Certificate"
                 fill
                 style={{ objectFit: 'contain' }}
+                sizes="160px"
+                quality={80}
               />
             </div>
           </div>
@@ -26,6 +28,8 @@ export default function Certificates() {
                 alt="CUC Certificate"
                 fill
                 style={{ objectFit: 'contain' }}
+                sizes="160px"
+                quality={80}
               />
             </div>
           </div>
@@ -37,6 +41,8 @@ export default function Certificates() {
                 alt="ISO 9001 Certificate"
                 fill
                 style={{ objectFit: 'contain' }}
+                sizes="128px"
+                quality={80}
               />
             </div>
           </div>

@@ -34,7 +34,10 @@ const ContactPage = () => {
             className="object-cover"
             style={{ objectPosition: 'center 40%' }}
             priority
-            quality={80}
+            quality={75}
+            sizes="100vw"
+            placeholder="blur"
+            blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAUH/8QAIBAAAQMEAwEBAAAAAAAAAAAAAQACAwQFBhEhMUESUf/EABUBAQEAAAAAAAAAAAAAAAAAAAUG/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEQMhMf/aAAwDAQACEQMRAD8AstxW7VdRJFcbtTSwxnTmQU5aXH0bJOh+oiKsZSjZ/9k="
           />
         </div>
         <div className="absolute inset-0 bg-black/40 z-10" />

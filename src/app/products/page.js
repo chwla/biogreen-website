@@ -23,7 +23,8 @@ const ProductSection = ({
               alt={altText}
               fill
               className="object-contain"
-              sizes="(max-width: 1024px) 100vw, 40vw"
+              sizes="(max-width: 1024px) 256px, 384px"
+              quality={80}
             />
           </div>
         </div>
@@ -78,7 +79,10 @@ const ProductsPage = () => {
             className="object-cover"
             style={{ objectPosition: 'center 50%' }}
             priority
-            quality={80}
+            quality={75}
+            sizes="100vw"
+            placeholder="blur"
+            blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAMI/8QAHxAAAgMAAgMBAQAAAAAAAAAAAQIAAxEEIRIxQWFR/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAXEQEBAQEAAAAAAAAAAAAAAAABAAIR/9oADAMBAAIRAxEAPwDbXOvr4tocVljIiDcHR/SNkRKhc2mf/9k="
           />
         </div>
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10"></div>
