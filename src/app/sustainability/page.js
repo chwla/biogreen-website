@@ -1,172 +1,137 @@
-'use client';
-import { useState } from 'react';
 import Image from 'next/image';
 import React from 'react';
 
-// Reusable Feature Card Component
-const FeatureCard = ({ imageSrc, altText, title, children }) => (
-  <div className="text-center bg-gray-50 rounded-lg shadow-sm transition-shadow hover:shadow-lg h-full flex flex-col">
-    <div className="relative w-full h-40 mx-auto rounded-t-lg overflow-hidden">
-      <Image src={imageSrc} alt={altText} fill className="object-cover" />
+const IconCard = ({ iconSrc, title }) => (
+  <div className="bg-white rounded-2xl shadow-sm border border-gray-50 p-6 flex flex-col items-center text-center h-full">
+    <div className="relative w-16 h-16 mb-4">
+      <Image src={iconSrc} alt={title} fill className="object-contain" />
     </div>
-    <div className="p-6 flex-grow flex flex-col">
-        <h3 className="text-2xl font-semibold mb-3" style={{ color: '#39702E' }}>{title}</h3>
-        <p className="text-gray-600 leading-relaxed flex-grow">{children}</p>
-    </div>
+    <p className="text-xs text-gray-600 font-medium leading-relaxed">{title}</p>
   </div>
 );
 
 const SustainabilityPage = () => {
-  const [openFAQ, setOpenFAQ] = useState(null);
-
-  const faqs = [
-    { question: "What is Bio Green Fertilizer made from?", answer: "Bio Green fertilizers are 100% plant-based, produced from avocado processing waste and other renewable organic materials." },
-    { question: "How is Bio Green different from chemical fertilizers?", answer: "Unlike chemical fertilizers that degrade soil, Bio Green restores soil fertility using avocado-based organic formulations that release nutrients naturally." },
-    { question: "Are your fertilizers certified organic?", answer: "Yes. Bio Green fertilizers are certified organic and developed to meet international standards." },
-    { question: "Can Bio Green fertilizers be used for all crops?", answer: "Yes. Our avocado-based products are suitable for cereals, pulses, fruits, vegetables, and cash crops." },
-    { question: "How do your fertilizers improve soil health?", answer: "They are rich in plant-available nutrients, improve soil structure, stimulate microbes, and enhance long-term fertility." },
-    { question: "What makes Bio Green environmentally friendly?", answer: "They upcycle avocado waste, reduce landfill impact, cut emissions, and protect ecosystems." },
-    { question: "Can Bio Green fertilizers replace manure?", answer: "Yes. They are safer, more efficient, and pathogen-free compared to raw manure." },
-    { question: "Do your products help in water conservation?", answer: "Yes. They enhance soil water-holding capacity and reduce leaching." },
-    { question: "Are Bio Green fertilizers cost-effective?", answer: "Yes. They maximize nutrient efficiency and long-term soil fertility, reducing chemical dependency." },
-    { question: "Do you provide technical support?", answer: "Absolutely. Training, on-site support, and tailored guidance are integral parts of our service." },
-    { question: "Where can farmers purchase Bio Green fertilizers?", answer: "Through our distributors, cooperatives, and direct channels in Ethiopia and international markets." },
-    { question: "How does Bio Green contribute to regenerative agriculture?", answer: "By turning avocado waste into organic fertilizer, we restore soil life, sequester carbon, and support biodiversity." }
-  ];
-
-  const toggleFAQ = (index) => setOpenFAQ(openFAQ === index ? null : index);
-
   return (
     <>
       {/* Hero Section */}
-      <section className="relative h-[500px] md:h-[600px] lg:h-[700px] flex items-center justify-center text-center text-white overflow-hidden">
+      <section className="relative h-[500px] md:h-[580px] flex items-end justify-start text-white overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/photos/hero.jpeg"
-            alt="A beautiful green valley representing sustainability and a healthy planet."
+            src="/photos/sustainability_hero.jpeg"
+            alt="Regenerating Soil: Restoring Balance. Redefining Fertilizers."
             fill
             className="object-cover"
-            style={{ objectPosition: 'center 35%' }}
+            style={{ objectPosition: 'center 40%' }}
             priority
             quality={100}
           />
         </div>
-        <div className="relative z-20 px-4">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tighter" style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.8)' }}>
-            Sustainability & Regenerative Agriculture
+        <div className="absolute inset-0 bg-black/30 z-10"></div>
+        <div className="relative z-20 px-8 sm:px-12 lg:px-20 pb-14 max-w-2xl">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight" style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.7)' }}>
+            Regenerating Soil:<br />Restoring Balance.<br />Redefining Fertilizers.
           </h1>
         </div>
       </section>
 
-      {/* Main Content */}
-      <section className="py-16 md:py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
-          {/* Introduction Section */}
-          <div className="mb-20">
-            <div className="max-w-4xl mx-auto text-center">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6" style={{ color: '#39702E' }}>
-                Growing Prosperity Organically, Sustaining Life Naturally
-              </h2>
-              <p className="text-lg text-gray-700 leading-relaxed">
-                At BioGreen, we are reshaping the fertilizer value chain through green technology that converts avocado waste into high-quality organic fertilizers—ensuring farming becomes more sustainable, resilient, and regenerative.
+      {/* Beyond Fertilizers Section */}
+      <section className="py-16" style={{ backgroundColor: '#f1f7ed' }}>
+        <div className="max-w-5xl mx-auto px-4 sm:px-8">
+          <div className="rounded-3xl p-10 md:p-14 text-center" style={{ backgroundColor: '#d4e8cd' }}>
+            <h2 className="text-2xl md:text-3xl font-bold mb-4 text-gray-800">BEYOND FERTILIZERS. GROWING THE FUTURE.</h2>
+            <p className="text-gray-700 text-base mb-2">We are not just manufacturing fertilizers.</p>
+            <p className="text-gray-700 text-base">We are cultivating a sustainable future — season after season.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* From Waste to Wealth & Feeding the Future */}
+      <section className="py-8 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-8">
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* From Waste to Wealth */}
+            <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 flex flex-col items-center text-center">
+              <div className="relative w-16 h-16 mb-6">
+                <Image src="/photos/sust_icon1.png" alt="Circular Model Icon" fill className="object-contain" />
+              </div>
+              <h3 className="font-bold text-gray-800 text-lg mb-4 uppercase tracking-wider">FROM WASTE TO WEALTH: A CIRCULAR MODEL</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                Every year, tons of avocado and coffee by-products are discarded. We convert this organic biomass into high-performance, plant-based fertilizers — closing the loop between agriculture and sustainability.
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mt-16">
-              <FeatureCard imageSrc="/photos/360_F_575112680_MgbhVqfkyuCP7FchIbo8x0lhw8cfVhXR (1).png" altText="Hand holding organic fertilizer" title="Replace">
-                Replace fossil-fuel-based fertilizers with organic, plant-based alternatives.
-              </FeatureCard>
-              <FeatureCard imageSrc="/photos/KnowYourFarmerKnowTheirFarm_600x450 (1).jpg" altText="A smiling farmer in her field" title="Support">
-                Support soil health and biodiversity with certified organic products.
-              </FeatureCard>
-              <FeatureCard imageSrc="/photos/images (29).jpg" altText="A vast, clean agricultural field" title="Reduce">
-                Reduce the environmental footprint of fertilizer production and use.
-              </FeatureCard>
-              <FeatureCard imageSrc="/photos/home3_3.jpg" altText="Hands holding rich soil with a growing plant" title="Deliver">
-                Deliver high nutrient efficiency with minimal environmental losses.
-              </FeatureCard>
+            {/* Feeding the Future */}
+            <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 flex flex-col items-center text-center">
+              <div className="relative w-16 h-16 mb-6">
+                <Image src="/photos/sust_icon2.png" alt="Responsibility Icon" fill className="object-contain" />
+              </div>
+              <h3 className="font-bold text-gray-800 text-lg mb-4 uppercase tracking-wider">FEEDING THE FUTURE RESPONSIBLY</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                With the global population rising, food security must go hand-in-hand with environmental responsibility. BioGreen stands at the intersection of innovation and regeneration — delivering organic fertilizers that nurture crops while protecting the planet.
+              </p>
             </div>
           </div>
+        </div>
+      </section>
 
-          {/* Green Technology Section */}
-          <div className="relative mb-20 py-20 px-8 rounded-2xl overflow-hidden text-center text-white">
-             <div className="absolute inset-0 z-0">
-                <Image src="/photos/Gemini_Generated_Image_caomdecaomdecaom.png" alt="A collage of fresh avocados" fill className="object-cover"/>
+      {/* Harvest Image + Growing Prosperity */}
+      <section className="py-16" style={{ backgroundColor: '#d4e8cd' }}>
+        <div className="max-w-6xl mx-auto px-4 sm:px-8">
+          <div className="flex flex-col md:flex-row items-center gap-12">
+            {/* Image */}
+            <div className="md:w-2/5 w-full">
+              <div className="relative w-full h-72 md:h-96 rounded-3xl overflow-hidden shadow-lg">
+                <Image
+                  src="/photos/sustainability_harvest.jpeg"
+                  alt="Harvest supporting organic farming"
+                  fill
+                  className="object-cover"
+                />
+              </div>
             </div>
-            <div className="absolute inset-0 bg-[#39702E] bg-opacity-80 z-10"></div>
-            <div className="relative z-20 max-w-4xl mx-auto">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                Green Technology for a Better Future
+            {/* Text */}
+            <div className="md:w-3/5">
+              <h2 className="text-2xl md:text-3xl font-bold mb-6 text-gray-800 leading-tight">
+                GROWING PROSPERITY ORGANICALLY,<br /> SUSTAINING LIFE NATURALLY
               </h2>
-              <div className="text-left max-w-3xl mx-auto space-y-3 text-lg">
-                <p>• Made from locally sourced avocado by-products.</p>
-                <p>• Produced through eco-friendly processes with minimal carbon output.</p>
-                <p>• Easy to apply, highly efficient, and environmentally safe.</p>
-                <p>• Designed to restore long-term soil health, season after season.</p>
-              </div>
+              <p className="text-gray-600 text-base leading-relaxed">
+                Sustainability is not a trend — it is our foundation. We are building a circular, climate-responsive fertilizer system that transforms agricultural waste into regenerative value for the soil, the farmer, and the planet.
+              </p>
             </div>
           </div>
+        </div>
+      </section>
 
-          {/* Future Vision Section */}
-          <div className="mb-20">
-            <div className="grid md:grid-cols-2 gap-12 items-center">
-                <div className="text-center md:text-left">
-                    <h2 className="text-3xl md:text-4xl font-bold mb-6" style={{ color: '#39702E' }}>
-                        Feeding the Future Sustainably
-                    </h2>
-                    <p className="text-lg text-gray-700 leading-relaxed">
-                        With the global population rising, fertilizers remain critical for food security. The challenge is to grow responsibly. BioGreen leads this transition by offering plant-based organic fertilizers from avocado waste—creating healthier soils, stronger crops, and a greener planet.
-                    </p>
-                </div>
-                <div className="relative h-80 w-full rounded-lg overflow-hidden shadow-lg">
-                    <Image src="/photos/Photo E.jpg" alt="A person walking towards the sunrise in a field" fill className="object-cover"/>
-                </div>
-            </div>
+      {/* Supporting Farmers & Communities */}
+      <section className="py-16 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-8">
+          <h2 className="text-2xl font-bold text-center mb-12 text-gray-800">Supporting Farmers &amp; Communities</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+            <IconCard
+              iconSrc="/photos/sust_icon3.png"
+              title="Promoting certified organic and regenerative farming practices"
+            />
+            <IconCard
+              iconSrc="/photos/sust_icon4.png"
+              title="Supporting smallholder and home growers with sustainable input solutions"
+            />
+            <IconCard
+              iconSrc="/photos/sust_icon5.png"
+              title="Crafted in Ethiopia from upcycled avocado and coffee by-products"
+            />
+            <IconCard
+              iconSrc="/photos/sust_icon6.png"
+              title="Converting nutrient-rich waste into certified organic fertilizers"
+            />
+            <IconCard
+              iconSrc="/photos/sust_icon7.png"
+              title="Empowering a majority-women workforce through fair employment and skill development"
+            />
+            <IconCard
+              iconSrc="/photos/sust_icon8.png"
+              title="Strengthening long-term agricultural resilience and rural livelihoods"
+            />
           </div>
-
-          {/* FAQ Section */}
-          <div className="bg-gray-50 py-16 px-6 sm:px-8 rounded-2xl">
-            <div className="max-w-4xl mx-auto">
-              <div className="text-center mb-12">
-                <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{ color: '#39702E' }}>
-                  Frequently Asked Questions
-                </h2>
-                <p className="text-lg text-gray-600">
-                  Everything you need to know about BioGreen fertilizers.
-                </p>
-              </div>
-
-              <div className="grid md:grid-cols-2 gap-x-8 gap-y-4">
-                  {faqs.map((faq, index) => (
-                    <div key={index} className="bg-white rounded-lg shadow-sm border border-gray-200">
-                      <button
-                        className="w-full text-left p-5 flex justify-between items-center hover:bg-gray-50 transition-colors"
-                        onClick={() => toggleFAQ(index)}
-                      >
-                        <h3 className="text-md font-semibold text-gray-900 pr-4">
-                          {faq.question}
-                        </h3>
-                        <span className={`text-2xl font-light transition-transform transform ${openFAQ === index ? 'rotate-45' : ''}`} style={{ color: '#39702E' }}>
-                          +
-                        </span>
-                      </button>
-                      
-                      {openFAQ === index && (
-                        <div className="px-5 pb-5">
-                          <div className="pt-3 border-t border-gray-100">
-                            <p className="text-gray-700 leading-relaxed mt-2">
-                              {faq.answer}
-                            </p>
-                          </div>
-                        </div>
-                      )}
-                    </div>
-                  ))}
-              </div>
-            </div>
-          </div>
-
         </div>
       </section>
     </>

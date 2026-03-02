@@ -3,108 +3,79 @@ import React from 'react';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 
+const ExpertiseCard = ({ iconSrc, title, description }) => (
+  <div className="bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col items-center text-center p-8 h-full">
+    <div className="w-20 h-20 mb-5 relative flex items-center justify-center">
+      <Image
+        src={iconSrc}
+        alt={title}
+        fill
+        style={{ objectFit: 'contain' }}
+      />
+    </div>
+    <h3 className="text-lg font-bold text-gray-900 mb-3">{title}</h3>
+    <p className="text-sm text-gray-600 leading-relaxed font-medium">{description}</p>
+  </div>
+);
+
 const Home2 = () => {
   const router = useRouter();
 
-  const handleReadMore = () => {
-    router.push('/about');
-  };
-
   return (
     <div className="bg-white">
-      {/* --- About Section --- */}
-      <section className="bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
-          <div className="flex flex-col md:flex-row items-center gap-12 md:gap-16">
-            {/* Left Content */}
-            <div className="md:w-1/2 text-center md:text-left">
-              <p className="text-gray-700 text-base leading-relaxed mb-6">
-                Bio Green stands at the forefront of agricultural innovation, driven by a vision for a sustainable and regenerative future. With a strong presence in Ethiopia and decades of expertise in soil science and plant nutrition, we have built lasting partnerships with farmers and customers who trust us to deliver solutions that truly make a difference.
-              </p>
-
-              <p className="text-gray-700 text-base leading-relaxed mb-6">
-                To meet the growing demand for sustainable agricultural inputs, Bio Green established one of East Africa&apos;s largest organic fertilizer facilities in <strong>Jimma, Ethiopia</strong>, spanning <strong>50,000 square meters</strong>. This facility enables large-scale production of premium organic fertilizers made from <strong>avocado by-products</strong>.
-              </p>
-
-              <p className="text-gray-700 text-base leading-relaxed mb-8">
-                Our dedicated <strong>R&D teams in India and Ethiopia</strong> continuously innovate to create plant-based, eco-friendly fertilizers tailored to diverse soils and climates, supporting organic farms and driving long-term agricultural productivity.
-              </p>
-
-              <button
-                className="text-white px-8 py-3 text-sm font-medium transition-colors duration-200 shadow-md hover:shadow-lg"
-                style={{ backgroundColor: '#39702E' }}
-                onMouseEnter={(e) => e.target.style.backgroundColor = '#2d5722'}
-                onMouseLeave={(e) => e.target.style.backgroundColor = '#39702E'}
-                onClick={handleReadMore}
-              >
-                READ MORE
-              </button>
-            </div>
-
-            {/* Right Image */}
-            <div className="md:w-1/2 w-full flex justify-center">
-              <div className="relative w-full max-w-md aspect-[3/4] rounded-lg overflow-hidden shadow-lg">
-                <Image
-                  src="/photos/new_img.jpeg"
-                  alt="Farmer with tractor in agricultural field"
-                  fill
-                  style={{ objectFit: 'cover' }}
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                />
-              </div>
-            </div>
+      {/* --- Our Expertise Section --- */}
+      <section className="py-20 px-6 sm:px-12 bg-[#f0f7ee]">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-4xl font-bold text-center mb-16 text-gray-900" style={{ fontFamily: 'Georgia, serif' }}>Our Expertise</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            <ExpertiseCard
+              iconSrc="/photos/expertise_tree.png"
+              title="Advanced Plant Nutrition"
+              description="High-performance plant-based fertilizers optimized for organic systems."
+            />
+            <ExpertiseCard
+              iconSrc="/photos/expertise_chart.png"
+              title="Grower Confidence"
+              description="Supporting higher yields and long-term soil vitality."
+            />
+            <ExpertiseCard
+              iconSrc="/photos/expertise_shield.png"
+              title="Science & Integrity"
+              description="Formulated through rigorous research and field testing."
+            />
+            <ExpertiseCard
+              iconSrc="/photos/expertise_partnership.png"
+              title="Technical Partnership"
+              description="Comprehensive agronomic support and expert guidance."
+            />
           </div>
         </div>
       </section>
 
-      {/* --- CEO Message Section --- */}
-      <section className="bg-gray-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
-          {/* On mobile, CEO image is on top. On desktop, it's on the right. */}
-          <div className="flex flex-col-reverse md:flex-row items-center gap-12 md:gap-16">
-            {/* Left Content */}
-            <div className="md:w-1/2 text-center md:text-left">
-              <h2 className="text-3xl lg:text-4xl font-light mb-8 uppercase tracking-wide" style={{ color: '#39702E' }}>
-                A Message from Our Chairman
+      {/* WHAT WE DO? Section */}
+      <section className="py-20 px-6 sm:px-12 bg-white border-t border-gray-100">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex flex-col md:flex-row items-center gap-16">
+            {/* Left Text */}
+            <div className="md:w-1/2 text-left">
+              <p className="text-xs font-bold tracking-widest text-[#39702E] uppercase mb-4">WHAT WE DO ?</p>
+              <h2 className="text-4xl lg:text-5xl font-bold mb-8 leading-tight text-gray-900" style={{ fontFamily: 'Georgia, serif' }}>
+                Advancing Organic Farming Through Innovation
               </h2>
-
-              <p className="text-gray-700 text-base leading-relaxed mb-6">
-                &ldquo;At <strong>Bio Green Fertilizer</strong>, our mission is to transform agriculture with sustainable, future-ready solutions. We are committed to replacing harmful chemical inputs with safe, plant-based fertilizers that nurture the soil and safeguard our planet for future generations.&rdquo;
+              <p className="text-gray-700 text-xl leading-relaxed mb-6 font-medium">
+                We manufacture premium plant-based organic fertilizers derived from avocado and coffee by-products, transforming agricultural waste into sustainable farming solutions. Through circular agriculture, we convert natural residues into valuable plant nutrition — completing the cycle from harvest back to soil. Our mission is to support modern, responsible farming with science-driven, environmentally conscious solutions.
               </p>
-
-              <p className="text-gray-700 text-base leading-relaxed mb-6">
-                &ldquo;With <strong>innovation and integrity</strong> at our core, we are building a greener tomorrow for farmers and communities worldwide. Together, we are shaping an agricultural future that is resilient, regenerative, and truly sustainable.&rdquo;
-              </p>
-
-              <div className="mt-8 mb-8 text-center md:text-left">
-                <p className="text-gray-800 text-lg font-semibold">
-                  Mr. Arvind Jain
-                </p>
-                <p className="text-gray-600 text-base">
-                  Chairman
-                </p>
-              </div>
-
-              <button
-                className="text-white px-8 py-3 text-sm font-medium transition-colors duration-200 shadow-md hover:shadow-lg"
-                style={{ backgroundColor: '#39702E' }}
-                onMouseEnter={(e) => e.target.style.backgroundColor = '#2d5722'}
-                onMouseLeave={(e) => e.target.style.backgroundColor = '#39702E'}
-                onClick={handleReadMore}
-              >
-                READ MORE
-              </button>
             </div>
 
-            {/* Right CEO Image - INCREASED SIZE */}
-            <div className="md:w-1/2 flex justify-center">
-              <div className="relative w-80 h-80 sm:w-96 sm:h-96 md:w-[450px] md:h-[450px] lg:w-[500px] lg:h-[500px] rounded-full overflow-hidden shadow-xl">
+            {/* Right Image */}
+            <div className="md:w-1/2 w-full flex justify-center">
+              <div className="relative w-full aspect-video rounded-2xl overflow-hidden shadow-2xl">
                 <Image
-                  src="/photos/ceo.png"
-                  alt="Mr. Arvind Jain - Chairman"
+                  src="/photos/african_man_harvesting.jpg"
+                  alt="Farming landscape showing organic agriculture"
                   fill
-                  style={{ objectFit: 'cover', objectPosition: 'center' }}
-                  sizes="(max-width: 640px) 320px, (max-width: 768px) 384px, (max-width: 1024px) 450px, 500px"
+                  style={{ objectFit: 'cover' }}
+                  sizes="(max-width: 768px) 100vw, 50vw"
                 />
               </div>
             </div>

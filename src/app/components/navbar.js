@@ -41,19 +41,13 @@ const Header = () => {
               href="/about" 
               className="text-gray-700 hover:text-green-600 font-normal text-sm xl:text-base tracking-wide transition-colors duration-200 whitespace-nowrap"
             >
-              ABOUT BIOGREEN
+              ABOUT US
             </Link>
             <Link 
               href="/products" 
               className="text-gray-700 hover:text-green-600 font-normal text-sm xl:text-base tracking-wide transition-colors duration-200 whitespace-nowrap"
             >
               PRODUCTS
-            </Link>
-            <Link 
-              href="/why-biogreen" 
-              className="text-gray-700 hover:text-green-600 font-normal text-sm xl:text-base tracking-wide transition-colors duration-200 whitespace-nowrap"
-            >
-              WHY BIOGREEN
             </Link>
             <Link 
               href="/sustainability" 
@@ -78,7 +72,6 @@ const Header = () => {
               aria-label="Toggle mobile menu"
               aria-expanded={isMobileMenuOpen}
             >
-              {/* Animated hamburger icon */}
               <div className="w-6 h-6 relative">
                 <span 
                   className={`absolute block w-6 h-0.5 bg-current transform transition-all duration-300 ease-in-out ${
@@ -122,7 +115,7 @@ const Header = () => {
             onClick={closeMobileMenu}
             className="block px-4 py-3 text-gray-700 hover:text-green-600 hover:bg-green-50 font-normal tracking-wide transition-colors duration-200 rounded-md"
           >
-            ABOUT BIOGREEN
+            ABOUT US
           </Link>
           <Link 
             href="/products" 
@@ -130,13 +123,6 @@ const Header = () => {
             className="block px-4 py-3 text-gray-700 hover:text-green-600 hover:bg-green-50 font-normal tracking-wide transition-colors duration-200 rounded-md"
           >
             PRODUCTS
-          </Link>
-          <Link 
-            href="/why-biogreen" 
-            onClick={closeMobileMenu}
-            className="block px-4 py-3 text-gray-700 hover:text-green-600 hover:bg-green-50 font-normal tracking-wide transition-colors duration-200 rounded-md"
-          >
-            WHY BIOGREEN
           </Link>
           <Link 
             href="/sustainability" 

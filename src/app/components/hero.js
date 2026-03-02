@@ -3,9 +3,9 @@ import Image from 'next/image';
 const Hero = () => {
   return (
     <div className="relative w-full overflow-hidden" style={{ height: 'calc(100vh - 5rem)' }}>
-      <Image 
-        src="/photos/new_hero.jpeg?ver=2026" 
-        alt="BioGreen sustainable fertilizer hero banner"
+      <Image
+        src="/photos/home_hero.jpg"
+        alt="Sustainable plant based fertilizers designed to regenerate soil and support organic farming"
         fill
         unoptimized
         className="object-cover"
@@ -14,30 +14,19 @@ const Hero = () => {
         sizes="100vw"
         quality={100}
       />
-      
-      <div className="absolute inset-0 bg-black/30"></div>
-      <div className="absolute inset-0 z-10 flex items-center justify-center pt-8 md:pt-0">
-        <div className="text-center text-white px-4 max-w-6xl">
-          <h1 
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-extrabold mb-4 md:mb-6 tracking-wide uppercase" 
-            style={{ 
-              fontFamily: 'Arial, sans-serif',
-              textShadow: '2px 2px 8px rgba(0,0,0,0.8)',
-              letterSpacing: '0.1em'
+
+      <div className="absolute inset-0 bg-black/20"></div>
+      <div className="absolute inset-0 z-10 flex items-end justify-start pb-16 md:pb-24 lg:pb-32">
+        <div className="text-white px-8 sm:px-12 lg:px-20 max-w-3xl">
+          <h1
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight"
+            style={{
+              fontFamily: 'Georgia, serif',
+              textShadow: '1px 1px 6px rgba(0,0,0,0.6)',
             }}
           >
-            BIO GREEN
+            Sustainable, plant based fertilizers designed to regenerate soil and support organic farming.
           </h1>
-          <p 
-            className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold tracking-widest uppercase leading-tight" 
-            style={{ 
-              fontFamily: 'Arial, sans-serif',
-              textShadow: '2px 2px 8px rgba(0,0,0,0.8)',
-              letterSpacing: '0.15em'
-            }}
-          >
-            ADVANCING ORGANIC AGRICULTURE THROUGH SCIENCE, SUSTAINABILITY AND SINCERITY 
-          </p>
         </div>
       </div>
     </div>

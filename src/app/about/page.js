@@ -1,122 +1,155 @@
 'use client';
 
-import { useState } from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
 
-const PresidentMessagePage = () => {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-  const pathname = usePathname();
-
-  const menuItems = [
-    { name: "Our Chairman's Message", path: '/about' },
-    { name: 'Our History', path: '/about/history' },
-    { name: 'Who Are We?', path: '/about/who-we-are' },
-    { name: 'What Do We Do?', path: '/about/what-we-do' },
-    { name: 'How Do We Do It?', path: '/about/how-do-we-do-it' },
-    { name: 'Achievements', path: '/about/achievements' }
-  ];
-
+const AboutPage = () => {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative h-[500px] md:h-[600px] lg:h-[700px] flex items-center justify-center text-center text-white overflow-hidden">
+      <section className="relative h-[500px] md:h-[600px] flex items-end justify-start text-white overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/photos/steptodown.com551422.jpg"
-            alt="About BioGreen - Sustainable Agriculture Transformation"
+            src="/photos/about_cover.jpg"
+            alt="Restoring the Earth with Regenerative Organic Farming"
             fill
             className="object-cover"
-            style={{ objectPosition: 'center 40%' }}
+            style={{ objectPosition: 'center 30%' }}
             priority
             quality={100}
           />
         </div>
-        <div className="relative z-20 px-4">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tighter" style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.8)' }}>
-            Message from Our Chairman
+        <div className="absolute inset-0 bg-black/30 z-10"></div>
+        <div className="relative z-20 px-8 sm:px-12 lg:px-20 pb-12 max-w-3xl">
+          <h1
+            className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight"
+            style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.7)' }}
+          >
+            Restoring the Earth with Regenerative Organic Farming
           </h1>
         </div>
       </section>
 
-      {/* Main Content Section */}
-      <section className="py-12 md:py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Mobile Menu Toggle */}
-          <div className="lg:hidden mb-8">
-            <button
-              onClick={() => setIsSidebarOpen(!isSidebarOpen)}
-              className="w-full text-white py-3 px-4 rounded-md font-semibold uppercase tracking-wider text-sm flex items-center justify-between shadow-md"
-              style={{backgroundColor: '#39702E'}}
-            >
-              <span>About Us Menu</span>
-              <svg className={`w-5 h-5 transform transition-transform ${isSidebarOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
-            </button>
+      {/* Chairman's Message Section */}
+      <section className="py-16" style={{ backgroundColor: '#d4e8cd' }}>
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col md:flex-row items-start gap-12">
+            {/* Quote Block */}
+            <div className="md:w-3/5">
+              <div className="bg-white rounded-2xl shadow-md p-8">
+                <div className="text-5xl font-serif text-gray-300 leading-none mb-4">&ldquo;</div>
+                <p className="text-gray-700 text-base leading-relaxed mb-6">
+                  At Bio Green Fertilizer, our vision goes beyond organic production — we are committed to Regenerative Organic agriculture that restores soil health, strengthens ecosystems, and secures the future of farming. By converting avocado by-products into plant-based fertilizers, we replace harmful chemical inputs while actively regenerating the land. Our mission is simple: nourish the soil, empower farmers, and protect the planet for future generations. With innovation, integrity, and responsibility at our core, we are building a resilient and sustainable agricultural future.
+                </p>
+              </div>
+            </div>
+            {/* Chairman Image */}
+            <div className="md:w-2/5 flex flex-col items-center">
+              <div className="relative w-64 h-64 md:w-72 md:h-72 rounded-full overflow-hidden shadow-xl">
+                <Image
+                  src="/photos/mr_arvind_jain.jpg"
+                  alt="Mr. Arvind Jain - Chairman"
+                  fill
+                  className="object-cover object-top"
+                />
+              </div>
+              <p className="mt-4 text-gray-800 text-xl" style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic', fontWeight: '600' }}>Mr. Arvind Jain</p>
+            </div>
           </div>
+        </div>
+      </section>
 
-          <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start">
-            {/* Left Sidebar Navigation */}
-            <aside className={`
-              w-full lg:w-72 lg:flex-shrink-0
-              ${isSidebarOpen ? 'block' : 'hidden lg:block'}
-            `}>
-              <div className="bg-white shadow-lg rounded-md border border-gray-200 p-2">
-                {menuItems.map((item) => (
-                  <Link
-                    key={item.name}
-                    href={item.path}
-                    onClick={() => setIsSidebarOpen(false)}
-                    className={`
-                      block w-full text-left py-3 px-4 font-bold text-sm uppercase tracking-wider rounded-md transition-colors duration-200
-                      ${pathname === item.path 
-                        ? 'bg-[#39702E] text-white' 
-                        : 'text-gray-700 hover:bg-green-50 hover:text-[#39702E]'
-                      }
-                    `}
-                  >
-                    {item.name}
-                  </Link>
-                ))}
+      {/* WHO WE ARE Section */}
+      <section className="py-0 overflow-hidden" style={{ backgroundColor: '#eef6e9' }}>
+        <div className="w-full">
+          <div className="flex flex-col md:flex-row items-stretch">
+            {/* Left Image - Full width of left area */}
+            <div className="md:w-1/2 w-full">
+              <div className="relative w-full h-[400px] md:h-[600px]">
+                <Image
+                  src="/photos/about_second.jpg"
+                  alt="Bio Green agricultural operations"
+                  fill
+                  className="object-cover"
+                />
               </div>
-            </aside>
+            </div>
+            {/* Right Content - Centered vertically and padded */}
+            <div className="md:w-1/2 flex items-center bg-[#eef6e9]">
+              <div className="px-8 sm:px-12 md:pl-16 lg:pl-24 py-12 md:py-16 max-w-2xl">
+                <h2 className="text-3xl md:text-4xl font-bold mb-6" style={{ color: '#39702E' }}>WHO WE ARE ?</h2>
+                <div className="space-y-6">
+                  <p className="text-gray-700 text-lg leading-relaxed">
+                    Bio Green is an agricultural solutions company advancing organic and regenerative farming. With strong expertise in soil science and plant nutrition, we deliver practical, sustainable solutions tailored to modern farming needs.
+                  </p>
+                  <p className="text-gray-700 text-lg leading-relaxed">
+                    Our operations are based in Jimma, Ethiopia; at one of East Africa&apos;s largest organic fertilizer facilities spanning 50,000 square meters. This advanced production center enables large-scale manufacturing of high-quality, plant-based fertilizers for regional and international markets.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-            {/* Right Content Area */}
-            <div className="flex-1 w-full bg-white p-6 sm:p-8 lg:p-10 rounded-lg shadow-lg border border-gray-200">
-              <div className="text-center mb-10">
-                <h2 className="text-3xl lg:text-4xl font-bold tracking-tight"
-                    style={{color: '#39702E'}}>
-                  A Message from Our Chairman
-                </h2>
-              </div>
-              
-              <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed">
-                <div className="relative w-48 h-48 sm:w-64 sm:h-64 md:float-right my-4 sm:ml-8 rounded-full overflow-hidden shadow-xl border-4 border-[#39702E]">
+      {/* Our Vision & Mission Section */}
+      <section className="py-16" style={{ backgroundColor: '#d4e8cd' }}>
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-2 gap-12">
+            {/* Our Vision */}
+            <div className="bg-white rounded-2xl shadow-md p-8 flex flex-col items-start gap-6">
+              <div className="flex items-center gap-4">
+                <div className="relative w-16 h-16 flex-shrink-0">
                   <Image
-                    src="/photos/ceo.png"
-                    alt="Mr. Arvind Jain, Chairman"
+                    src="/photos/icon_vision.png"
+                    alt="Our Vision icon"
                     fill
-                    className="object-cover"
+                    className="object-contain"
                   />
                 </div>
-                
-                <p>
-                  At <strong>Bio Green Fertilizer</strong>, our mission is clear—to transform agriculture with sustainable, future-ready solutions. We are committed to replacing harmful, chemical-based inputs with safe, effective, plant-based fertilizers derived from avocado by-products. These solutions not only nurture the soil but also enhance productivity while safeguarding our planet for future generations.
-                </p>
-                
-                <p>
-                  With <strong>innovation and integrity</strong> at the heart of everything we do, Bio Green is building a greener tomorrow for farmers and communities across the world. Together, we are shaping agriculture that is resilient, regenerative, and truly sustainable.
-                </p>
+                <h3 className="text-xl font-bold" style={{ color: '#39702E' }}>Our Vision</h3>
+              </div>
+              <p className="text-gray-600 text-base leading-relaxed">
+                We envision a world where agriculture is productive, sustainable, and regenerative—restoring soils, empowering farmers, and protecting the planet for generations to come.
+              </p>
+            </div>
 
-                {/* Signature */}
-                <div className="clear-both pt-6">
-                  <p className="text-xl font-semibold mb-1" style={{ color: '#39702E' }}>
-                    — Mr. Arvind Jain
-                  </p>
-                  <p className="text-gray-600 italic">
-                    Chairman
-                  </p>
+            {/* Our Mission */}
+            <div className="bg-white rounded-2xl shadow-md p-8 flex flex-col items-start gap-6">
+              <div className="flex items-center gap-4">
+                <div className="relative w-16 h-16 flex-shrink-0">
+                  <Image
+                    src="/photos/icon_mission.png"
+                    alt="Our Mission icon"
+                    fill
+                    className="object-contain"
+                  />
                 </div>
+                <h3 className="text-xl font-bold" style={{ color: '#39702E' }}>Our Mission</h3>
+              </div>
+              <p className="text-gray-600 text-base leading-relaxed">
+                Our mission is to nourish the world organically by transforming natural by-products into high-quality plant-based fertilizers that enrich soil health, increase yields, and support regenerative farming while reducing chemical dependency.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Our Core Values Section */}
+      <section className="py-16 px-4 sm:px-8" style={{ backgroundColor: '#f1f7ed' }}>
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl font-bold text-center mb-10 text-gray-800">Our Core Values</h2>
+          <div className="bg-white rounded-2xl shadow-md p-10 max-w-3xl mx-auto text-center">
+            <p className="text-gray-600 text-base leading-relaxed mb-8">
+              At Bio Green, our values are rooted in sustainability, innovation, and integrity. Bio put farmers at the heart of everything we do, foster collaboration with communities, and uphold our responsibility as stewards of the land—ensuring agriculture not only thrives today but regenerates and sustains fertility for generations to come.
+            </p>
+            <div className="flex justify-center">
+              <div className="relative w-40 h-40 md:w-52 md:h-52">
+                <Image
+                  src="/photos/icon_corevalue.png"
+                  alt="Core values icon"
+                  fill
+                  className="object-contain"
+                />
               </div>
             </div>
           </div>
@@ -126,4 +159,4 @@ const PresidentMessagePage = () => {
   );
 };
 
-export default PresidentMessagePage;
+export default AboutPage;
