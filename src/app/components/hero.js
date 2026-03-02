@@ -7,12 +7,11 @@ const Hero = () => {
         src="/photos/home_hero.jpg"
         alt="Sustainable plant based fertilizers designed to regenerate soil and support organic farming"
         fill
-        unoptimized
         className="object-cover"
         style={{ objectPosition: 'center 40%' }}
         priority
         sizes="100vw"
-        quality={100}
+        quality={80}
       />
 
       <div className="absolute inset-0 bg-black/20"></div>

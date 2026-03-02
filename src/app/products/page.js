@@ -78,7 +78,7 @@ const ProductsPage = () => {
             className="object-cover"
             style={{ objectPosition: 'center 50%' }}
             priority
-            quality={100}
+            quality={80}
           />
         </div>
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10"></div>

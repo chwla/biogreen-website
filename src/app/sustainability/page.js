@@ -23,7 +23,7 @@ const SustainabilityPage = () => {
             className="object-cover"
             style={{ objectPosition: 'center 40%' }}
             priority
-            quality={100}
+            quality={80}
           />
         </div>
         <div className="absolute inset-0 bg-black/30 z-10"></div>

@@ -34,7 +34,7 @@ const ContactPage = () => {
             className="object-cover"
             style={{ objectPosition: 'center 40%' }}
             priority
-            quality={100}
+            quality={80}
           />
         </div>
         <div className="absolute inset-0 bg-black/40 z-10" />
