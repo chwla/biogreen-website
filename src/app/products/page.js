@@ -17,16 +17,16 @@ const ProductSection = ({
       <div className={`flex flex-col ${reverse ? 'lg:flex-row-reverse' : 'lg:flex-row'} items-start gap-10 md:gap-16`}>
         {/* Product Image */}
         <div className="lg:w-5/12 w-full flex justify-center">
-          <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96">
-            <Image
-              src={imageSrc}
-              alt={altText}
-              fill
-              className="object-contain"
-              sizes="(max-width: 1024px) 256px, 384px"
-              quality={80}
-            />
-          </div>
+          <Image
+            src={imageSrc}
+            alt={altText}
+            width={384}
+            height={384}
+            className="object-contain"
+            style={{ borderRadius: '1rem', width: 'auto', height: 'auto', maxWidth: '100%', maxHeight: '384px' }}
+            sizes="(max-width: 768px) 256px, (max-width: 1024px) 320px, 384px"
+            quality={80}
+          />
         </div>
 
         <div className="lg:w-7/12 w-full">
