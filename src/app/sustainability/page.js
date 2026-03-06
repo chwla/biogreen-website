@@ -3,10 +3,10 @@ import React from 'react';
 
 const IconCard = ({ iconSrc, title }) => (
   <div className="bg-white rounded-2xl shadow-sm border border-gray-50 p-6 flex flex-col items-center text-center h-full">
-    <div className="relative w-16 h-16 mb-4">
-      <Image src={iconSrc} alt={title} fill className="object-contain" sizes="64px" quality={80} />
+    <div className="relative w-24 h-24 mb-4">
+      <Image src={iconSrc} alt={title} fill className="object-contain" sizes="96px" quality={80} />
     </div>
-    <p className="text-xs text-gray-600 font-medium leading-relaxed">{title}</p>
+    <p className="text-base text-gray-600 font-medium leading-relaxed">{title}</p>
   </div>
 );
 
@@ -41,9 +41,9 @@ const SustainabilityPage = () => {
       <section className="py-16" style={{ backgroundColor: '#f1f7ed' }}>
         <div className="max-w-5xl mx-auto px-4 sm:px-8">
           <div className="rounded-3xl p-10 md:p-14 text-center" style={{ backgroundColor: '#d4e8cd' }}>
-            <h2 className="text-2xl md:text-3xl font-bold mb-4 text-gray-800">BEYOND FERTILIZERS. GROWING THE FUTURE.</h2>
-            <p className="text-gray-700 text-base mb-2">We are not just manufacturing fertilizers.</p>
-            <p className="text-gray-700 text-base">We are cultivating a sustainable future — season after season.</p>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-800">BEYOND FERTILIZERS. GROWING THE FUTURE.</h2>
+            <p className="text-gray-700 text-lg mb-2">We are not just manufacturing fertilizers.</p>
+            <p className="text-gray-700 text-lg">We are cultivating a sustainable future — season after season.</p>
           </div>
         </div>
       </section>
@@ -54,22 +54,22 @@ const SustainabilityPage = () => {
           <div className="grid md:grid-cols-2 gap-8">
             {/* From Waste to Wealth */}
             <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 flex flex-col items-center text-center">
-              <div className="relative w-16 h-16 mb-6">
-                <Image src="/photos/sust_icon1.png" alt="Circular Model Icon" fill className="object-contain" sizes="64px" quality={80} />
+              <div className="relative w-24 h-24 mb-6">
+                <Image src="/photos/sust_icon1.png" alt="Circular Model Icon" fill className="object-contain" sizes="96px" quality={80} />
               </div>
-              <h3 className="font-bold text-gray-800 text-lg mb-4 uppercase tracking-wider">FROM WASTE TO WEALTH: A CIRCULAR MODEL</h3>
-              <p className="text-gray-600 text-sm leading-relaxed">
+              <h3 className="font-bold text-gray-800 text-xl mb-4 uppercase tracking-wider">FROM WASTE TO WEALTH: A CIRCULAR MODEL</h3>
+              <p className="text-gray-600 text-base leading-relaxed">
                 Every year, tons of avocado and coffee by-products are discarded. We convert this organic biomass into high-performance, plant-based fertilizers — closing the loop between agriculture and sustainability.
               </p>
             </div>
 
             {/* Feeding the Future */}
             <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 flex flex-col items-center text-center">
-              <div className="relative w-16 h-16 mb-6">
-                <Image src="/photos/sust_icon2.png" alt="Responsibility Icon" fill className="object-contain" sizes="64px" quality={80} />
+              <div className="relative w-24 h-24 mb-6">
+                <Image src="/photos/sust_icon2.png" alt="Responsibility Icon" fill className="object-contain" sizes="96px" quality={80} />
               </div>
-              <h3 className="font-bold text-gray-800 text-lg mb-4 uppercase tracking-wider">FEEDING THE FUTURE RESPONSIBLY</h3>
-              <p className="text-gray-600 text-sm leading-relaxed">
+              <h3 className="font-bold text-gray-800 text-xl mb-4 uppercase tracking-wider">FEEDING THE FUTURE RESPONSIBLY</h3>
+              <p className="text-gray-600 text-base leading-relaxed">
                 With the global population rising, food security must go hand-in-hand with environmental responsibility. BioGreen stands at the intersection of innovation and regeneration — delivering organic fertilizers that nurture crops while protecting the planet.
               </p>
             </div>
@@ -97,10 +97,10 @@ const SustainabilityPage = () => {
             </div>
             {/* Text */}
             <div className="md:w-3/5">
-              <h2 className="text-2xl md:text-3xl font-bold mb-6 text-gray-800 leading-tight">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-800 leading-tight">
                 GROWING PROSPERITY ORGANICALLY,<br /> SUSTAINING LIFE NATURALLY
               </h2>
-              <p className="text-gray-600 text-base leading-relaxed">
+              <p className="text-gray-600 text-lg leading-relaxed">
                 Sustainability is not a trend — it is our foundation. We are building a circular, climate-responsive fertilizer system that transforms agricultural waste into regenerative value for the soil, the farmer, and the planet.
               </p>
             </div>
@@ -111,7 +111,7 @@ const SustainabilityPage = () => {
       {/* Supporting Farmers & Communities */}
       <section className="py-16 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-8">
-          <h2 className="text-2xl font-bold text-center mb-12 text-gray-800">Supporting Farmers &amp; Communities</h2>
+          <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">Supporting Farmers &amp; Communities</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
             <IconCard
               iconSrc="/photos/sust_icon3.png"

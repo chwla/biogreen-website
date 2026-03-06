@@ -15,8 +15,8 @@ const ExpertiseCard = ({ iconSrc, title, description }) => (
         quality={80}
       />
     </div>
-    <h3 className="text-lg font-bold text-gray-900 mb-3">{title}</h3>
-    <p className="text-sm text-gray-600 leading-relaxed font-medium">{description}</p>
+    <h3 className="text-xl font-bold text-gray-900 mb-3">{title}</h3>
+    <p className="text-base text-gray-600 leading-relaxed font-medium">{description}</p>
   </div>
 );
 
@@ -28,7 +28,7 @@ const Home2 = () => {
       {/* --- Our Expertise Section --- */}
       <section className="py-20 px-6 sm:px-12 bg-[#f0f7ee]">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-16 text-gray-900" style={{ fontFamily: 'Georgia, serif' }}>Our Expertise</h2>
+          <h2 className="text-5xl font-bold text-center mb-16 text-gray-900" style={{ fontFamily: 'Georgia, serif' }}>Our Expertise</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             <ExpertiseCard
               iconSrc="/photos/expertise_tree.png"
@@ -60,8 +60,8 @@ const Home2 = () => {
           <div className="flex flex-col md:flex-row items-center gap-16">
             {/* Left Text */}
             <div className="md:w-1/2 text-left">
-              <p className="text-xs font-bold tracking-widest text-[#39702E] uppercase mb-4">WHAT WE DO ?</p>
-              <h2 className="text-4xl lg:text-5xl font-bold mb-8 leading-tight text-gray-900" style={{ fontFamily: 'Georgia, serif' }}>
+              <p className="text-2xl font-extrabold tracking-widest text-[#39702E] uppercase mb-4">WHAT WE DO ?</p>
+              <h2 className="text-5xl lg:text-6xl font-bold mb-8 leading-tight text-gray-900" style={{ fontFamily: 'Georgia, serif' }}>
                 Advancing Organic Farming Through Innovation
               </h2>
               <p className="text-gray-700 text-xl leading-relaxed mb-6 font-medium">

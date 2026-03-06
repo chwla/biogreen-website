@@ -70,7 +70,9 @@ const ContactPage = () => {
                 </svg>
               </div>
               <h3 className="font-semibold text-gray-800 text-base">Phone</h3>
-              <p className="text-sm text-gray-600">+20 95 500 0699</p>
+              <div className="text-sm text-gray-600 space-y-1">
+                <p><span className="font-medium text-gray-700"></span> +251 95 500 0009</p>
+              </div>
             </div>
 
             {/* Email */}
@@ -105,89 +107,6 @@ const ContactPage = () => {
               </p>
             </div>
 
-          </div>
-        </div>
-      </section>
-
-      {/* Contact Form */}
-      <section className="py-12 bg-gray-50">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-white rounded-lg shadow-sm border border-gray-100 p-8 md:p-12">
-            <h2 className="text-2xl font-bold text-center mb-8 text-gray-800">Send Us a Message</h2>
-
-            {submitted ? (
-              <div className="text-center py-8">
-                <p className="text-lg font-semibold" style={{ color: '#39702E' }}>
-                  Thank you! Your message has been sent.
-                </p>
-                <p className="text-gray-500 mt-2 text-sm">We&apos;ll get back to you as soon as possible.</p>
-              </div>
-            ) : (
-              <form onSubmit={handleSubmit} className="space-y-5">
-                {/* Name + Email row */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                  <div>
-                    <input
-                      type="text"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      placeholder="Your Name"
-                      required
-                      className="w-full border border-gray-300 rounded-md px-4 py-3 text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-green-600 focus:border-transparent"
-                    />
-                  </div>
-                  <div>
-                    <input
-                      type="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      placeholder="Your Email"
-                      required
-                      className="w-full border border-gray-300 rounded-md px-4 py-3 text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-green-600 focus:border-transparent"
-                    />
-                  </div>
-                </div>
-
-                {/* Subject */}
-                <div>
-                  <input
-                    type="text"
-                    name="subject"
-                    value={formData.subject}
-                    onChange={handleChange}
-                    placeholder="Subject"
-                    required
-                    className="w-full border border-gray-300 rounded-md px-4 py-3 text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-green-600 focus:border-transparent"
-                  />
-                </div>
-
-                {/* Message */}
-                <div>
-                  <textarea
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    placeholder="Your Message"
-                    required
-                    rows={5}
-                    className="w-full border border-gray-300 rounded-md px-4 py-3 text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-green-600 focus:border-transparent resize-none"
-                  />
-                </div>
-
-                {/* Submit */}
-                <div className="flex justify-center pt-2">
-                  <button
-                    type="submit"
-                    className="px-10 py-3 rounded-md text-white font-semibold text-sm transition-opacity hover:opacity-90"
-                    style={{ backgroundColor: '#39702E' }}
-                  >
-                    Send Message
-                  </button>
-                </div>
-              </form>
-            )}
           </div>
         </div>
       </section>

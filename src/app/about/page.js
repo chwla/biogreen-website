@@ -107,19 +107,19 @@ const AboutPage = () => {
             {/* Our Vision */}
             <div className="bg-white rounded-2xl shadow-md p-8 flex flex-col items-start gap-6">
               <div className="flex items-center gap-4">
-                <div className="relative w-16 h-16 flex-shrink-0">
+                <div className="relative w-24 h-24 flex-shrink-0">
                   <Image
                     src="/photos/icon_vision.png"
                     alt="Our Vision icon"
                     fill
                     className="object-contain"
-                    sizes="64px"
+                    sizes="96px"
                     quality={80}
                   />
                 </div>
-                <h3 className="text-xl font-bold" style={{ color: '#39702E' }}>Our Vision</h3>
+                <h3 className="text-2xl font-bold" style={{ color: '#39702E' }}>Our Vision</h3>
               </div>
-              <p className="text-gray-600 text-base leading-relaxed">
+              <p className="text-gray-600 text-lg leading-relaxed">
                 We envision a world where agriculture is productive, sustainable, and regenerative—restoring soils, empowering farmers, and protecting the planet for generations to come.
               </p>
             </div>
@@ -127,19 +127,19 @@ const AboutPage = () => {
             {/* Our Mission */}
             <div className="bg-white rounded-2xl shadow-md p-8 flex flex-col items-start gap-6">
               <div className="flex items-center gap-4">
-                <div className="relative w-16 h-16 flex-shrink-0">
+                <div className="relative w-24 h-24 flex-shrink-0">
                   <Image
                     src="/photos/icon_mission.png"
                     alt="Our Mission icon"
                     fill
                     className="object-contain"
-                    sizes="64px"
+                    sizes="96px"
                     quality={80}
                   />
                 </div>
-                <h3 className="text-xl font-bold" style={{ color: '#39702E' }}>Our Mission</h3>
+                <h3 className="text-2xl font-bold" style={{ color: '#39702E' }}>Our Mission</h3>
               </div>
-              <p className="text-gray-600 text-base leading-relaxed">
+              <p className="text-gray-600 text-lg leading-relaxed">
                 Our mission is to nourish the world organically by transforming natural by-products into high-quality plant-based fertilizers that enrich soil health, increase yields, and support regenerative farming while reducing chemical dependency.
               </p>
             </div>
@@ -150,13 +150,13 @@ const AboutPage = () => {
       {/* Our Core Values Section */}
       <section className="py-16 px-4 sm:px-8" style={{ backgroundColor: '#f1f7ed' }}>
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-10 text-gray-800">Our Core Values</h2>
+          <h2 className="text-4xl font-bold text-center mb-10 text-gray-800">Our Core Values</h2>
           <div className="bg-white rounded-2xl shadow-md p-10 max-w-3xl mx-auto text-center">
-            <p className="text-gray-600 text-base leading-relaxed mb-8">
+            <p className="text-gray-600 text-lg leading-relaxed mb-8">
               At Bio Green, our values are rooted in sustainability, innovation, and integrity. Bio put farmers at the heart of everything we do, foster collaboration with communities, and uphold our responsibility as stewards of the land—ensuring agriculture not only thrives today but regenerates and sustains fertility for generations to come.
             </p>
             <div className="flex justify-center">
-              <div className="relative w-40 h-40 md:w-52 md:h-52">
+              <div className="relative w-52 h-52 md:w-64 md:h-64">
                 <Image
                   src="/photos/icon_corevalue.png"
                   alt="Core values icon"
